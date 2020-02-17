@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="haoke-eureka-center" />
+        <module name="haoke-manage-api-server" />
+        <module name="haoke-manage-cloud-server-ad-interface" />
+        <module name="haoke-manage-cloud-server-ad-service" />
+        <module name="haoke-manage-cloud-server-common" />
+        <module name="haoke-manage-cloud-server-generator" />
+        <module name="haoke-manage-cloud-server-house-resources-interface" />
+        <module name="haoke-manage-cloud-server-house-resources-service" />
+        <module name="haoke-manage-dubbo-server-ad-interface" />
+        <module name="haoke-manage-dubbo-server-ad-service" />
+        <module name="haoke-manage-dubbo-server-common" />
+        <module name="haoke-manage-dubbo-server-generator" />
+        <module name="haoke-manage-dubbo-server-house-resources-dubbo-service" />
+        <module name="ssk-haoke-manage-api-server" />
+      </profile>
+      <profile name="Annotation profile for ssk-haoke-manage" enabled="true">
+        <sourceOutputDir name="../haoke-manage-dubbo-server-house-resources-dubbo-interface/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../haoke-manage-dubbo-server-house-resources-dubbo-interface/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="haoke-manage-dubbo-server-house-resources-dubbo-interface" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="haoke-eureka-center" target="1.8" />
+      <module name="haoke-manage-api-server" target="1.8" />
+      <module name="haoke-manage-cloud-server" target="1.8" />
+      <module name="haoke-manage-cloud-server-ad" target="1.8" />
+      <module name="haoke-manage-cloud-server-ad-interface" target="1.8" />
+      <module name="haoke-manage-cloud-server-ad-service" target="1.8" />
+      <module name="haoke-manage-cloud-server-common" target="1.8" />
+      <module name="haoke-manage-cloud-server-generator" target="1.8" />
+      <module name="haoke-manage-cloud-server-house-resources" target="1.8" />
+      <module name="haoke-manage-cloud-server-house-resources-interface" target="1.8" />
+      <module name="haoke-manage-cloud-server-house-resources-service" target="1.8" />
+      <module name="ssk-haoke-manage" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
