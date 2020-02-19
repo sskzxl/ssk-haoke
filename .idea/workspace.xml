@@ -2,9 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0dc28ee6-41a9-4792-9841-1741660e61a0" name="Default" comment="第一次创建仓库">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/target/classes/com/ssk/haoke/cloud/server/api/IHouseResourcesApi.class" afterPath="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/target/classes/com/ssk/haoke/cloud/server/api/IHouseResourcesApi.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/public/favicon.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/assets/logo.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/commom" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/.browserslistrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/.eslintrc.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/README.md" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/babel.config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/public/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/App.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/antd-variables.less" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/api/notifie.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/api/user.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/common/request.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/components/HelloWorld.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/layouts/BasicLayout.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/layouts/UserLayout.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/plugins/ant-design-vue.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/plugins/axios.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/router/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/views/About.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/views/Home.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/views/NotFound.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/views/user/Login.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/views/user/Register.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/views/user/RegisterResult.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/vue.config.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/yarn.lock" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/api/IHouseResourcesApi.java" afterPath="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/api/IHouseResourcesApi.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -54,11 +82,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="HouseResourcesController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HouseResourcesController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/controller/HouseResourcesController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="70" column="58" lean-forward="false" selection-start-line="70" selection-start-column="58" selection-end-line="70" selection-end-column="58" />
+            <state relative-caret-position="388">
+              <caret line="74" column="19" lean-forward="false" selection-start-line="74" selection-start-column="19" selection-end-line="74" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/haoke_manage_frontend/src/api/user.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -204,6 +242,13 @@
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>false</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>false</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
@@ -235,6 +280,9 @@
       </expand>
       <select />
     </treeState>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/haoke_manage_frontend/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="21" />
@@ -352,11 +400,11 @@
       <recent name="com.ssk.haoke.dubbo.api.graphql" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\JavaWebLearning\HaoKe\java\ssk-haoke-manage" />
       <recent name="E:\JavaWebLearning\HaoKe\java\ssk-haoke-manage\haoke-manage-cloud-server\haoke-manage-cloud-server-house-resources\haoke-manage-cloud-server-house-resources-interface\src\main\java\com\ssk\haoke\cloud\server\vo" />
       <recent name="E:\JavaWebLearning\HaoKe\java\ssk-haoke-manage\haoke-manage-api-server\src\main\resources" />
       <recent name="E:\JavaWebLearning\HaoKe\java\ssk-haoke-manage\haoke-manage-dubbo-server\haoke-manage-dubbo-server-house-resources\src\test\java" />
       <recent name="E:\JavaWebLearning\HaoKe\java\ssk-haoke-manage\haoke-manage-dubbo-server\haoke-manage-dubbo-server-house-resources\haoke-manage-dubbo-server-house-resources-dubbo-service\src\main\java\com\ssk\hao\dubbo\server" />
-      <recent name="E:\JavaWebLearning\HaoKe\java\ssk-haoke-manage\haoke-manage-dubbo-server\haoke-manage-dubbo-server-house-resources\haoke-manage-dubbo-server-house-resources-dubbo-service\src\main\java" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -694,7 +742,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="390415000" />
+    <option name="totallyTimeSpent" value="391336000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -736,18 +784,44 @@
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15504292" sideWeight="0.51744884" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Azure Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298122" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="JRebel Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="19" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1137339" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel Executor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Azure Activity Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20681551" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" x="2" y="407" width="1864" height="421" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2511737" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="GraphQL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298122" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="HDInsight Spark Submission" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298122" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22769953" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11280846" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298122" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33019978" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21137339" sideWeight="0.48255116" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12553649" sideWeight="0.52442527" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.8896714" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Spark Job in Cluster" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Debug Remote Spark Job in Cluster" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15504292" sideWeight="0.51744884" order="7" side_tool="true" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -793,16 +867,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/HouseApiApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="14" column="19" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-ad/haoke-manage-cloud-server-ad-service/src/main/java/com/ssk/haoke/cloud/server/rest/AdRest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -824,10 +888,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-259">
           <caret line="4426" column="25" lean-forward="false" selection-start-line="4426" selection-start-column="25" selection-end-line="4426" selection-end-column="25" />
-          <folding>
-            <element signature="e#175306#175307#0" expanded="false" />
-            <element signature="e#175349#175350#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1004,7 +1064,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-67">
           <caret line="19" column="43" lean-forward="false" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1119,8 +1178,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/controller/HouseResourcesController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="70" column="58" lean-forward="false" selection-start-line="70" selection-start-column="58" selection-end-line="70" selection-end-column="58" />
+        <state relative-caret-position="388">
+          <caret line="74" column="19" lean-forward="false" selection-start-line="74" selection-start-column="19" selection-end-line="74" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -1130,7 +1189,7 @@
         <state relative-caret-position="212">
           <caret line="69" column="19" lean-forward="false" selection-start-line="69" selection-start-column="19" selection-end-line="69" selection-end-column="19" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1166,6 +1225,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/haoke_manage_frontend/.gitignore" />
+    <entry file="file://$PROJECT_DIR$/haoke_manage_frontend/src/api/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
