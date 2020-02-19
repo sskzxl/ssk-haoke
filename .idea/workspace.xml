@@ -1,37 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0dc28ee6-41a9-4792-9841-1741660e61a0" name="Default" comment="第一次创建仓库">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/public/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/assets/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/commom" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/.browserslistrc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/.eslintrc.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/babel.config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/package.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/public/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/App.vue" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/antd-variables.less" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/api/notifie.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/api/user.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/common/request.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/components/HelloWorld.vue" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/layouts/BasicLayout.vue" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/layouts/UserLayout.vue" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/main.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/plugins/ant-design-vue.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/plugins/axios.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/router/index.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/views/About.vue" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/views/Home.vue" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/views/NotFound.vue" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/views/user/Login.vue" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/views/user/Register.vue" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/src/views/user/RegisterResult.vue" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/vue.config.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke_manage_frontend/yarn.lock" />
+    <list default="true" id="0dc28ee6-41a9-4792-9841-1741660e61a0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -95,8 +65,8 @@
       <file leaf-file-name="user.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/haoke_manage_frontend/src/api/user.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="684">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -176,6 +146,11 @@
     </dirStrings>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="ssk &lt;1123866518@qq.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
@@ -707,6 +682,14 @@
       <workItem from="1581662994609" duration="47186000" />
       <workItem from="1582096096576" duration="121000" />
     </task>
+    <task id="LOCAL-00001" summary="前端vue">
+      <created>1582097405324</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1582097405324</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -742,7 +725,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="391336000" />
+    <option name="totallyTimeSpent" value="391539000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -856,6 +839,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="前端vue" />
+    <option name="LAST_COMMIT_MESSAGE" value="前端vue" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <option name="time" value="280" />
@@ -888,6 +875,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-259">
           <caret line="4426" column="25" lean-forward="false" selection-start-line="4426" selection-start-column="25" selection-end-line="4426" selection-end-column="25" />
+          <folding>
+            <element signature="e#175306#175307#0" expanded="false" />
+            <element signature="e#175349#175350#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1227,8 +1218,8 @@
     <entry file="file://$PROJECT_DIR$/haoke_manage_frontend/.gitignore" />
     <entry file="file://$PROJECT_DIR$/haoke_manage_frontend/src/api/user.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="684">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding />
         </state>
       </provider>
