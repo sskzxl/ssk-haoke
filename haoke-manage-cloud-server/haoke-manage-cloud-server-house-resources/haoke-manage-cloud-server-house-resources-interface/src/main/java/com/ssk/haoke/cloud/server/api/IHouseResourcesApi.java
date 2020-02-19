@@ -24,7 +24,7 @@ public interface IHouseResourcesApi {
     @PostMapping
     @ResponseBody
     @ApiOperation(value = "新增房源",notes = "新增房源")
-    int saveHouseResources(HouseResources houseResources);
+    int saveHouseResources(@RequestBody HouseResources houseResources);
     /**
     * 分页查询房源列表
     * *
@@ -49,6 +49,6 @@ public interface IHouseResourcesApi {
     @PutMapping(produces = "application/json")
     @ResponseBody
     @ApiOperation(value = "更新房源",notes = "更新房源")
-    boolean updateHouseResources(HouseResources houseResources);
+    boolean updateHouseResources(@RequestBody HouseResources houseResources);
 }
 
