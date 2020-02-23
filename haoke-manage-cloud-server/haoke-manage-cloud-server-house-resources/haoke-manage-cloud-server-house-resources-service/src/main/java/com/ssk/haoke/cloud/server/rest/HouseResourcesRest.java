@@ -29,8 +29,8 @@ public class HouseResourcesRest implements IHouseResourcesApi,IHouseResourcesQue
     }
 
     @Override
-    public RestResponse<PageInfo<HouseResourcesRespDto>> queryHouseResourcesList(String filter,Integer page, Integer pageSize) {
-        return houseResourcesQueryApi.queryHouseResourcesList(filter,page,pageSize);
+    public RestResponse<PageInfo<HouseResourcesRespDto>> queryHouseResourcesList(String filter,Integer pageNum, Integer pageSize) {
+        return houseResourcesQueryApi.queryHouseResourcesList(filter,pageNum,pageSize);
     }
 
     @Override

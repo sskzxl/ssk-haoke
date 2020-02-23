@@ -1,10 +1,14 @@
 package com.ssk.haoke.cloud.server.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Lists;
 import com.ssk.haoke.cloud.server.api.dto.request.HouseResourcesReqDto;
 import com.ssk.haoke.cloud.server.api.dto.response.HouseResourcesRespDto;
+import com.ssk.haoke.cloud.server.mapper.HouseResourcesMapper;
+import com.ssk.haoke.cloud.server.pojo.HouseResources;
 import com.ssk.haoke.cloud.server.service.BaseServiceImpl;
 import com.ssk.haoke.cloud.server.service.HouseResourcesService;
 import com.ssk.haoke.cloud.server.vo.HouseResourcesEo;
@@ -15,15 +19,18 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.List;
 
 @Service
 public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo> implements HouseResourcesService {
 
-    public static final Logger logger = LoggerFactory.getLogger(HouseInspectionReqServiceImpl.class);
+    public static final Logger logger = LoggerFactory.getLogger(HouseResourcesServiceImpl.class);
     public static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
+    @Resource
+    private HouseResourcesMapper houseResourcesMapper;
     /**
      * @param id
      * @return
@@ -55,14 +62,15 @@ public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo>
      * @param pageSize
      * @return
      */
-    public PageInfo<HouseResourcesRespDto> queryHouseResourcesList(String filter, Integer page, Integer pageSize) {
+    public PageInfo<HouseResourcesRespDto> queryHouseResourcesList(String filter, Integer pageNum, Integer pageSize) {
         HouseResourcesEo houseResourcesEo = new HouseResourcesEo();
         try {
             houseResourcesEo = OBJECT_MAPPER.readValue(filter, HouseResourcesEo.class);
         } catch (IOException e) {
             logger.error("string转对象异常");
         }
-        IPage<HouseResourcesEo> eoIPage = queryPageListByWhere(houseResourcesEo, page, pageSize);
+
+        IPage<HouseResourcesEo> eoIPage = queryPageListByWhere(houseResourcesEo, pageNum, pageSize);
         PageInfo pageInfo = IPage2PageInfo(eoIPage);
         return pageInfo;
     }

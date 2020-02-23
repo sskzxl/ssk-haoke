@@ -20,11 +20,11 @@ public interface HouseResourcesService {
 
     /**
      * 查询房源列表
-     * @param page
+     * @param pageNum
      * @param pageSize
      * @return
      */
-    PageInfo<HouseResourcesRespDto> queryHouseResourcesList(String filter,Integer page, Integer pageSize);
+    PageInfo<HouseResourcesRespDto> queryHouseResourcesList(String filter,Integer pageNum, Integer pageSize);
 
     /**
      * 根据id查询房源

@@ -14,7 +14,7 @@ import javax.annotation.Resource;
 *
 * @author 代码生成器
 */
-@Service
+@Service("houseInspectionReqQueryApi")
 public class HouseInspectionReqQueryApiImpl implements IHouseInspectionReqQueryApi {
 
     @Resource

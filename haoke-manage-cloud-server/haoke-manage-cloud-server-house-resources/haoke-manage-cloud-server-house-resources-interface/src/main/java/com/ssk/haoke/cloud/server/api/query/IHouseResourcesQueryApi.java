@@ -19,14 +19,14 @@ public interface IHouseResourcesQueryApi {
     /**
      * 分页查询房源列表
      * *
-     * @param page 当前页
+     * @param pageNum 当前页
      * @param pageSize 页面大小
      * @return
      */
     @GetMapping(produces = {"application/json"})
     @ApiOperation(value = "分页查询房源",notes = "分页查询房源")
     RestResponse<PageInfo<HouseResourcesRespDto>> queryHouseResourcesList(@RequestParam("filter") String filter,
-                                                                          @RequestParam("page") Integer page,
+                                                                          @RequestParam("pageNum") Integer pageNum,
                                                                           @RequestParam("pageSize") Integer pageSize);
 
     /**

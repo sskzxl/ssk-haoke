@@ -26,4 +26,5 @@ public class Ad extends BasePojo{
     @ApiModelProperty(name = "url" , value = "图片URL地址")
     private String url;
 
+
 }

@@ -13,7 +13,7 @@ import javax.annotation.Resource;
 *
 * @author 代码生成器
 */
-@Service
+@Service("houseInspectionReqApi")
 public class HouseInspectionReqApiImpl implements IHouseInspectionReqApi {
 
     @Resource

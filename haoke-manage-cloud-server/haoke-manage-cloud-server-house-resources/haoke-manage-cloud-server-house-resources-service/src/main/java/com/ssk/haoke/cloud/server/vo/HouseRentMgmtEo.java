@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.ssk.haoke.cloud.server.pojo.BasePojo;
-import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
 import java.util.Date;
 
@@ -15,9 +15,9 @@ import java.util.Date;
 * @author 代码生成器
 */
 @TableName("tb_rent_management")
+@Data
 public class HouseRentMgmtEo extends BasePojo{
     @TableId(value = "id",type = IdType.AUTO)
-    @ApiModelProperty(name = "id" , value = "主键")
     private Long id;
     /**
      *

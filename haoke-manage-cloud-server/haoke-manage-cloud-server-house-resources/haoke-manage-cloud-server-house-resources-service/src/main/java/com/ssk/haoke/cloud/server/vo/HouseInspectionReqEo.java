@@ -1,6 +1,8 @@
 package com.ssk.haoke.cloud.server.vo;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.ssk.haoke.cloud.server.pojo.BasePojo;
 import lombok.Data;
@@ -15,11 +17,12 @@ import java.util.Date;
 @TableName("tb_house_inspection_req")
 @Data
 public class HouseInspectionReqEo extends BasePojo{
-
+    @TableId(value = "id",type = IdType.AUTO)
+    private Long id;
     /**
      *  用户id（tb_user）
      */
-    @TableField("user_id")
+    @TableId
     private Long userId;
 
     /**
