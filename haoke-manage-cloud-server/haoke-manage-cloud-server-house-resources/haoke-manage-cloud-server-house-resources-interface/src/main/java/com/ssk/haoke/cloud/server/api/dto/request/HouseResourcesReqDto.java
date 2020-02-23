@@ -1,9 +1,12 @@
-package com.ssk.haoke.cloud.server.pojo;
+package com.ssk.haoke.cloud.server.api.dto.request;
 
+import com.ssk.haoke.cloud.server.pojo.BasePojo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.experimental.Accessors;
+
+
 
 /**
  * <p>
@@ -15,8 +18,8 @@ import lombok.experimental.Accessors;
  */
 @Data
 @Accessors(chain = true)
-@ApiModel(value = "HouseResources", description = "房源请求响应对象")
-public class HouseResources extends BasePojo {
+@ApiModel(value = "HouseResourcesReqDto", description = "房源请求dto对象")
+public class HouseResourcesReqDto extends BasePojo {
 
 
     private static final long serialVersionUID = 8129783375107293156L;

@@ -4,6 +4,8 @@ import com.ssk.haoke.cloud.api.service.IHouseResourcesService;
 import com.ssk.haoke.cloud.server.pojo.HouseResources;
 import com.ssk.haoke.cloud.server.vo.PageInfo;
 import com.ssk.haoke.cloud.server.vo.TableResult;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 @RequestMapping("house/resources")
 @CrossOrigin
+@Api(tags = "好客租房-管理应用",description = "房源管理")
 public class HouseResourcesController {
     @Autowired
     public static final Logger LOGGER = LoggerFactory.getLogger(HouseResourcesController.class);
@@ -29,6 +32,7 @@ public class HouseResourcesController {
      */
     @PostMapping
     @ResponseBody
+    @ApiOperation(value = "新增房源")
     public ResponseEntity<Void> save(@RequestBody HouseResources houseResources) {
         try {
             System.out.println(houseResources);
@@ -51,6 +55,7 @@ public class HouseResourcesController {
      * @return
      */
     @GetMapping
+    @ApiOperation(value = "查询房源列表")
     public ResponseEntity<TableResult<HouseResources>> list(HouseResources houseResources,
                                             @RequestParam(name = "currentPage",
                                                     defaultValue = "1") Integer currentPage,
@@ -66,6 +71,7 @@ public class HouseResourcesController {
      */
     @PutMapping
     @ResponseBody
+    @ApiOperation(value = "更新房源")
     public ResponseEntity<Void> update(@RequestBody HouseResources houseResources) {
         try {
             boolean bool = this.houseResourcesService.update(houseResources);
@@ -82,6 +88,7 @@ public class HouseResourcesController {
     }
     @DeleteMapping("{id}")
     @ResponseBody
+    @ApiOperation(value = "根据id删除房源")
     public ResponseEntity delete(@PathVariable("id") Long id){
         System.out.println("进来了吗");
         try {
@@ -95,6 +102,7 @@ public class HouseResourcesController {
     }
     @GetMapping("{id}")
     @ResponseBody
+    @ApiOperation(value = "根据id获取房源")
     public ResponseEntity get(@PathVariable("id") Long id){
        return ResponseEntity.ok(houseResourcesService.queryById(id));
     }

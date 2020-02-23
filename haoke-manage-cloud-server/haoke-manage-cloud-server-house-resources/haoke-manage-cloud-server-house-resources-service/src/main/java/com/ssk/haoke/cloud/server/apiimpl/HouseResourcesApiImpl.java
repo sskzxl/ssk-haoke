@@ -1,10 +1,9 @@
 package com.ssk.haoke.cloud.server.apiimpl;
 
 import com.ssk.haoke.cloud.server.api.IHouseResourcesApi;
-import com.ssk.haoke.cloud.server.pojo.HouseResources;
+import com.ssk.haoke.cloud.server.api.dto.request.HouseResourcesReqDto;
+import com.ssk.haoke.cloud.server.rest.RestResponse;
 import com.ssk.haoke.cloud.server.service.HouseResourcesService;
-import com.ssk.haoke.cloud.server.vo.PageInfo;
-import com.ssk.haoke.cloud.server.vo.TableResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,27 +14,17 @@ public class HouseResourcesApiImpl implements IHouseResourcesApi {
     private HouseResourcesService houseResourcesService;
 
     @Override
-    public boolean deleteHouseResource(Long id) {
-        return houseResourcesService.deleteHouseResources(id);
+    public RestResponse<Boolean> deleteHouseResource(Long id) {
+        return new RestResponse<>(houseResourcesService.deleteHouseResources(id));
+    }
+    @Override
+    public RestResponse<Integer> saveHouseResources(HouseResourcesReqDto houseResourcesReqDto) {
+        return new RestResponse<>(this.houseResourcesService.saveHouseResources(houseResourcesReqDto));
+    }
+    @Override
+    public RestResponse<Boolean> updateHouseResources(HouseResourcesReqDto houseResourcesReqDto) {
+        return new RestResponse<>(this.houseResourcesService.updateHouseResources(houseResourcesReqDto));
     }
 
-    @Override
-    public int saveHouseResources(HouseResources houseResources) {
-        return this.houseResourcesService.saveHouseResources(houseResources);
-    }
-
-    @Override
-    public PageInfo<HouseResources> queryHouseResourcesList(Integer page, Integer pageSize) {
-        return this.houseResourcesService.queryHouseResourcesList(page,pageSize);
-    }
-
-    @Override
-    public HouseResources queryHouseResourcesById(Long id) {
-        return this.houseResourcesService.queryHouseResourcesById(id);
-    }
-    @Override
-    public boolean updateHouseResources(HouseResources houseResources) {
-        return this.houseResourcesService.updateHouseResources(houseResources);
-    }
 
 }

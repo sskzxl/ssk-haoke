@@ -1,9 +1,10 @@
 package com.ssk.haoke.cloud.server.rest;
 
 import com.ssk.haoke.cloud.server.api.IHouseResourcesApi;
-import com.ssk.haoke.cloud.server.pojo.HouseResources;
+import com.ssk.haoke.cloud.server.api.dto.request.HouseResourcesReqDto;
+import com.ssk.haoke.cloud.server.api.dto.response.HouseResourcesRespDto;
+import com.ssk.haoke.cloud.server.api.query.IHouseResourcesQueryApi;
 import com.ssk.haoke.cloud.server.vo.PageInfo;
-import com.ssk.haoke.cloud.server.vo.TableResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,31 +12,34 @@ import javax.annotation.Resource;
 
 @RestController
 @RequestMapping("/v1/house/resources")
-public class HouseResourcesRest implements IHouseResourcesApi {
+public class HouseResourcesRest implements IHouseResourcesApi,IHouseResourcesQueryApi {
     @Resource
     private IHouseResourcesApi houseResourcesApi;
+    @Resource
+    private IHouseResourcesQueryApi houseResourcesQueryApi;
+
     @Override
-    public boolean deleteHouseResource(Long id) {
+    public RestResponse<Boolean> deleteHouseResource(Long id) {
         return houseResourcesApi.deleteHouseResource(id);
     }
 
     @Override
-    public int saveHouseResources(HouseResources houseResources) {
-        return houseResourcesApi.saveHouseResources(houseResources);
+    public RestResponse<Integer> saveHouseResources(HouseResourcesReqDto houseResourcesReqDto) {
+        return houseResourcesApi.saveHouseResources(houseResourcesReqDto);
     }
 
     @Override
-    public PageInfo<HouseResources> queryHouseResourcesList(Integer page, Integer pageSize) {
-        return houseResourcesApi.queryHouseResourcesList(page,pageSize);
+    public RestResponse<PageInfo<HouseResourcesRespDto>> queryHouseResourcesList(String filter,Integer page, Integer pageSize) {
+        return houseResourcesQueryApi.queryHouseResourcesList(filter,page,pageSize);
     }
 
     @Override
-    public HouseResources queryHouseResourcesById(Long id) {
-        return houseResourcesApi.queryHouseResourcesById(id);
+    public RestResponse<HouseResourcesRespDto> queryHouseResourcesById(Long id) {
+        return houseResourcesQueryApi.queryHouseResourcesById(id);
     }
 
     @Override
-    public boolean updateHouseResources(HouseResources houseResources) {
-        return houseResourcesApi.updateHouseResources(houseResources);
+    public RestResponse<Boolean> updateHouseResources(HouseResourcesReqDto houseResources) {
+        return updateHouseResources(houseResources);
     }
 }
