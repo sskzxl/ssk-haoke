@@ -13,7 +13,10 @@
         <module name="haoke-manage-cloud-server-common" />
         <module name="haoke-manage-cloud-server-generator" />
         <module name="haoke-manage-cloud-server-house-resources-interface" />
+        <module name="haoke-manage-cloud-server-house-resources-interface (1)" />
         <module name="haoke-manage-cloud-server-house-resources-service" />
+        <module name="haoke-manage-cloud-server-user-interface" />
+        <module name="haoke-manage-cloud-server-user-service" />
         <module name="haoke-manage-dubbo-server-ad-interface" />
         <module name="haoke-manage-dubbo-server-ad-service" />
         <module name="haoke-manage-dubbo-server-common" />
@@ -27,6 +30,12 @@
         <outputRelativeToContentRoot value="true" />
         <module name="haoke-manage-dubbo-server-house-resources-dubbo-interface" />
       </profile>
+      <profile name="Annotation profile for haoke-manage-cloud-server-house-resources" enabled="true">
+        <sourceOutputDir name="../haoke-manage-cloud-server-house-resources-service/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../haoke-manage-cloud-server-house-resources-service/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="haoke-manage-cloud-server-house-resources-service (1)" />
+      </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="haoke-eureka-center" target="1.8" />
@@ -38,8 +47,14 @@
       <module name="haoke-manage-cloud-server-common" target="1.8" />
       <module name="haoke-manage-cloud-server-generator" target="1.8" />
       <module name="haoke-manage-cloud-server-house-resources" target="1.8" />
+      <module name="haoke-manage-cloud-server-house-resources (1)" target="1.8" />
       <module name="haoke-manage-cloud-server-house-resources-interface" target="1.8" />
+      <module name="haoke-manage-cloud-server-house-resources-interface (1)" target="1.8" />
       <module name="haoke-manage-cloud-server-house-resources-service" target="1.8" />
+      <module name="haoke-manage-cloud-server-house-resources-service (1)" target="1.8" />
+      <module name="haoke-manage-cloud-server-user" target="1.8" />
+      <module name="haoke-manage-cloud-server-user-interface" target="1.8" />
+      <module name="haoke-manage-cloud-server-user-service" target="1.8" />
       <module name="ssk-haoke-manage" target="1.8" />
     </bytecodeTargetLevel>
   </component>

@@ -13,5 +13,8 @@
     <file url="file://$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-user" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-user/haoke-manage-cloud-server-user-interface" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-user/haoke-manage-cloud-server-user-service" charset="UTF-8" />
   </component>
 </project>

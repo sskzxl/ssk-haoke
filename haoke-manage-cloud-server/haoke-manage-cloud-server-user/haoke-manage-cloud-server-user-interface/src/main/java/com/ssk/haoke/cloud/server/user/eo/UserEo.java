@@ -1,17 +1,21 @@
-package com.ssk.haoke.cloud.server.vo;
+package com.ssk.haoke.cloud.server.user.eo;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.ssk.haoke.cloud.server.pojo.BasePojo;
 import lombok.Data;
-
-import java.util.Date;
 
 /**
 * Eo对象
 *
 * @author 代码生成器
 */
+@TableName("tb_user")
 @Data
-public class UserEo{
-
+public class UserEo extends BasePojo{
+    @TableId(value = "id",type = IdType.AUTO)
+    private Long id;
     /**
      *  姓名
      */
@@ -55,11 +59,5 @@ public class UserEo{
     /**
      *  
      */
-    private Date created;
-
-    /**
-     *  
-     */
-    private Date updated;
 
 }
