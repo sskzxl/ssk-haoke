@@ -22,7 +22,7 @@
         </dependency>
         <dependency>
             <groupId>cn-haoke-ssk</groupId>
-            <artifactId>haoke-manage-cloud-server-ad-interface</artifactId>
+            <artifactId>haoke-portal-cloud-server-ad-interface</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>

@@ -1,8 +1,8 @@
 package com.ssk.haoke.cloud.server.user.api.query;
 
-import com.ssk.haoke.cloud.server.user.api.dto.request.UserReqDto;
-import com.ssk.haoke.cloud.server.rest.RestResponse;
-import com.ssk.haoke.cloud.server.eo.PageInfo;
+import com.ssk.haoke.cloud.server.house.eo.PageInfo;
+import com.ssk.haoke.cloud.server.house.rest.RestResponse;
+import com.ssk.haoke.cloud.server.user.api.dto.response.UserRespDto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -27,7 +27,7 @@ public interface IUserQueryApi {
     */
     @GetMapping("/{id}")
     @ApiOperation(value = "根据id查询", notes = "根据id查询")
-    RestResponse<UserReqDto> queryById(@PathVariable("id") Long id);
+    RestResponse<UserRespDto> queryById(@PathVariable("id") Long id);
 
     /**
     * 分页数据
@@ -39,7 +39,7 @@ public interface IUserQueryApi {
     */
     @GetMapping("/page")
     @ApiOperation(value = "分页数据", notes = "根据filter查询条件查询数据，filter=UserReqDto")
-    RestResponse<PageInfo<UserReqDto>> queryByPage(@RequestParam("filter") String filter,
+    RestResponse<PageInfo<UserRespDto>> queryByPage(@RequestParam("filter") String filter,
                                      @RequestParam(name = "pageNum", required = false, defaultValue = "1") Integer pageNum,
                                      @RequestParam(name = "pageSize", required = false, defaultValue = "10") Integer pageSize);
 

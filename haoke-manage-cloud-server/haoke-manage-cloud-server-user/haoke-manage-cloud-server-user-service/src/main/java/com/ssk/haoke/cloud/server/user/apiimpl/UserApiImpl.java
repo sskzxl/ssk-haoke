@@ -2,7 +2,7 @@ package com.ssk.haoke.cloud.server.user.apiimpl;
 
 import com.ssk.haoke.cloud.server.user.api.IUserApi;
 import com.ssk.haoke.cloud.server.user.api.dto.request.UserReqDto;
-import com.ssk.haoke.cloud.server.rest.RestResponse;
+import com.ssk.haoke.cloud.server.house.rest.RestResponse;
 import com.ssk.haoke.cloud.server.user.service.IUserService;
 import org.springframework.stereotype.Service;
 

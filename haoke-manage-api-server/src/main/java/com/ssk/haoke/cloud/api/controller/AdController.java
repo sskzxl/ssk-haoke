@@ -2,8 +2,8 @@ package com.ssk.haoke.cloud.api.controller;
 
 import com.ssk.haoke.cloud.api.service.IAdService;
 import com.ssk.haoke.cloud.api.vo.WebResult;
-import com.ssk.haoke.cloud.server.pojo.Ad;
-import com.ssk.haoke.cloud.server.vo.PageInfo;
+import com.ssk.haoke.cloud.server.ad.pojo.Ad;
+import com.ssk.haoke.cloud.server.house.eo.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;

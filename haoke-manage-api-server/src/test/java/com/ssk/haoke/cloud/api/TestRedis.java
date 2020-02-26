@@ -1,5 +1,6 @@
 package com.ssk.haoke.cloud.api;
-import com.ssk.haoke.cloud.api.service.impl.UserService;
+
+import com.ssk.haoke.cloud.api.service.impl.UserLoginService;
 import org.apache.commons.io.FileUtils;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -35,7 +36,7 @@ public class TestRedis {
 
     @Test
     public void testUserMapper(){
-        UserService userService = new UserService();
+        UserLoginService userService = new UserLoginService();
 //        String s = userService.checkLogin("ssk", "123456");
 //        System.out.println(s);
 

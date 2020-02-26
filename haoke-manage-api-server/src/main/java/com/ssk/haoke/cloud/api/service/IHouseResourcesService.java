@@ -1,33 +1,35 @@
 package com.ssk.haoke.cloud.api.service;
 
-import com.ssk.haoke.cloud.server.pojo.HouseResources;
-import com.ssk.haoke.cloud.server.vo.TableResult;
+import com.ssk.haoke.cloud.server.house.api.dto.request.HouseResourcesReqDto;
+import com.ssk.haoke.cloud.server.house.api.dto.response.HouseResourcesRespDto;
+import com.ssk.haoke.cloud.server.house.rest.RestResponse;
+import com.ssk.haoke.cloud.server.house.eo.PageInfo;
 
 public interface IHouseResourcesService {
 
-    boolean delete(Long id);
+    RestResponse<Boolean> delete(Long id);
 
     /**
-     * @param houseResources
+     * @param houseResourcesReqDto
      * @return -1:输入的参数不符合要求，0：数据插入数据库失败，1：成功
      */
-    boolean save(HouseResources houseResources);
+    RestResponse<Boolean> save(HouseResourcesReqDto houseResourcesReqDto);
     /**
      * 分页查询房源列表
      * *
      * @param pageNum 当前页
      * @param pageSize 页面大小
-     * @param houseResources 查询条件
+     * @param filter 查询条件
      * @return
      */
-    TableResult<HouseResources> queryList(Integer pageNum, Integer pageSize, HouseResources houseResources);
+    RestResponse<PageInfo<HouseResourcesRespDto>> queryList(Integer pageNum, Integer pageSize, String filter);
 
     /**
      * 根据id删除房源
      * @param id
      * @return
      */
-    HouseResources queryById(Long id);
+    RestResponse<HouseResourcesRespDto> queryById(Long id);
     //更新房源
-    boolean update(HouseResources houseResources);
+    RestResponse<Boolean> update(HouseResourcesReqDto houseResourcesReqDto);
 }

@@ -9,8 +9,8 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootApplication
 @EnableFeignClients
 @EnableDiscoveryClient
-@ComponentScan(basePackages = {"com.ssk.haoke.cloud.server.api",
-        "com.ssk.haoke.cloud.server"})
+@ComponentScan(basePackages = {"com.ssk.haoke.cloud.server.house.api",
+        "com.ssk.haoke.cloud.server.house"})
 public class HouseCenterApplication {
     public static void main(String[] args) {
         new SpringApplication(HouseCenterApplication.class).run(args);

@@ -15,7 +15,6 @@
         <module>haoke-manage-cloud-server-house-resources</module>
         <module>haoke-manage-cloud-server-generator</module>
         <module>haoke-manage-cloud-server-common</module>
-        <module>haoke-manage-cloud-server-ad</module>
     </modules>
     <dependencies>
         <dependency>

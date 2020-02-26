@@ -2,7 +2,7 @@ package com.ssk.haoke.cloud.server.user.service;
 
 import com.ssk.haoke.cloud.server.user.api.dto.request.UserReqDto;
 import com.ssk.haoke.cloud.server.user.api.dto.response.UserRespDto;
-import com.ssk.haoke.cloud.server.eo.PageInfo;
+import com.ssk.haoke.cloud.server.house.eo.PageInfo;
 
 /**
 * 服务接口

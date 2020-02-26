@@ -4,7 +4,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
-import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableDiscoveryClient
@@ -14,7 +13,7 @@ import org.springframework.context.annotation.ComponentScan;
 //})
 @EnableFeignClients(basePackages = {
         "com.ssk.haoke.cloud.api",
-        "com.ssk.haoke.cloud.server.api"
+        "com.ssk.haoke.cloud.server.*.api"
 })
 public class HouseApiApplication {
     public static void main(String[] args) {

@@ -8,9 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="haoke-eureka-center" />
         <module name="haoke-manage-api-server" />
-        <module name="haoke-manage-cloud-server-ad-interface" />
-        <module name="haoke-manage-cloud-server-ad-service" />
         <module name="haoke-manage-cloud-server-common" />
+        <module name="haoke-manage-cloud-server-common (1)" />
         <module name="haoke-manage-cloud-server-generator" />
         <module name="haoke-manage-cloud-server-house-resources-interface" />
         <module name="haoke-manage-cloud-server-house-resources-interface (1)" />
@@ -22,6 +21,9 @@
         <module name="haoke-manage-dubbo-server-common" />
         <module name="haoke-manage-dubbo-server-generator" />
         <module name="haoke-manage-dubbo-server-house-resources-dubbo-service" />
+        <module name="haoke-portal-cloud-server-ad-interface" />
+        <module name="haoke-portal-cloud-server-ad-service" />
+        <module name="haoke-portal-cloud-server-common" />
         <module name="ssk-haoke-manage-api-server" />
       </profile>
       <profile name="Annotation profile for ssk-haoke-manage" enabled="true">
@@ -42,9 +44,13 @@
       <module name="haoke-manage-api-server" target="1.8" />
       <module name="haoke-manage-cloud-server" target="1.8" />
       <module name="haoke-manage-cloud-server-ad" target="1.8" />
+      <module name="haoke-manage-cloud-server-ad (1)" target="1.8" />
       <module name="haoke-manage-cloud-server-ad-interface" target="1.8" />
+      <module name="haoke-manage-cloud-server-ad-interface (1)" target="1.8" />
       <module name="haoke-manage-cloud-server-ad-service" target="1.8" />
+      <module name="haoke-manage-cloud-server-ad-service (1)" target="1.8" />
       <module name="haoke-manage-cloud-server-common" target="1.8" />
+      <module name="haoke-manage-cloud-server-common (1)" target="1.8" />
       <module name="haoke-manage-cloud-server-generator" target="1.8" />
       <module name="haoke-manage-cloud-server-house-resources" target="1.8" />
       <module name="haoke-manage-cloud-server-house-resources (1)" target="1.8" />
@@ -55,6 +61,11 @@
       <module name="haoke-manage-cloud-server-user" target="1.8" />
       <module name="haoke-manage-cloud-server-user-interface" target="1.8" />
       <module name="haoke-manage-cloud-server-user-service" target="1.8" />
+      <module name="haoke-portal-cloud-server" target="1.8" />
+      <module name="haoke-portal-cloud-server-ad" target="1.8" />
+      <module name="haoke-portal-cloud-server-ad-interface" target="1.8" />
+      <module name="haoke-portal-cloud-server-ad-service" target="1.8" />
+      <module name="haoke-portal-cloud-server-common" target="1.8" />
       <module name="ssk-haoke-manage" target="1.8" />
     </bytecodeTargetLevel>
   </component>

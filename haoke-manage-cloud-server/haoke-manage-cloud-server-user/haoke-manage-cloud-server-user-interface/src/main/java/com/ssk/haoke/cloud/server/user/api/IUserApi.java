@@ -1,7 +1,7 @@
 package com.ssk.haoke.cloud.server.user.api;
 
 import com.ssk.haoke.cloud.server.user.api.dto.request.UserReqDto;
-import com.ssk.haoke.cloud.server.rest.RestResponse;
+import com.ssk.haoke.cloud.server.house.rest.RestResponse;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.cloud.openfeign.FeignClient;

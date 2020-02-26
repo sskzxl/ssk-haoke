@@ -1,9 +1,9 @@
 package com.ssk.haoke.cloud.api.service.impl;
 
 import com.ssk.haoke.cloud.api.service.IAdService;
-import com.ssk.haoke.cloud.server.api.IAdApi;
-import com.ssk.haoke.cloud.server.pojo.Ad;
-import com.ssk.haoke.cloud.server.vo.PageInfo;
+import com.ssk.haoke.cloud.server.ad.api.IAdApi;
+import com.ssk.haoke.cloud.server.ad.pojo.Ad;
+import com.ssk.haoke.cloud.server.house.eo.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

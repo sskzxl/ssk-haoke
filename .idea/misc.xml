@@ -8,10 +8,12 @@
         <option value="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-ad/haoke-manage-dubbo-server-ad-interface/pom.xml" />
         <option value="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-ad/haoke-manage-dubbo-server-ad-service/pom.xml" />
         <option value="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-user/pom.xml" />
+        <option value="$PROJECT_DIR$/haoke-portal-cloud-server/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-ad/pom.xml" />
         <option value="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-dubbo-server-house-resources-dubbo-interface/pom.xml" />
         <option value="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-dubbo-server-house-resources-dubbo-service/pom.xml" />
         <option value="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/pom.xml" />
