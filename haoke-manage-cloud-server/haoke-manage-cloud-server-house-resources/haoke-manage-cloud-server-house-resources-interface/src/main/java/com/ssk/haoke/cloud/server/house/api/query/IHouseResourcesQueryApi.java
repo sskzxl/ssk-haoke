@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-@FeignClient(name = "haoke-manage-cloud-server-house-resources",
+@FeignClient(name = "${haoke.manage.center.resources.api.name:haoke-manage-center-resources}",
         path = "/v1/house/resources",
-        url = "${ssk-haoke-houseResources-api:}")
+        url = "${haoke.manage.center.resources.api:}")
 @Api(tags = "好客租房管理平台：房源中心")
 public interface IHouseResourcesQueryApi {
     /**

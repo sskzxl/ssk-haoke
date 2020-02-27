@@ -14,7 +14,8 @@ import org.springframework.web.bind.annotation.*;
  **/
 
  @Api(tags = "好客租房管理平台：房源中心")
-@FeignClient(name = "haoke-manage-cloud-server-house-resources", path = "/v1/houserent",  url = "${ssk-haoke-houseResources-api:}")
+@FeignClient(name = "${haoke.manage.center.resources.api.name:haoke-manage-center-resources}",
+        path = "/v1/houserent",  url = "${haoke.manage.center.resources.api:}")
 public interface IHouseRentMgmtApi {
 
     /**

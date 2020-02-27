@@ -6,9 +6,8 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
-@FeignClient(name = "haoke-manage-cloud-server-house-resources",
-        path = "/v1/house/resources",
-    url = "${ssk-haoke-houseResources-api:}")
+@FeignClient(name = "${haoke.manage.center.resources.api.name:haoke-manage-center-resources}",
+        path = "/v1/house/resources", url = "${haoke.manage.center.resources.api:}")
 @Api(tags = "好客租房管理平台：房源中心")
 public interface IHouseResourcesApi {
     @ApiOperation(value = "删除房源",notes = "删除房源")

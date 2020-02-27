@@ -17,9 +17,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 * @author 代码生成器
 */
 @Api(tags = "好客租房管理平台：房源中心")
-@FeignClient(name = "haoke-manage-cloud-server-house-resources",
+@FeignClient(name = "${haoke.manage.center.resources.api.name:haoke-manage-center-resources}",
         path = "/v1/houserent",
-        url = "${ssk-haoke-houseResources-api:}")
+        url = "${haoke.manage.center.resources.api:}")
 public interface IHouseRentMgmtQueryApi {
 
     /**
