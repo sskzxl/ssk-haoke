@@ -20,20 +20,35 @@ public class HouseRentMgmtEo extends BasePojo{
     @TableId(value = "id",type = IdType.AUTO)
     private Long id;
     /**
-     *
+     *租户姓名
+     */
+    @TableField("tenant_name")
+    private String tenantName;
+    /**
+     *租户手机
+     */
+    @TableField("tenant_phone")
+    private String tenantPhone;
+    /**
+     *租户id
      */
     @TableField("tenant_id")
     private Long tenantId;
     /**
-     *
+     *房东id
      */
     @TableField("landlord_id")
     private Long landlordId;
     /**
-     *
+     *房源id
      */
     @TableField("house_resources_id")
     private Long houseResourcesId;
+    /**
+     *租户姓名
+     */
+    @TableField("house_resources_name")
+    private String houseResourcesName;
 
     /**
      *  合同开始时间
@@ -58,18 +73,4 @@ public class HouseRentMgmtEo extends BasePojo{
      */
     @TableField("status")
     private String status;
-
-    /**
-     *
-     */
-    @TableField("created")
-    private Date created;
-
-    /**
-     *
-     */
-    @TableField("updated")
-    private Date updated;
-
-
 }

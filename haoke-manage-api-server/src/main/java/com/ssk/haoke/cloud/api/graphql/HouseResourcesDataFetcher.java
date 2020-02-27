@@ -16,6 +16,6 @@ public class HouseResourcesDataFetcher implements MyDataFetcher {
 
     public Object dataFetcher(DataFetchingEnvironment environment) {
         Long id = environment.getArgument("id");
-        return this.houseResourcesService.queryById(id);
+        return this.houseResourcesService.queryById(id).getData();
     }
 }

@@ -16,7 +16,7 @@ public class HouseResourcesListDataFetcher implements MyDataFetcher {
 
     @Override
     public Object dataFetcher(DataFetchingEnvironment environment) {
-        Integer page = environment.getArgument("page");
+        Integer page = environment.getArgument("pageNum");
         if (page == null) {
             page = 1;
         }
@@ -24,6 +24,6 @@ public class HouseResourcesListDataFetcher implements MyDataFetcher {
         if (pageSize == null) {
             pageSize = 5;
         }
-        return this.houseResourcesService.queryList( page, pageSize,null);
+        return this.houseResourcesService.queryList( page, pageSize,"{}").getData();
     }
 }

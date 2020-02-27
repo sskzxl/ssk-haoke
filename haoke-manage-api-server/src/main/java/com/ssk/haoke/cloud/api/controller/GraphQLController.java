@@ -37,7 +37,8 @@ public class GraphQLController {
             Map<String, Object> variables = MAPPER.readValue(variablesJson, MAPPER.getTypeFactory()
                     .constructMapType(HashMap.class, String.class, Object.class));
 
-            return this.executeQuery(query, operationName, variables);
+            Map<String, Object> map = this.executeQuery(query, operationName, variables);
+            return map;
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -24,8 +24,13 @@ public class HouseRentMgmtReqDto{
     /**
     *  租户姓名
     */
-    @ApiModelProperty(name = "rentingName", value = "租户姓名")
-    private String rentingName;
+    @ApiModelProperty(name = "tenantName", value = "租户姓名")
+    private String tenantName;
+    /**
+     *  租户姓名
+     */
+    @ApiModelProperty(name = "tenantPhone", value = "租户号码")
+    private String tenantPhone;
     /**
      *  房东姓名
      */

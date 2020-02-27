@@ -2,11 +2,11 @@ schema {
     query: HaokeQuery
 }
 type HaokeQuery {
-    HouseResources(id:Long):HouseResources
-    HouseResourcesList(page:Int, pageSize:Int):TableResult
+    HouseResources(id:Long):HouseResourcesRespDto
+    HouseResourcesList(pageNum:Int, pageSize:Int):PageInfo
     IndexAdList:IndexAdResult
 }
-type HouseResources{
+type HouseResourcesRespDto{
     id:Long!
     title:String
     estateId:Long
@@ -30,15 +30,13 @@ type HouseResources{
     time:Int
     propertyCost:String
 }
-type TableResult{
-    list: [HouseResources]
-    pagination: Pagination
+type PageInfo{
+    total: Int
+    pageNum: Int
+    pageSize: Int
+    records: [HouseResourcesRespDto]
 }
-type Pagination{
-    current:Int
-    pageSize:Int
-    total:Int
-}
+
 type IndexAdResult{
     list:[IndexAdResultData]
  }
