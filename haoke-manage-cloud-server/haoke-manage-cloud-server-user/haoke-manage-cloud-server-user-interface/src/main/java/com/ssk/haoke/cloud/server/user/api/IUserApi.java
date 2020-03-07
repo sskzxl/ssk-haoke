@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.*;
 * @author 代码生成器
 */
 @Api(tags = {"好客租房管理平台：用户服务"})
-@FeignClient(name = "${haoke.manage.center.user.name:haoke-manage-center-user}", path = "/v1/user", url = "${haoke.manage.center.user.api:}")
+@FeignClient(name = "${haoke.manage.center.user.api.name:haoke-manage-center-user}",
+        path = "/v1/user", url = "${haoke.manage.center.user.api:}")
 public interface IUserApi {
 
     /**

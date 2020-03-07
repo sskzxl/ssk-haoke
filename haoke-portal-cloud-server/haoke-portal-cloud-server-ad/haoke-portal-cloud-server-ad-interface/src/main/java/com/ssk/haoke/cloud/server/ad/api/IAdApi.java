@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @FeignClient(name = "haoke-manage-cloud-server-ad",
         path = "/v1/house/ad",
-    url = "${ssk-haoke-ad-api:}")
+    url = "${haoke.portal.center.ad.api:}")
 @Api(tags = "好客租房运营前台：广告中心")
 public interface IAdApi {
     /**

@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="haoke-eureka-center" />
         <module name="haoke-manage-api-server" />
+        <module name="haoke-manage-api-server (1)" />
         <module name="haoke-manage-cloud-server-common" />
         <module name="haoke-manage-cloud-server-common (1)" />
         <module name="haoke-manage-cloud-server-generator" />
@@ -21,6 +22,7 @@
         <module name="haoke-manage-dubbo-server-common" />
         <module name="haoke-manage-dubbo-server-generator" />
         <module name="haoke-manage-dubbo-server-house-resources-dubbo-service" />
+        <module name="haoke-portal-api-server" />
         <module name="haoke-portal-cloud-server-ad-interface" />
         <module name="haoke-portal-cloud-server-ad-service" />
         <module name="haoke-portal-cloud-server-common" />
@@ -42,6 +44,7 @@
     <bytecodeTargetLevel target="1.8">
       <module name="haoke-eureka-center" target="1.8" />
       <module name="haoke-manage-api-server" target="1.8" />
+      <module name="haoke-manage-api-server (1)" target="1.8" />
       <module name="haoke-manage-cloud-server" target="1.8" />
       <module name="haoke-manage-cloud-server-ad" target="1.8" />
       <module name="haoke-manage-cloud-server-ad (1)" target="1.8" />
@@ -61,6 +64,7 @@
       <module name="haoke-manage-cloud-server-user" target="1.8" />
       <module name="haoke-manage-cloud-server-user-interface" target="1.8" />
       <module name="haoke-manage-cloud-server-user-service" target="1.8" />
+      <module name="haoke-portal-api-server" target="1.8" />
       <module name="haoke-portal-cloud-server" target="1.8" />
       <module name="haoke-portal-cloud-server-ad" target="1.8" />
       <module name="haoke-portal-cloud-server-ad-interface" target="1.8" />

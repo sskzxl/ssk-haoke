@@ -7,13 +7,15 @@ import com.ssk.haoke.cloud.server.house.api.dto.request.HouseRentMgmtReqDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.HouseRentMgmtDetailRespDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.HouseRentMgmtRespDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.HouseResourcesRespDto;
+import com.ssk.haoke.cloud.server.house.eo.HouseRentMgmtEo;
+import com.ssk.haoke.cloud.server.house.eo.PageInfo;
 import com.ssk.haoke.cloud.server.house.rest.RestResponse;
 import com.ssk.haoke.cloud.server.house.service.BaseServiceImpl;
 import com.ssk.haoke.cloud.server.house.service.HouseResourcesService;
 import com.ssk.haoke.cloud.server.house.service.IHouseRentMgmtService;
-import com.ssk.haoke.cloud.server.house.eo.HouseRentMgmtEo;
-import com.ssk.haoke.cloud.server.house.eo.PageInfo;
+import com.ssk.haoke.cloud.server.user.api.dto.response.ContractRespDto;
 import com.ssk.haoke.cloud.server.user.api.dto.response.UserRespDto;
+import com.ssk.haoke.cloud.server.user.api.query.IContractQueryApi;
 import com.ssk.haoke.cloud.server.user.api.query.IUserQueryApi;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,6 +39,8 @@ public class HouseRentMgmtServiceImpl extends BaseServiceImpl<HouseRentMgmtEo> i
 
     @Resource
     private IUserQueryApi userQueryApi;
+    @Resource
+    private IContractQueryApi contractQueryApi;
     @Resource
     private HouseResourcesService houseResourcesService;
     @Override
@@ -81,6 +85,7 @@ public class HouseRentMgmtServiceImpl extends BaseServiceImpl<HouseRentMgmtEo> i
         Long landlordId = rentMgmtEo.getLandlordId();
         Long tenantId = rentMgmtEo.getTenantId();
         Long houseResourcesId = rentMgmtEo.getHouseResourcesId();
+        Long contractId = rentMgmtEo.getContractId();
         if (null != landlordId){
             RestResponse<UserRespDto> landlordRespDto = userQueryApi.queryById(landlordId);
             detailRespDto.setLandLord(landlordRespDto.getData());
@@ -91,9 +96,12 @@ public class HouseRentMgmtServiceImpl extends BaseServiceImpl<HouseRentMgmtEo> i
         }
         if (null != houseResourcesId){
             HouseResourcesRespDto houseResourcesRespDto = houseResourcesService.queryHouseResourcesById(houseResourcesId);
-            detailRespDto.setHouseResourcesRespDto(houseResourcesRespDto);
+            detailRespDto.setHouseResources(houseResourcesRespDto);
         }
-
+        if (null != contractId){
+            RestResponse<ContractRespDto> contractRespDtoRestResponse = contractQueryApi.queryById(contractId);
+            detailRespDto.setContract(contractRespDtoRestResponse.getData());
+        }
         return detailRespDto;
     }
 

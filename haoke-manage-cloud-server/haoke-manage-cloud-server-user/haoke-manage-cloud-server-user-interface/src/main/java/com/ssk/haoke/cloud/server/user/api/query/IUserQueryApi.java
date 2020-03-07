@@ -16,7 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 * @author 代码生成器
 */
 @Api(tags = {"好客租房管理平台：用户中心"})
-@FeignClient(name = "haoke-manage-cloud-server-user", path = "/v1/user", url = "${ssk-haoke-user-api:}")
+@FeignClient(name = "${haoke.manage.center.user.api.name:haoke-manage-center-user}",
+        path = "/v1/user", url = "${haoke.manage.center.user.api:}")
 public interface IUserQueryApi {
 
     /**

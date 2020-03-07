@@ -1,6 +1,8 @@
 package com.ssk.haoke.cloud.server.user.eo;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.ssk.haoke.cloud.server.pojo.BasePojo;
 import lombok.Data;
@@ -15,7 +17,8 @@ import java.util.Date;
 @TableName("tb_contract")
 @Data
 public class ContractEo extends BasePojo{
-
+    @TableId(value = "id",type = IdType.AUTO)
+    private Long id;
     /**
      *  合同状态 0、待签约 1、履约中 2、已结束 3、已逾期
      */

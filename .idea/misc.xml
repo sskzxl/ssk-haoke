@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-ad/haoke-manage-dubbo-server-ad-service/pom.xml" />
         <option value="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-user/pom.xml" />
         <option value="$PROJECT_DIR$/haoke-portal-cloud-server/pom.xml" />
+        <option value="$PROJECT_DIR$/haoke-portal-api-server/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

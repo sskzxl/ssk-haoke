@@ -45,6 +45,11 @@ public class HouseRentMgmtEo extends BasePojo{
     @TableField("house_resources_id")
     private Long houseResourcesId;
     /**
+     *合同id
+     */
+    @TableField("contract_id")
+    private Long contractId;
+    /**
      *租户姓名
      */
     @TableField("house_resources_name")
