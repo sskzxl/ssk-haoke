@@ -98,7 +98,7 @@ public class HouseResourcesEo extends BasePojo {
     /**
      * 配套设施， 如：1,2,3
      */
-    private String facilities;
+    private Integer facilities;
 
     /**
      * 图片，最多5张

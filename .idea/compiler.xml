@@ -6,12 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="haoke-eureka-center" />
         <module name="haoke-manage-api-server" />
         <module name="haoke-manage-api-server (1)" />
         <module name="haoke-manage-cloud-server-common" />
         <module name="haoke-manage-cloud-server-common (1)" />
-        <module name="haoke-manage-cloud-server-generator" />
         <module name="haoke-manage-cloud-server-house-resources-interface" />
         <module name="haoke-manage-cloud-server-house-resources-interface (1)" />
         <module name="haoke-manage-cloud-server-house-resources-service" />

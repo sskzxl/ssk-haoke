@@ -45,4 +45,5 @@ public interface IHouseInspectionReqQueryApi {
                                                    @RequestParam(name = "pageNum", required = false, defaultValue = "1") Integer pageNum,
                                                    @RequestParam(name = "pageSize", required = false, defaultValue = "10") Integer pageSize);
 
+
 }

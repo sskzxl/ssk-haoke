@@ -2,161 +2,88 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0dc28ee6-41a9-4792-9841-1741660e61a0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/HouseApiApplication.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/common/Const.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/common/ServiceResponse.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/config/CrossOriginConfig.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/config/LoginRedisConfig.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/config/MockConfig.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/config/MybatisConfig.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/config/SwaggerConfig.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/config/WebConfig.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/config/redis/ClusterConfigurationProperties.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/config/redis/RedisClusterConfig.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/controller/AdController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/controller/GraphQLController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/controller/HouseResourcesController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/controller/MockController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/controller/PicUploadController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/controller/SearchController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/controller/UserController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/controller/UserLoginController.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/graphql/GraphQLProvider.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/graphql/HouseResourcesDataFetcher.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/graphql/HouseResourcesListDataFetcher.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/graphql/IndexAdDataFetcher.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/graphql/MyDataFetcher.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/interceptor/MyResponseBodyAdvice.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/interceptor/MyServletRequestWrapper.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/interceptor/RedisCacheInterceptor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/interceptor/RequestReplaceFilter.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/interceptor/UserInterceptor.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/mapper/UserMapper.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/service/IAdService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/service/IHouseResourcesService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/service/IUserService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/service/impl/AdServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/service/impl/HouseResourcesServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/service/impl/PicUploadFileSystemService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/service/impl/SearchService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/service/impl/UserLoginService.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/service/impl/UserServiceImpl.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/util/JWTUtil.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/util/TokenManager.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/util/impl/RedisTokenManager.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/vo/HouseData.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/vo/Pagination.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/vo/PicUploadResult.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/vo/SearchResult.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/vo/TableResult.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/vo/WebResult.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/vo/ad/index/IndexAdResult.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/vo/ad/index/IndexAdResultData.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/vo/user/User.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/vo/user/UserData.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/vo/user/UserMeta.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/com/ssk/haoke/cloud/api/vo/user/UserResponse.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/test-classes/com/ssk/haoke/cloud/api/TestRedis.class" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/manage/api/controller/ContractController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/manage/api/controller/HouseInspectionReqController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/manage/api/controller/HouseRentMgmtController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/manage/api/service/impl/HouseContractServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/manage/api/service/impl/HouseInspectionReqServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/manage/api/service/impl/HouseRentMgmtServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-manage-api-server/src/main/resources/bootstrap.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/graphql.config.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/graphql.schema.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/haoke-manage-api-server.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/haoke-portal-api-server.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/HouseApp.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/config/CrossOriginConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/config/LoginRedisConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/config/MybatisConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/config/SwaggerConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/config/WebConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/config/redis/ClusterConfigurationProperties.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/config/redis/RedisClusterConfig.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/resources/application.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/resources/bootstrap.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/META-INF/spring-configuration-metadata.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/application.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/haoke.graphqls" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/mock-data.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/haoke-portal-cloud-server/haoke-portal-cloud-server-ad/haoke-portal-cloud-server-ad-service/src/main/resources/bootstrap.properties" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/target/classes/haoke.graphqls" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/target/classes/mock-data.properties" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/haoke-portal-cloud-server/haoke-portal-cloud-server-ad/haoke-portal-cloud-server-ad-interface/target/classes/com/ssk/haoke/cloud/server/ad/api/IAdApi.class" afterPath="$PROJECT_DIR$/haoke-portal-cloud-server/haoke-portal-cloud-server-ad/haoke-portal-cloud-server-ad-interface/target/classes/com/ssk/haoke/cloud/server/ad/api/IAdApi.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_amazonaws_aws_java_sdk_autoscaling_1_11_9.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_amazonaws_aws_java_sdk_core_1_11_9.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_amazonaws_aws_java_sdk_ec2_1_11_9.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_amazonaws_aws_java_sdk_route53_1_11_9.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_amazonaws_aws_java_sdk_sts_1_11_9.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_dataformat_jackson_dataformat_xml_2_9_7.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_jaxb_annotations_2_9_7.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_woodstox_woodstox_core_5_0_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_inject_guice_4_1_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_archaius_archaius_core_0_7_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_eureka_eureka_client_1_6_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_eureka_eureka_core_1_6_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_netflix_commons_netflix_eventbus_0_3_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_netflix_commons_netflix_infix_0_3_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_ribbon_ribbon_2_2_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_ribbon_ribbon_core_2_2_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_ribbon_ribbon_eureka_2_2_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_ribbon_ribbon_httpclient_2_2_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_ribbon_ribbon_loadbalancer_2_2_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_ribbon_ribbon_transport_2_2_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_server_1_19_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_jersey_jersey_servlet_1_19_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_thoughtworks_xstream_xstream_1_4_9.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_collections_commons_collections_3_2_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_jxpath_commons_jxpath_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_1_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_micrometer_micrometer_core_1_1_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_epoll_4_1_29_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_netty_netty_transport_native_unix_common_4_1_29_Final.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_servlet_api_2_5.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_xml_stream_stax_api_1_0_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_antlr_runtime_3_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_antlr_stringtemplate_3_2_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_math_2_2.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcpkix_jdk15on_1_55.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_bouncycastle_bcprov_jdk15on_1_55.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_jettison_jettison_1_3_7.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_woodstox_stax2_api_3_1_4.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_woodstox_woodstox_core_asl_4_4_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_freemarker_freemarker_2_3_28.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_latencyutils_LatencyUtils_2_0_3.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_2_1_0_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_actuator_autoconfigure_2_1_0_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_actuator_2_1_0_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_freemarker_2_1_0_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_commons_1_2_4_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_context_1_2_4_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_core_1_3_5_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_eureka_client_1_3_5_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_eureka_server_1_3_5_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_1_2_4_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_archaius_1_3_5_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_eureka_server_1_3_5_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_ribbon_1_3_5_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_rsa_1_0_3_RELEASE.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__stax_stax_api_1_0_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__xmlpull_xmlpull_1_1_3_1.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__xpp3_xpp3_min_1_1_4c.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/haoke-eureka-center/haoke-eureka-center.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/haoke-eureka-center/pom.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/haoke-eureka-center/src/main/java/com/ssk/haoke/cloud/server/EurekaCenter.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/haoke-eureka-center/src/main/resources/application.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/haoke-eureka-center/target/classes/application.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-generator/haoke-manage-cloud-server-generator.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-generator/pom.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-generator/src/main/java/com/ssk/haoke/generator/CodeGenerator.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/haoke-manage-api-server/src/main/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/haoke-manage-api-server/target/classes/application.properties" afterPath="$PROJECT_DIR$/haoke-manage-api-server/target/classes/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/house/eo/HouseRentMgmtEo.java" afterPath="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/house/eo/HouseRentMgmtEo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-service/src/main/java/com/ssk/haoke/cloud/server/house/service/impl/HouseRentMgmtServiceImpl.java" afterPath="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-service/src/main/java/com/ssk/haoke/cloud/server/house/service/impl/HouseRentMgmtServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-service/target/classes/application.properties" afterPath="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-service/target/classes/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-user/haoke-manage-cloud-server-user-interface/src/main/java/com/ssk/haoke/cloud/server/user/api/IUserApi.java" afterPath="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-user/haoke-manage-cloud-server-user-interface/src/main/java/com/ssk/haoke/cloud/server/user/api/IUserApi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-user/haoke-manage-cloud-server-user-interface/src/main/java/com/ssk/haoke/cloud/server/user/api/query/IUserQueryApi.java" afterPath="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-user/haoke-manage-cloud-server-user-interface/src/main/java/com/ssk/haoke/cloud/server/user/api/query/IUserQueryApi.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-user/haoke-manage-cloud-server-user-interface/src/main/java/com/ssk/haoke/cloud/server/user/eo/ContractEo.java" afterPath="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-user/haoke-manage-cloud-server-user-interface/src/main/java/com/ssk/haoke/cloud/server/user/eo/ContractEo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/haoke-portal-cloud-server/haoke-portal-cloud-server-ad/haoke-portal-cloud-server-ad-interface/src/main/java/com/ssk/haoke/cloud/server/ad/api/IAdApi.java" afterPath="$PROJECT_DIR$/haoke-portal-cloud-server/haoke-portal-cloud-server-ad/haoke-portal-cloud-server-ad-interface/src/main/java/com/ssk/haoke/cloud/server/ad/api/IAdApi.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/HouseApiApplication.java" afterPath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/manage/api/HouseManageApp.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/common/Const.java" afterPath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/manage/api/common/Const.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/common/ServiceResponse.java" afterPath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/manage/api/common/ServiceResponse.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/config/CrossOriginConfig.java" afterPath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/manage/api/config/CrossOriginConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/config/LoginRedisConfig.java" afterPath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/manage/api/config/LoginRedisConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/config/MockConfig.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/config/MockConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/config/MybatisConfig.java" afterPath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/manage/api/config/MybatisConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/config/SwaggerConfig.java" afterPath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/manage/api/config/SwaggerConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/config/WebConfig.java" afterPath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/manage/api/config/WebConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/config/redis/ClusterConfigurationProperties.java" afterPath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/manage/api/config/redis/ClusterConfigurationProperties.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/config/redis/RedisClusterConfig.java" afterPath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/manage/api/config/redis/RedisClusterConfig.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/controller/AdController.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/controller/AdController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/controller/GraphQLController.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/controller/GraphQLController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/controller/HouseResourcesController.java" afterPath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/manage/api/controller/HouseResourcesController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/controller/MockController.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/controller/MockController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/controller/PicUploadController.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/controller/PicUploadController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/controller/SearchController.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/controller/SearchController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/controller/UserController.java" afterPath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/manage/api/controller/UserController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/controller/UserLoginController.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/controller/UserLoginController.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/graphql/GraphQLProvider.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/graphql/GraphQLProvider.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/graphql/HouseResourcesDataFetcher.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/graphql/HouseResourcesDataFetcher.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/graphql/HouseResourcesListDataFetcher.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/graphql/HouseResourcesListDataFetcher.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/graphql/IndexAdDataFetcher.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/graphql/IndexAdDataFetcher.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/graphql/MyDataFetcher.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/graphql/MyDataFetcher.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/interceptor/MyResponseBodyAdvice.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/interceptor/MyResponseBodyAdvice.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/interceptor/MyServletRequestWrapper.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/interceptor/MyServletRequestWrapper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/interceptor/RedisCacheInterceptor.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/interceptor/RedisCacheInterceptor.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/interceptor/RequestReplaceFilter.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/interceptor/RequestReplaceFilter.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/interceptor/UserInterceptor.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/interceptor/UserInterceptor.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/mapper/UserMapper.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/mapper/UserMapper.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/service/IAdService.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/service/IAdService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/service/IHouseResourcesService.java" afterPath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/manage/api/service/IHouseResourcesService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/service/impl/AdServiceImpl.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/service/impl/AdServiceImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/service/impl/HouseResourcesServiceImpl.java" afterPath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/manage/api/service/impl/HouseResourcesServiceImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/service/impl/PicUploadFileSystemService.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/service/impl/PicUploadFileSystemService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/service/impl/SearchService.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/service/impl/SearchService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/service/impl/UserLoginService.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/service/impl/UserLoginService.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/service/impl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/manage/api/service/impl/UserServiceImpl.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/util/JWTUtil.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/util/JWTUtil.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/util/TokenManager.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/util/TokenManager.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/util/impl/RedisTokenManager.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/util/impl/RedisTokenManager.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/vo/HouseData.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/vo/HouseData.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/vo/Pagination.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/vo/Pagination.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/vo/PicUploadResult.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/vo/PicUploadResult.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/vo/SearchResult.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/vo/SearchResult.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/vo/TableResult.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/vo/TableResult.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/vo/WebResult.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/vo/WebResult.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/vo/ad/index/IndexAdResult.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/vo/ad/index/IndexAdResult.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/vo/ad/index/IndexAdResultData.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/vo/ad/index/IndexAdResultData.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/vo/user/User.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/vo/user/User.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/vo/user/UserData.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/vo/user/UserData.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/vo/user/UserMeta.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/vo/user/UserMeta.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/vo/user/UserResponse.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/vo/user/UserResponse.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/resources/haoke.graphqls" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/resources/haoke.graphqls" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/main/resources/mock-data.properties" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/resources/mock-data.properties" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/haoke-manage-api-server/src/test/java/com/ssk/haoke/cloud/api/TestRedis.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/test/java/com/ssk/haoke/cloud/api/TestRedis.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/house/api/dto/request/HouseResourcesReqDto.java" afterPath="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/house/api/dto/request/HouseResourcesReqDto.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/house/api/dto/response/HouseResourcesRespDto.java" afterPath="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/house/api/dto/response/HouseResourcesRespDto.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/house/api/query/IHouseInspectionReqQueryApi.java" afterPath="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/house/api/query/IHouseInspectionReqQueryApi.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/house/eo/HouseResourcesEo.java" afterPath="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/house/eo/HouseResourcesEo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-service/src/main/java/com/ssk/haoke/cloud/server/house/rest/HouseResourcesRest.java" afterPath="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-service/src/main/java/com/ssk/haoke/cloud/server/house/rest/HouseResourcesRest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/haoke-portal-api-server/haoke-portal-api-server.iml" afterPath="$PROJECT_DIR$/haoke-portal-api-server/haoke-portal-api-server.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/controller/SearchController.java" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/controller/SearchController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/haoke-portal-api-server/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/haoke-portal-api-server/src/main/resources/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/application.properties" afterPath="$PROJECT_DIR$/haoke-portal-api-server/target/classes/application.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -222,21 +149,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="AdController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/controller/AdController.java">
+      <file leaf-file-name="HouseRentMgmtRespDto.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/house/api/dto/response/HouseRentMgmtRespDto.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="30" column="50" lean-forward="false" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GraphQLController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/controller/GraphQLController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="17" column="4" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+            <state relative-caret-position="216">
+              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -245,8 +162,18 @@
       <file leaf-file-name="IHouseInspectionReqApi.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/house/api/IHouseInspectionReqApi.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
+            <state relative-caret-position="-613">
               <caret line="18" column="17" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IHouseInspectionReqQueryApi.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/house/api/query/IHouseInspectionReqQueryApi.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="197">
+              <caret line="40" column="6" lean-forward="true" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -264,7 +191,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>load factor</find>
       <find>DEFAULT_LOAD_FACTOR</find>
       <find>resize</find>
       <find>loadFactor</find>
@@ -294,6 +220,7 @@
       <find>HouseRentMgmtReqDto</find>
       <find>房源</find>
       <find>userService</find>
+      <find>facilities</find>
     </findStrings>
     <replaceStrings>
       <replace>TableName(</replace>
@@ -313,8 +240,8 @@
       <replace>contractService</replace>
     </replaceStrings>
     <dirStrings>
-      <dir>E:\JavaWebLearning\HaoKe\java\ssk-haoke-manage</dir>
       <dir>E:\JavaWebLearning\HaoKe\java\ssk-haoke-manage\haoke-manage-cloud-server\haoke-manage-cloud-server-house-resources</dir>
+      <dir>E:\JavaWebLearning\HaoKe\java\ssk-haoke-manage</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -333,14 +260,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/controller/HouseResourcesController.java" />
-        <option value="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-service/src/main/java/com/ssk/haoke/cloud/server/house/apiimpl/HouseInspectionReqApiImpl.java" />
-        <option value="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/service/impl/HouseResourcesServiceImpl.java" />
-        <option value="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/house/api/IHouseRentMgmtApi.java" />
-        <option value="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/service/IHouseResourcesService.java" />
-        <option value="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/controller/HouseRentMgmtController.java" />
-        <option value="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/controller/HouseInspectionReqController.java" />
-        <option value="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/controller/UserController.java" />
         <option value="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/service/impl/HouseContractServiceImpl.java" />
         <option value="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/service/impl/HouseInspectionReqServiceImpl.java" />
         <option value="$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/service/impl/HouseRentMgmtServiceImpl.java" />
@@ -381,9 +300,17 @@
         <option value="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/config/MybatisConfig.java" />
         <option value="$PROJECT_DIR$/haoke-portal-cloud-server/haoke-portal-cloud-server-ad/haoke-portal-cloud-server-ad-interface/src/main/java/com/ssk/haoke/cloud/server/ad/api/IAdApi.java" />
         <option value="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/service/impl/AdServiceImpl.java" />
-        <option value="$PROJECT_DIR$/haoke-portal-api-server/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/controller/GraphQLController.java" />
         <option value="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/controller/MockController.java" />
+        <option value="$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/controller/SearchController.java" />
+        <option value="$PROJECT_DIR$/haoke-portal-api-server/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-service/src/test/java/Test.java" />
+        <option value="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-service/src/main/java/com/ssk/haoke/cloud/server/house/rest/HouseResourcesRest.java" />
+        <option value="$PROJECT_DIR$/haoke-portal-api-server/src/test/Data.java" />
+        <option value="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/house/api/dto/response/HouseResourcesRespDto.java" />
+        <option value="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/house/api/dto/request/HouseResourcesReqDto.java" />
+        <option value="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/house/eo/HouseResourcesEo.java" />
+        <option value="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/house/api/query/IHouseInspectionReqQueryApi.java" />
       </list>
     </option>
   </component>
@@ -492,10 +419,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -517,88 +440,79 @@
             <path>
               <item name="ssk-haoke-manage" type="b2602c69:ProjectViewProjectNode" />
               <item name="ssk-haoke-manage" type="462c0819:PsiDirectoryNode" />
-              <item name="haoke-portal-api-server" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server-house-resources" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server-house-resources-interface" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ssk-haoke-manage" type="b2602c69:ProjectViewProjectNode" />
               <item name="ssk-haoke-manage" type="462c0819:PsiDirectoryNode" />
-              <item name="haoke-portal-api-server" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server-house-resources" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server-house-resources-interface" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ssk-haoke-manage" type="b2602c69:ProjectViewProjectNode" />
               <item name="ssk-haoke-manage" type="462c0819:PsiDirectoryNode" />
-              <item name="haoke-portal-api-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ssk-haoke-manage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ssk-haoke-manage" type="462c0819:PsiDirectoryNode" />
-              <item name="haoke-portal-api-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ssk-haoke-manage" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ssk-haoke-manage" type="462c0819:PsiDirectoryNode" />
-              <item name="haoke-portal-api-server" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server-house-resources" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server-house-resources-interface" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ssk-haoke-manage" type="b2602c69:ProjectViewProjectNode" />
               <item name="ssk-haoke-manage" type="462c0819:PsiDirectoryNode" />
-              <item name="haoke-portal-api-server" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server-house-resources" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server-house-resources-interface" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="ssk" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ssk-haoke-manage" type="b2602c69:ProjectViewProjectNode" />
               <item name="ssk-haoke-manage" type="462c0819:PsiDirectoryNode" />
-              <item name="haoke-portal-api-server" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server-house-resources" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server-house-resources-interface" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="ssk" type="462c0819:PsiDirectoryNode" />
-              <item name="haoke" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ssk-haoke-manage" type="b2602c69:ProjectViewProjectNode" />
               <item name="ssk-haoke-manage" type="462c0819:PsiDirectoryNode" />
-              <item name="haoke-portal-api-server" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server-house-resources" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server-house-resources-interface" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="ssk" type="462c0819:PsiDirectoryNode" />
-              <item name="haoke" type="462c0819:PsiDirectoryNode" />
-              <item name="cloud" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ssk-haoke-manage" type="b2602c69:ProjectViewProjectNode" />
               <item name="ssk-haoke-manage" type="462c0819:PsiDirectoryNode" />
-              <item name="haoke-portal-api-server" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server-house-resources" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server-house-resources-interface" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
               <item name="ssk" type="462c0819:PsiDirectoryNode" />
               <item name="haoke" type="462c0819:PsiDirectoryNode" />
-              <item name="cloud" type="462c0819:PsiDirectoryNode" />
-              <item name="portal" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ssk-haoke-manage" type="b2602c69:ProjectViewProjectNode" />
               <item name="ssk-haoke-manage" type="462c0819:PsiDirectoryNode" />
-              <item name="haoke-portal-api-server" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server-house-resources" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server-house-resources-interface" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -606,13 +520,61 @@
               <item name="ssk" type="462c0819:PsiDirectoryNode" />
               <item name="haoke" type="462c0819:PsiDirectoryNode" />
               <item name="cloud" type="462c0819:PsiDirectoryNode" />
-              <item name="portal" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ssk-haoke-manage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ssk-haoke-manage" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server-house-resources" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server-house-resources-interface" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="ssk" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke" type="462c0819:PsiDirectoryNode" />
+              <item name="cloud" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ssk-haoke-manage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ssk-haoke-manage" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server-house-resources" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server-house-resources-interface" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="ssk" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke" type="462c0819:PsiDirectoryNode" />
+              <item name="cloud" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="house" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ssk-haoke-manage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ssk-haoke-manage" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server-house-resources" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server-house-resources-interface" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="ssk" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke" type="462c0819:PsiDirectoryNode" />
+              <item name="cloud" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="house" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ssk-haoke-manage" type="b2602c69:ProjectViewProjectNode" />
               <item name="ssk-haoke-manage" type="462c0819:PsiDirectoryNode" />
-              <item name="haoke-portal-api-server" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server-house-resources" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server-house-resources-interface" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -620,14 +582,17 @@
               <item name="ssk" type="462c0819:PsiDirectoryNode" />
               <item name="haoke" type="462c0819:PsiDirectoryNode" />
               <item name="cloud" type="462c0819:PsiDirectoryNode" />
-              <item name="portal" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="house" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="dto" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ssk-haoke-manage" type="b2602c69:ProjectViewProjectNode" />
               <item name="ssk-haoke-manage" type="462c0819:PsiDirectoryNode" />
-              <item name="haoke-portal-api-server" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server-house-resources" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server-house-resources-interface" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -635,14 +600,18 @@
               <item name="ssk" type="462c0819:PsiDirectoryNode" />
               <item name="haoke" type="462c0819:PsiDirectoryNode" />
               <item name="cloud" type="462c0819:PsiDirectoryNode" />
-              <item name="portal" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="house" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="vo" type="462c0819:PsiDirectoryNode" />
+              <item name="dto" type="462c0819:PsiDirectoryNode" />
+              <item name="request" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ssk-haoke-manage" type="b2602c69:ProjectViewProjectNode" />
               <item name="ssk-haoke-manage" type="462c0819:PsiDirectoryNode" />
-              <item name="haoke-portal-api-server" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server-house-resources" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server-house-resources-interface" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
@@ -650,23 +619,61 @@
               <item name="ssk" type="462c0819:PsiDirectoryNode" />
               <item name="haoke" type="462c0819:PsiDirectoryNode" />
               <item name="cloud" type="462c0819:PsiDirectoryNode" />
-              <item name="portal" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="house" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="vo" type="462c0819:PsiDirectoryNode" />
-              <item name="user" type="462c0819:PsiDirectoryNode" />
+              <item name="dto" type="462c0819:PsiDirectoryNode" />
+              <item name="response" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ssk-haoke-manage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ssk-haoke-manage" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server-house-resources" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-manage-cloud-server-house-resources-interface" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="ssk" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke" type="462c0819:PsiDirectoryNode" />
+              <item name="cloud" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="house" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="query" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ssk-haoke-manage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ssk-haoke-manage" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-portal-api-server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ssk-haoke-manage" type="b2602c69:ProjectViewProjectNode" />
               <item name="ssk-haoke-manage" type="462c0819:PsiDirectoryNode" />
               <item name="haoke-portal-api-server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ssk-haoke-manage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ssk-haoke-manage" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-portal-api-server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ssk-haoke-manage" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ssk-haoke-manage" type="462c0819:PsiDirectoryNode" />
+              <item name="haoke-portal-cloud-server" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -686,7 +693,7 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="RequestMappingsPanelOrder2" value="2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="SearchEverywhereHistoryKey" value="HouseResourcesDataFetcher&#9;FILE&#9;file://E:/JavaWebLearning/HaoKe/java/ssk-haoke-manage/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/graphql/HouseResourcesDataFetcher.java&#10;IHouseResourcesQueryApi&#9;FILE&#9;file://E:/JavaWebLearning/HaoKe/java/ssk-haoke-manage/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/house/api/query/IHouseResourcesQueryApi.java&#10;base&#9;FILE&#9;file://E:/JavaWebLearning/HaoKe/java/ssk-haoke-manage/haoke-manage-cloud-server/haoke-manage-cloud-server-common/src/main/java/com/ssk/haoke/cloud/server/house/service/BaseServiceImpl.java&#10;UserLoginService&#9;PSI&#9;JAVA://com.ssk.haoke.cloud.portal.api.service.impl.UserLoginService&#10;contract&#9;PSI&#9;JAVA://com.ssk.haoke.cloud.server.user.eo.ContractEo&#10;rent&#9;FILE&#9;file://E:/JavaWebLearning/HaoKe/java/ssk-haoke-manage/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/manage/api/service/impl/HouseRentMgmtServiceImpl.java&#10;ihousein&#9;FILE&#9;file://E:/JavaWebLearning/HaoKe/java/ssk-haoke-manage/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-service/src/main/java/com/ssk/haoke/cloud/server/house/service/IHouseInspectionReqService.java&#10;PageInfo&#9;FILE&#9;file://E:/JavaWebLearning/HaoKe/java/ssk-haoke-manage/haoke-manage-cloud-server/haoke-manage-cloud-server-common/src/main/java/com/ssk/haoke/cloud/server/house/eo/PageInfo.java&#10;houseresources&#9;PSI&#9;JAVA://com.ssk.haoke.cloud.server.house.apiimpl.HouseResourcesApiImpl&#10;*apii&#9;FILE&#9;file://E:/JavaWebLearning/HaoKe/java/ssk-haoke-manage/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-service/src/main/java/com/ssk/haoke/cloud/server/house/apiimpl/query/HouseRentMgmtQueryApiImpl.java&#10;housecon&#9;PSI&#9;JAVA://com.ssk.haoke.cloud.api.controller.HouseResourcesController&#10;housec&#9;PSI&#9;JAVA://com.ssk.haoke.cloud.api.controller.HouseResourcesController&#10;*serviceimp&#9;FILE&#9;file://E:/JavaWebLearning/HaoKe/java/ssk-haoke-manage/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-service/src/main/java/com/ssk/haoke/cloud/server/service/impl/HouseRentMgmtServiceImpl.java&#10;serviceIm&#9;PSI&#9;JAVA://com.ssk.haoke.cloud.server.service.impl.HouseInspectionReqServiceImpl&#10;service&#9;FILE&#9;file://E:/JavaWebLearning/HaoKe/java/ssk-haoke-manage/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/service/impl/HouseResourcesServiceImpl.java&#10;rest&#9;FILE&#9;file://E:/JavaWebLearning/HaoKe/java/ssk-haoke-manage/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-service/src/main/java/com/ssk/haoke/cloud/server/rest/HouseInspectionReqRest.java&#10;ad&#9;PSI&#9;JAVA://com.ssk.haoke.cloud.server.pojo.Ad&#10;mapper&#9;FILE&#9;jar://C:/Users/ssk/.m2/repository/com/baomidou/mybatis-plus-core/3.0.5/mybatis-plus-core-3.0.5-sources.jar!/com/baomidou/mybatisplus/core/mapper/BaseMapper.java&#10;BaseServiceImpl&#9;PSI&#9;JAVA://com.ssk.haoke.cloud.server.service.BaseServiceImpl&#10;contr&#9;FILE&#9;file://E:/JavaWebLearning/HaoKe/java/ssk-haoke-manage/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/controller/HouseResourcesController.java&#10;adser&#9;FILE&#9;file://E:/JavaWebLearning/HaoKe/java/ssk-haoke-manage/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/service/impl/AdServiceImpl.java&#10;house&#9;FILE&#9;file://E:/JavaWebLearning/HaoKe/java/ssk-haoke-manage/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-service/src/main/java/com/ssk/haoke/cloud/server/apiimpl/HouseResourcesApiImpl.java&#10;iad&#9;PSI&#9;JAVA://com.ssk.haoke.cloud.server.api.IAdApi&#10;iho&#9;FILE&#9;file://E:/JavaWebLearning/HaoKe/java/ssk-haoke-manage/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/api/IHouseResourcesApi.java" />
+    <property name="SearchEverywhereHistoryKey" value="houseresourceseo&#9;PSI&#9;JAVA://com.ssk.haoke.cloud.server.house.eo.HouseResourcesEo&#10;house&#9;FILE&#9;file://E:/JavaWebLearning/HaoKe/java/ssk-haoke-manage/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/house/api/dto/request/HouseResourcesReqDto.java&#10;HouseResourcesDataFetcher&#9;FILE&#9;file://E:/JavaWebLearning/HaoKe/java/ssk-haoke-manage/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/graphql/HouseResourcesDataFetcher.java&#10;IHouseResourcesQueryApi&#9;FILE&#9;file://E:/JavaWebLearning/HaoKe/java/ssk-haoke-manage/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/house/api/query/IHouseResourcesQueryApi.java&#10;base&#9;FILE&#9;file://E:/JavaWebLearning/HaoKe/java/ssk-haoke-manage/haoke-manage-cloud-server/haoke-manage-cloud-server-common/src/main/java/com/ssk/haoke/cloud/server/house/service/BaseServiceImpl.java&#10;UserLoginService&#9;PSI&#9;JAVA://com.ssk.haoke.cloud.portal.api.service.impl.UserLoginService&#10;contract&#9;PSI&#9;JAVA://com.ssk.haoke.cloud.server.user.eo.ContractEo&#10;rent&#9;FILE&#9;file://E:/JavaWebLearning/HaoKe/java/ssk-haoke-manage/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/manage/api/service/impl/HouseRentMgmtServiceImpl.java&#10;ihousein&#9;FILE&#9;file://E:/JavaWebLearning/HaoKe/java/ssk-haoke-manage/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-service/src/main/java/com/ssk/haoke/cloud/server/house/service/IHouseInspectionReqService.java&#10;PageInfo&#9;FILE&#9;file://E:/JavaWebLearning/HaoKe/java/ssk-haoke-manage/haoke-manage-cloud-server/haoke-manage-cloud-server-common/src/main/java/com/ssk/haoke/cloud/server/house/eo/PageInfo.java&#10;houseresources&#9;PSI&#9;JAVA://com.ssk.haoke.cloud.server.house.apiimpl.HouseResourcesApiImpl&#10;*apii&#9;FILE&#9;file://E:/JavaWebLearning/HaoKe/java/ssk-haoke-manage/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-service/src/main/java/com/ssk/haoke/cloud/server/house/apiimpl/query/HouseRentMgmtQueryApiImpl.java&#10;housecon&#9;PSI&#9;JAVA://com.ssk.haoke.cloud.api.controller.HouseResourcesController&#10;housec&#9;PSI&#9;JAVA://com.ssk.haoke.cloud.api.controller.HouseResourcesController&#10;*serviceimp&#9;FILE&#9;file://E:/JavaWebLearning/HaoKe/java/ssk-haoke-manage/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-service/src/main/java/com/ssk/haoke/cloud/server/service/impl/HouseRentMgmtServiceImpl.java&#10;serviceIm&#9;PSI&#9;JAVA://com.ssk.haoke.cloud.server.service.impl.HouseInspectionReqServiceImpl&#10;service&#9;FILE&#9;file://E:/JavaWebLearning/HaoKe/java/ssk-haoke-manage/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/service/impl/HouseResourcesServiceImpl.java&#10;rest&#9;FILE&#9;file://E:/JavaWebLearning/HaoKe/java/ssk-haoke-manage/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-service/src/main/java/com/ssk/haoke/cloud/server/rest/HouseInspectionReqRest.java&#10;ad&#9;PSI&#9;JAVA://com.ssk.haoke.cloud.server.pojo.Ad&#10;mapper&#9;FILE&#9;jar://C:/Users/ssk/.m2/repository/com/baomidou/mybatis-plus-core/3.0.5/mybatis-plus-core-3.0.5-sources.jar!/com/baomidou/mybatisplus/core/mapper/BaseMapper.java&#10;BaseServiceImpl&#9;PSI&#9;JAVA://com.ssk.haoke.cloud.server.service.BaseServiceImpl&#10;contr&#9;FILE&#9;file://E:/JavaWebLearning/HaoKe/java/ssk-haoke-manage/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/controller/HouseResourcesController.java&#10;adser&#9;FILE&#9;file://E:/JavaWebLearning/HaoKe/java/ssk-haoke-manage/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/api/service/impl/AdServiceImpl.java&#10;iad&#9;PSI&#9;JAVA://com.ssk.haoke.cloud.server.api.IAdApi&#10;iho&#9;FILE&#9;file://E:/JavaWebLearning/HaoKe/java/ssk-haoke-manage/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/api/IHouseResourcesApi.java" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="jsgraphql-schema-editor-notification" value="false" />
   </component>
@@ -1132,7 +1139,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.HouseApp">
+  <component name="RunManager" selected="JUnit.Data.tesBulk">
     <configuration name="AdCenterApplication " type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1151,6 +1158,26 @@
       <option name="ALTERNATIVE_JRE_PATH" />
       <module name="haoke-manage-cloud-server-ad-service" />
       <envs />
+    </configuration>
+    <configuration name="Data.tesBulk" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <module name="haoke-portal-api-server" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="Data" />
+      <option name="METHOD_NAME" value="tesBulk" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
     </configuration>
     <configuration name="DubboApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
@@ -1197,25 +1224,6 @@
       <option name="VM_PARAMETERS" value="-Dssk-haoke-user-api=127.0.0.1:8082 -Dssk-haoke-house-resources-api=127.0.0.1:8080" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <module name="haoke-manage-cloud-server-house-resources-service" />
-      <envs />
-    </configuration>
-    <configuration name="HouseDubboProvider" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="com.ssk.haoke.cloud.server.house.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="MAIN_CLASS_NAME" value="com.ssk.haoke.dubbo.server.HouseDubboProvider" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="haoke-manage-dubbo-server-house-resources-dubbo-service" />
       <envs />
     </configuration>
     <configuration name="HouseManageApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -1355,19 +1363,19 @@
       <item index="2" class="java.lang.String" itemvalue="Spring Boot.HouseCenterApplication" />
       <item index="3" class="java.lang.String" itemvalue="Spring Boot.EurekaCenter" />
       <item index="4" class="java.lang.String" itemvalue="Spring Boot.HouseApiApplication" />
-      <item index="5" class="java.lang.String" itemvalue="Application.HouseDubboProvider" />
-      <item index="6" class="java.lang.String" itemvalue="Application.UserCenterApplication" />
-      <item index="7" class="java.lang.String" itemvalue="Spring Boot.AdCenterApplication " />
-      <item index="8" class="java.lang.String" itemvalue="Application.HouseManageApp" />
-      <item index="9" class="java.lang.String" itemvalue="Application.HouseApp" />
+      <item index="5" class="java.lang.String" itemvalue="Application.UserCenterApplication" />
+      <item index="6" class="java.lang.String" itemvalue="Spring Boot.AdCenterApplication " />
+      <item index="7" class="java.lang.String" itemvalue="Application.HouseManageApp" />
+      <item index="8" class="java.lang.String" itemvalue="Application.HouseApp" />
+      <item index="9" class="java.lang.String" itemvalue="JUnit.Data.tesBulk" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.HouseApp" />
-        <item index="1" class="java.lang.String" itemvalue="Spring Boot.AdCenterApplication " />
-        <item index="2" class="java.lang.String" itemvalue="Application.HouseManageApp" />
-        <item index="3" class="java.lang.String" itemvalue="Application.UserCenterApplication" />
-        <item index="4" class="java.lang.String" itemvalue="Application.HouseDubboProvider" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.Data.tesBulk" />
+        <item index="1" class="java.lang.String" itemvalue="Application.HouseApp" />
+        <item index="2" class="java.lang.String" itemvalue="Spring Boot.AdCenterApplication " />
+        <item index="3" class="java.lang.String" itemvalue="Application.HouseManageApp" />
+        <item index="4" class="java.lang.String" itemvalue="Application.UserCenterApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -1417,7 +1425,8 @@
       <workItem from="1581662994609" duration="47186000" />
       <workItem from="1582096096576" duration="121000" />
       <workItem from="1582765340882" duration="35224000" />
-      <workItem from="1583498769622" duration="3127000" />
+      <workItem from="1583498769622" duration="3923000" />
+      <workItem from="1583583114706" duration="18549000" />
     </task>
     <task id="LOCAL-00001" summary="前端vue">
       <created>1582097405324</created>
@@ -1468,30 +1477,37 @@
       <option name="project" value="LOCAL" />
       <updated>1582781750896</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="前后台分离">
+      <created>1583576357868</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1583576357868</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestRedis - 2019.08.10 at 15h 47m 23s.xml">
-      <configuration name="TestRedis" configurationId="JUnit" />
+    <history-entry file="Data_tesBulk - 2020.03.07 at 21h 49m 27s.xml">
+      <configuration name="Data.tesBulk" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRedis_insertData - 2019.09.25 at 15h 00m 09s.xml">
-      <configuration name="TestRedis.insertData" configurationId="JUnit" />
+    <history-entry file="Data_tesBulk - 2020.03.07 at 22h 09m 42s.xml">
+      <configuration name="Data.tesBulk" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRedis_insertData - 2019.09.25 at 15h 01m 56s.xml">
-      <configuration name="TestRedis.insertData" configurationId="JUnit" />
+    <history-entry file="Data_tesBulk - 2020.03.08 at 09h 20m 42s.xml">
+      <configuration name="Data.tesBulk" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRedis_testUserMapper - 2019.09.01 at 18h 04m 49s.xml">
-      <configuration name="TestRedis.testUserMapper" configurationId="JUnit" />
+    <history-entry file="Data_tesBulk - 2020.03.08 at 15h 04m 41s.xml">
+      <configuration name="Data.tesBulk" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRedis_testUserMapper - 2019.09.01 at 18h 05m 48s.xml">
-      <configuration name="TestRedis.testUserMapper" configurationId="JUnit" />
+    <history-entry file="Data_tesBulk - 2020.03.08 at 15h 09m 46s.xml">
+      <configuration name="Data.tesBulk" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRedis_testUserMapper - 2019.09.01 at 18h 08m 44s.xml">
-      <configuration name="TestRedis.testUserMapper" configurationId="JUnit" />
+    <history-entry file="Data_tesBulk - 2020.03.08 at 15h 12m 20s.xml">
+      <configuration name="Data.tesBulk" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestRedis_testUserMapper - 2019.09.01 at 18h 09m 50s.xml">
-      <configuration name="TestRedis.testUserMapper" configurationId="JUnit" />
+    <history-entry file="Data_tesBulk - 2020.03.08 at 15h 20m 32s.xml">
+      <configuration name="Data.tesBulk" configurationId="JUnit" />
     </history-entry>
     <history-entry file="TestRedis_testUserMapper - 2019.09.01 at 18h 27m 01s.xml">
       <configuration name="TestRedis.testUserMapper" configurationId="JUnit" />
@@ -1504,7 +1520,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="517258000" />
+    <option name="totallyTimeSpent" value="536603000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1532,21 +1548,21 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15017879" sideWeight="0.49784946" order="6" side_tool="false" content_ui="tabs" x="2" y="407" width="1864" height="421" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.025029797" sideWeight="0.49784946" order="6" side_tool="false" content_ui="tabs" x="2" y="407" width="1864" height="421" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4410012" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="HDInsight Spark Submission" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298122" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5625745" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22769953" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.9213349" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298122" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33019978" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2360215" sideWeight="0.48255116" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25053763" sideWeight="0.48255116" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12553649" sideWeight="0.52442527" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4672229" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Spark Job in Cluster" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Debug Remote Spark Job in Cluster" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="18" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1555,10 +1571,10 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="GraphQL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896304" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28724673" sideWeight="0.49784946" order="20" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4672229" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1601,7 +1617,8 @@
     <MESSAGE value="租房管理详情接口" />
     <MESSAGE value="graphql调整" />
     <MESSAGE value="上nacos配置中心" />
-    <option name="LAST_COMMIT_MESSAGE" value="上nacos配置中心" />
+    <MESSAGE value="前后台分离" />
+    <option name="LAST_COMMIT_MESSAGE" value="前后台分离" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1614,143 +1631,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/interceptor/RequestReplaceFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-343">
-          <caret line="1" column="7" lean-forward="true" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/util/impl/RedisTokenManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="21" column="42" lean-forward="false" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/service/impl/UserLoginService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="15" column="17" lean-forward="false" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/baomidou/mybatis-plus-core/3.0.5/mybatis-plus-core-3.0.5-sources.jar!/com/baomidou/mybatisplus/core/mapper/BaseMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="15" column="8" lean-forward="false" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-common/src/main/java/com/ssk/haoke/cloud/server/house/service/BaseServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/haoke-manage-api-server/src/main/java/com/ssk/haoke/cloud/manage/api/HouseManageApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="11" column="30" lean-forward="false" selection-start-line="11" selection-start-column="30" selection-end-line="11" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-service/src/main/java/com/ssk/haoke/cloud/server/HouseCenterApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="12" column="38" lean-forward="false" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.1.2.RELEASE/spring-context-5.1.2.RELEASE.jar!/org/springframework/stereotype/Component.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="17" column="18" lean-forward="false" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/graphql/HouseResourcesDataFetcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-service/src/main/java/com/ssk/haoke/cloud/server/house/apiimpl/query/HouseResourcesQueryApiImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/house/api/query/IHouseResourcesQueryApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="2" column="7" lean-forward="true" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-common/src/main/java/com/ssk/haoke/cloud/server/pojo/BasePojo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="8" column="22" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-service/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/haoke-manage-api-server/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="936">
-          <caret line="26" column="28" lean-forward="true" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/house/eo/HouseInspectionReqEo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="42" lean-forward="true" selection-start-line="0" selection-start-column="42" selection-end-line="0" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-service/src/main/java/com/ssk/haoke/cloud/server/house/mapper/HouseInspectionReqMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-elasticsearch/3.1.2.RELEASE/spring-data-elasticsearch-3.1.2.RELEASE.jar!/org/springframework/data/elasticsearch/core/ElasticsearchTemplate.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="119" column="13" lean-forward="false" selection-start-line="119" selection-start-column="13" selection-end-line="119" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/config/redis/ClusterConfigurationProperties.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="18" column="25" lean-forward="true" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/service/impl/SearchService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="34" column="33" lean-forward="false" selection-start-line="34" selection-start-column="33" selection-end-line="34" selection-end-column="33" />
           <folding />
         </state>
       </provider>
@@ -1767,13 +1651,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/HouseApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="16" column="36" lean-forward="true" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
@@ -1784,6 +1661,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="4" column="29" lean-forward="true" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1798,6 +1676,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
           <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1805,6 +1686,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
           <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1820,6 +1702,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="4" column="35" lean-forward="true" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1862,14 +1745,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/haoke-portal-api-server/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="21" column="10" lean-forward="false" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/vo/user/UserData.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -1900,22 +1775,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="26" column="31" lean-forward="false" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/vo/SearchResult.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/controller/SearchController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1952,14 +1811,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/controller/AdController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="30" column="50" lean-forward="false" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/service/impl/PicUploadFileSystemService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="226">
@@ -1972,7 +1823,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-501">
           <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1980,14 +1830,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="10" column="11" lean-forward="true" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/house/api/IHouseInspectionReqApi.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="18" column="17" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -2000,10 +1842,206 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/controller/AdController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="30" column="50" lean-forward="false" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-generator/src/main/java/com/ssk/haoke/generator/CodeGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="2" column="37" lean-forward="false" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/client/elasticsearch-rest-client/6.4.2/elasticsearch-rest-client-6.4.2.jar!/org/elasticsearch/client/RestClientBuilder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="21" column="19" lean-forward="false" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/elasticsearch/client/elasticsearch-rest-client/6.4.2/elasticsearch-rest-client-6.4.2.jar!/org/elasticsearch/client/RestClient.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="65" column="13" lean-forward="false" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/house/api/query/IHouseResourcesQueryApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/graphql/HouseResourcesDataFetcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="10" column="27" lean-forward="true" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/controller/GraphQLController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="17" column="4" lean-forward="false" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+        <state relative-caret-position="-288">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/vo/SearchResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="239">
+          <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/data/spring-data-commons/2.1.2.RELEASE/spring-data-commons-2.1.2.RELEASE.jar!/org/springframework/data/domain/PageRequest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/HouseApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="14" column="33" lean-forward="false" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-service/src/main/java/com/ssk/haoke/cloud/server/house/service/HouseResourcesService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="18" column="38" lean-forward="false" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/controller/SearchController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="460">
+          <caret line="30" column="17" lean-forward="false" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/haoke-portal-api-server/src/test/Data.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="38" column="26" lean-forward="true" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-service/src/test/java/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/vo/HouseData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="9" column="43" lean-forward="false" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-service/src/main/java/com/ssk/haoke/cloud/server/house/rest/HouseResourcesRest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="67" column="64" lean-forward="false" selection-start-line="67" selection-start-column="64" selection-end-line="67" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/haoke-portal-api-server/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="936">
+          <caret line="26" column="76" lean-forward="false" selection-start-line="26" selection-start-column="76" selection-end-line="26" selection-end-column="76" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/house/eo/HouseResourcesEo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="89" column="7" lean-forward="true" selection-start-line="89" selection-start-column="7" selection-end-line="89" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/house/api/dto/request/HouseResourcesReqDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="116" column="28" lean-forward="false" selection-start-line="116" selection-start-column="28" selection-end-line="116" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/haoke-portal-api-server/src/main/java/com/ssk/haoke/cloud/portal/api/service/impl/SearchService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="34" column="26" lean-forward="false" selection-start-line="34" selection-start-column="26" selection-end-line="34" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/house/api/dto/response/HouseRentMgmtDetailRespDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/house/api/dto/response/HouseResourcesRespDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="114" column="30" lean-forward="false" selection-start-line="114" selection-start-column="20" selection-end-line="114" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/house/api/dto/response/HouseRentMgmtRespDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/house/api/IHouseInspectionReqApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-613">
+          <caret line="18" column="17" lean-forward="false" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-cloud-server-house-resources-interface/src/main/java/com/ssk/haoke/cloud/server/house/api/query/IHouseInspectionReqQueryApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="40" column="6" lean-forward="true" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
           <folding />
         </state>
       </provider>

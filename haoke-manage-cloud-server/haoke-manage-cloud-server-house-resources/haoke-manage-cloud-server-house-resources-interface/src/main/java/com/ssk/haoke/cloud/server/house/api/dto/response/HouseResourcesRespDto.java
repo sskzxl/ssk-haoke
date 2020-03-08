@@ -109,10 +109,10 @@ public class HouseResourcesRespDto extends BasePojo {
     private Integer decoration;
 
     /**
-     * 配套设施， 如：1,2,3
+     * 配套设施， 如：1洗衣机,2冰箱,3空调,4阳台,5卫生间,6电视,7热水器,8宽带,9沙发,10,衣柜
      */
     @ApiModelProperty(name = "facilities" , value = "配套设施")
-    private String facilities;
+    private Integer facilities;
 
     /**
      * 图片，最多5张
