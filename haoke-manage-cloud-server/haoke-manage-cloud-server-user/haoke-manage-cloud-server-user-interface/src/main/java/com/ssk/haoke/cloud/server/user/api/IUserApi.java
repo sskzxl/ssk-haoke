@@ -1,7 +1,9 @@
 package com.ssk.haoke.cloud.server.user.api;
 
-import com.ssk.haoke.cloud.server.user.api.dto.request.UserReqDto;
+import com.ssk.haoke.cloud.server.common.ServiceResponse;
 import com.ssk.haoke.cloud.server.house.rest.RestResponse;
+import com.ssk.haoke.cloud.server.user.api.dto.request.UserReqDto;
+import com.ssk.haoke.cloud.server.user.api.dto.response.UserRespDto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -46,4 +48,13 @@ public interface IUserApi {
     @DeleteMapping("/{ids}")
     @ApiOperation(value = "删除", notes = "删除")
     RestResponse<Void> removeUser(@PathVariable("ids") String ids);
+
+    @PostMapping("/login")
+    @ApiOperation(value = "登陆", notes = "登陆")
+    ServiceResponse<UserRespDto> login(@RequestParam("username") String username, @RequestParam("password")String password);
+
+    @PostMapping("/register")
+    @ApiOperation(value = "注册", notes = "注册")
+    ServiceResponse<String> register(@RequestBody UserReqDto userReqDto);
+
 }

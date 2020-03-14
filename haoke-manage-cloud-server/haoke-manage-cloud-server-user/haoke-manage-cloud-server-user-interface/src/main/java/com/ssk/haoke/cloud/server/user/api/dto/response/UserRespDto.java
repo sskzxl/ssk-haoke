@@ -22,9 +22,13 @@ public class UserRespDto extends BasePojo{
     /**
     *  姓名
     */
-    @ApiModelProperty(name = "name", value = "姓名")
-    private String name;
-
+    @ApiModelProperty(name = "username", value = "姓名")
+    private String username;
+    /**
+     *  密码
+     */
+    @ApiModelProperty(name = "password", value = "密码")
+    private String password;
     /**
     *  手机号
     */
@@ -67,5 +71,8 @@ public class UserRespDto extends BasePojo{
     @ApiModelProperty(name = "isHost", value = "是否房东（0、是 1、否）")
     private Integer isHost;
 
+    /**
+     *token
+     */
 
 }

@@ -1,8 +1,9 @@
 package com.ssk.haoke.cloud.server.user.service;
 
+import com.ssk.haoke.cloud.server.common.ServiceResponse;
+import com.ssk.haoke.cloud.server.house.eo.PageInfo;
 import com.ssk.haoke.cloud.server.user.api.dto.request.UserReqDto;
 import com.ssk.haoke.cloud.server.user.api.dto.response.UserRespDto;
-import com.ssk.haoke.cloud.server.house.eo.PageInfo;
 
 /**
 * 服务接口
@@ -52,5 +53,24 @@ public interface IUserService {
     PageInfo<UserRespDto> queryByPage(String filter,
                                      Integer pageNum,
                                      Integer pageSize);
+    //login
+    ServiceResponse<UserRespDto> login(String username, String password);
 
+    ServiceResponse<String> register(UserReqDto userReqDto);
+
+    ServiceResponse checkValid(String str, String type);
+
+    String selectQuestion(String username);
+
+    String checkAnswer(String username, String question, String answer);
+
+    String forgetResetPassword(String username, String passwordNew, String forgetToken);
+
+    String resetPassword(String passwordOld, String passwordNew, UserReqDto userReqDto);
+
+    UserRespDto updateInformation(UserReqDto userReqDto);
+
+    UserRespDto getInformation(Integer UserId);
+
+    void checkAdminRole(UserReqDto userReqDto);
 }

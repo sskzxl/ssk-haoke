@@ -23,9 +23,13 @@ public class UserReqDto{
     /**
     *  姓名
     */
-    @ApiModelProperty(name = "name", value = "姓名")
-    private String name;
-
+    @ApiModelProperty(name = "username", value = "姓名")
+    private String username;
+    /**
+     *  密码
+     */
+    @ApiModelProperty(name = "password", value = "密码")
+    private String password;
     /**
     *  手机号
     */

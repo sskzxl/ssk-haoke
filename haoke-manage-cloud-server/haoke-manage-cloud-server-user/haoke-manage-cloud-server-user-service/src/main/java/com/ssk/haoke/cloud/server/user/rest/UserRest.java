@@ -1,5 +1,6 @@
 package com.ssk.haoke.cloud.server.user.rest;
 
+import com.ssk.haoke.cloud.server.common.ServiceResponse;
 import com.ssk.haoke.cloud.server.house.eo.PageInfo;
 import com.ssk.haoke.cloud.server.house.rest.RestResponse;
 import com.ssk.haoke.cloud.server.user.api.IUserApi;
@@ -32,6 +33,16 @@ public class UserRest implements IUserApi,IUserQueryApi {
     @Override
     public RestResponse<Void> removeUser(@PathVariable("ids") String ids) {
         return userApi.removeUser(ids);
+    }
+
+    @Override
+    public ServiceResponse login(@RequestParam("username") String username, @RequestParam("password")String password) {
+        return userApi.login(username,password);
+    }
+
+    @Override
+    public ServiceResponse<String> register(@RequestBody UserReqDto userReqDto) {
+        return userApi.register(userReqDto);
     }
 
     @Override

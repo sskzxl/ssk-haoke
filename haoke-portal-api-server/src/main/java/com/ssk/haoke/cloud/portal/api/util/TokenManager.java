@@ -1,13 +1,15 @@
 package com.ssk.haoke.cloud.portal.api.util;
 
+import com.ssk.haoke.cloud.server.user.api.dto.response.UserRespDto;
+
 public interface TokenManager {
 
     /**
      * 创建token
-     * @param user
+     * @param userRespDto
      * @return
      */
-    String getToken(String  username);
+    String getToken(UserRespDto userRespDto);
 
     /**
      * 刷新用户
@@ -19,7 +21,7 @@ public interface TokenManager {
      * 用户退出登陆
      * @param token
      */
-    void loginOff(String token);
+    Boolean loginOff(String token);
 
     /**
      * 获取用户信息

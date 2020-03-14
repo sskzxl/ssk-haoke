@@ -1,12 +1,17 @@
 package com.ssk.haoke.cloud.portal.api.util.impl;
 
+import com.alibaba.nacos.client.utils.JSONUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ssk.haoke.cloud.portal.api.config.LoginRedisConfig;
 import com.ssk.haoke.cloud.portal.api.util.TokenManager;
+import com.ssk.haoke.cloud.server.user.api.dto.response.UserRespDto;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
@@ -18,12 +23,17 @@ public class RedisTokenManager implements TokenManager ,Serializable {
     LoginRedisConfig config;
     @Autowired
     ObjectMapper objectMapper;
-
-    public String getToken(String username) {
+    public final static Logger logger = LoggerFactory.getLogger(RedisTokenManager.class);
+    public String getToken(UserRespDto userRespDto) {
         //使用uuid作为源token
         String token = UUID.randomUUID().toString().replace("-", "");
-
-        this.redisTemplate.opsForValue().set(token,username,config.getExpires(),TimeUnit.SECONDS);
+        String user = null;
+        try {
+            user = JSONUtils.serializeObject(userRespDto);
+        } catch (IOException e) {
+            logger.error("用户对象转换String失败:{}",e);
+        }
+        this.redisTemplate.opsForValue().set(token,user,config.getExpires(),TimeUnit.SECONDS);
         return token;
     }
 
@@ -35,8 +45,8 @@ public class RedisTokenManager implements TokenManager ,Serializable {
     }
 
     @Override
-    public void loginOff(String token) {
-        redisTemplate.delete(token);
+    public Boolean loginOff(String token) {
+        return redisTemplate.delete(token);
     }
 
     @Override
