@@ -1,6 +1,7 @@
 package com.ssk.haoke.cloud.portal.api.config;
 
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
+import com.ssk.haoke.cloud.portal.api.interceptor.RedisCacheInterceptor;
 import com.ssk.haoke.cloud.portal.api.interceptor.UserInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -12,15 +13,17 @@ import java.util.List;
 
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
-//    @Autowired
-//    private RedisCacheInterceptor redisCacheInterceptor;
+    @Autowired
+    private RedisCacheInterceptor redisCacheInterceptor;
     @Autowired
     private UserInterceptor userInterceptor;
 
     public void addInterceptors(InterceptorRegistry registry) {
-//        registry.addInterceptor(this.redisCacheInterceptor).addPathPatterns("/**");
-//        registry.addInterceptor(this.userInterceptor).addPathPatterns("/**")
-//                .excludePathPatterns("/users/login");
+        registry.addInterceptor(this.redisCacheInterceptor).addPathPatterns("/**");
+        registry.addInterceptor(this.userInterceptor).addPathPatterns("/**")
+                .excludePathPatterns("/users/login")
+                .excludePathPatterns("/users/register")
+                  .excludePathPatterns("/users/logout");
     }
 
     @Override

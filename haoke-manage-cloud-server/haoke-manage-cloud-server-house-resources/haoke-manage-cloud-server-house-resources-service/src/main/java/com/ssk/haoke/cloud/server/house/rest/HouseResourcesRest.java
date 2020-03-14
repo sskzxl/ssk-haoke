@@ -39,12 +39,22 @@ public class HouseResourcesRest implements IHouseResourcesApi,IHouseResourcesQue
 
     @Override
     public RestResponse<PageInfo<HouseResourcesRespDto>> queryHouseResourcesList(String filter,Integer pageNum, Integer pageSize) {
-        return houseResourcesQueryApi.queryHouseResourcesList(filter,pageNum,pageSize);
+
+        RestResponse<PageInfo<HouseResourcesRespDto>> response = houseResourcesQueryApi.queryHouseResourcesList(filter, pageNum, pageSize);
+        if (null == response.getData()){
+            return RestResponse.FAIL;
+        }else {
+            return response;
+        }
     }
 
     @Override
     public RestResponse<HouseResourcesRespDto> queryHouseResourcesById(Long id) {
-        return houseResourcesQueryApi.queryHouseResourcesById(id);
+        RestResponse<HouseResourcesRespDto> response = houseResourcesQueryApi.queryHouseResourcesById(id);
+        if (null == response.getData()){
+            return RestResponse.FAIL;
+        }
+        return response;
     }
 
     @Override

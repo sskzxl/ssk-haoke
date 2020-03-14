@@ -51,7 +51,7 @@ public class RedisTokenManager implements TokenManager ,Serializable {
 
     @Override
     public String getUserInfoByToken(String token) {
-        if(redisTemplate.hasKey(token)){
+        if(null != token && redisTemplate.hasKey(token)){
             String user = (String) redisTemplate.opsForValue().get(token);
             return user;
         }

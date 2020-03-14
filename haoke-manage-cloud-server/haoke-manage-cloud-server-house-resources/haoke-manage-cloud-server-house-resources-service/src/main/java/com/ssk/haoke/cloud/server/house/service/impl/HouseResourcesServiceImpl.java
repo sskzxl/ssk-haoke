@@ -14,6 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import java.io.IOException;
 import java.util.List;
@@ -77,7 +78,7 @@ public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo>
     public HouseResourcesRespDto queryHouseResourcesById(Long id) {
         HouseResourcesEo houseResourcesEo = super.queryById(id);
         if (null == houseResourcesEo) {
-            return new HouseResourcesRespDto();
+            return null;
         } else {
             HouseResourcesRespDto houseResourcesRespDto = new HouseResourcesRespDto();
             BeanUtils.copyProperties(houseResourcesEo, houseResourcesRespDto, HouseResourcesRespDto.class);
@@ -103,6 +104,9 @@ public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo>
 
     private PageInfo<HouseResourcesRespDto> IPage2PageInfo(IPage eoIPage) {
         List<HouseResourcesEo> eos = eoIPage.getRecords();
+        if (CollectionUtils.isEmpty(eos)){
+            return null;
+        }
         List<HouseResourcesRespDto> respDtos = Lists.newArrayList();
         for (HouseResourcesEo eo : eos) {
             HouseResourcesRespDto respDto = new HouseResourcesRespDto();
