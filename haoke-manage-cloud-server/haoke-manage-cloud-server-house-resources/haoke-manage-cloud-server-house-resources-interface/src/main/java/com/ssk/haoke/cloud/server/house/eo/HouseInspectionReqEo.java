@@ -19,45 +19,24 @@ import java.util.Date;
 public class HouseInspectionReqEo extends BasePojo{
     @TableId(value = "id",type = IdType.AUTO)
     private Long id;
-    /**
-     *  用户id（tb_user）
-     */
-    @TableId
-    private Long userId;
-
-    /**
-     *  房源id（tb_house_resources）
-     */
-    @TableField("house_resouces_id")
-    private Long houseResoucesId;
-
-    /**
-     *  看房时间
-     */
-    @TableField("inspection_time")
-    private Date inspectionTime;
-
-    /**
-     *  请求时间x
-     */
+    @TableField("tenant_id")
+    private Long tenantId;//租客id
+    @TableField("host_id")
+    private Long hostId;//房东id
+    @TableField("house_resources_id")
+    private Long houseResourcesId;
+    @TableField("start_time")
+    private Date startTime;
+    @TableField("end_time")
+    private Date endTime;
+    @TableField("req_status")
+    private Integer reqStatus;
+    @TableField("address")
+    private String address;
     @TableField("req_time")
     private Date reqTime;
-
-    /**
-     *  请求状态（0、待确认 1、待看房 2、已确认 3、已取消）
-     */
-    @TableField("req_status")
-    private String reqStatus;
-
-    /**
-     *  
-     */
     @TableField("created")
     private Date created;
-
-    /**
-     *  
-     */
     @TableField("updated")
     private Date updated;
 

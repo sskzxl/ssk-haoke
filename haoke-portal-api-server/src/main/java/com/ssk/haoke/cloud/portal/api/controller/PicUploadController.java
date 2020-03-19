@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-@RequestMapping("pic/upload")
+@RequestMapping("api/pic/upload")
 @Controller
 public class PicUploadController {
     //本地文件存储

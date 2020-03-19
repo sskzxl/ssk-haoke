@@ -98,7 +98,7 @@ public class HouseResourcesEo extends BasePojo {
     /**
      * 配套设施， 如：1,2,3
      */
-    private Integer facilities;
+    private String facilities;
 
     /**
      * 图片，最多5张
@@ -113,8 +113,11 @@ public class HouseResourcesEo extends BasePojo {
     /**
      * 联系人
      */
+    private Long contactId;
+    /**
+     * 联系人id
+     */
     private String contact;
-
     /**
      * 手机号
      */

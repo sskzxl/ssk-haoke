@@ -7,8 +7,6 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.ssk.haoke.cloud.server.pojo.BasePojo;
 import lombok.Data;
 
-import java.util.Date;
-
 /**
 * 租房管理表Eo对象
 *
@@ -45,27 +43,10 @@ public class HouseRentMgmtEo extends BasePojo{
     @TableField("house_resources_id")
     private Long houseResourcesId;
     /**
-     *合同id
-     */
-    @TableField("contract_id")
-    private Long contractId;
-    /**
-     *租户姓名
+     *房源姓名
      */
     @TableField("house_resources_name")
     private String houseResourcesName;
-
-    /**
-     *  合同开始时间
-     */
-    @TableField("start_time")
-    private Date startTime;
-
-    /**
-     *  合同结束时间
-     */
-    @TableField("end_time")
-    private Date endTime;
 
     /**
      *  租金
@@ -74,7 +55,7 @@ public class HouseRentMgmtEo extends BasePojo{
     private String rent;
 
     /**
-     *  0、待确认 1、已确认 2、待付款 3、已逾期
+     *  0、已租 1、未租  2、取消
      */
     @TableField("status")
     private String status;

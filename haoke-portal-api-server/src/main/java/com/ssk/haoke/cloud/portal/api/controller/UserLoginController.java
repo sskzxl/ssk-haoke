@@ -6,9 +6,13 @@ import com.ssk.haoke.cloud.server.user.api.dto.request.UserReqDto;
 import com.ssk.haoke.cloud.server.user.api.dto.response.UserRespDto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @RestController
@@ -28,8 +32,8 @@ public class UserLoginController {
 
     @PostMapping("/login")
     @ApiOperation(value = "登陆",notes = "login")
-    public ServiceResponse<UserRespDto> login(@RequestParam ("username")String username, @RequestParam("password") String password, HttpSession session){
-        ServiceResponse response = userLoginService.login(username, password);
+    public ServiceResponse<UserRespDto> login(@RequestBody UserReqDto userReqDto, HttpSession session){
+        ServiceResponse response = userLoginService.login(userReqDto.getUsername(), userReqDto.getPassword());
         return response;
     }
 
@@ -45,23 +49,31 @@ public class UserLoginController {
     }
     /**
      * 登出操作
-     * @param token
      * @return
      */
     @PostMapping("/logout")
     @ApiOperation(value = "登出",notes = "logout")
-    public void logout(String token){
-        userLoginService.logout(token);
+    public ServiceResponse logout(HttpServletRequest request, HttpServletResponse response){
+        String authorization = request.getHeader("Authorization");
+        if (StringUtils.isEmpty(authorization)){
+            response.setStatus(HttpStatus.UNAUTHORIZED.value(),HttpStatus.UNAUTHORIZED.name());
+            return ServiceResponse.createByErrorCodeMessage(HttpStatus.UNAUTHORIZED.value(),HttpStatus.UNAUTHORIZED.name());
+        }
+        return userLoginService.logout(authorization,response);
     }
 
     /**
      * 获取用户信息
-     * @param token
      * @return
      */
-    @PostMapping("/info")
-    @ApiOperation(value = "登出",notes = "logout")
-    public ServiceResponse<UserRespDto> getInfo(String token){
-        return userLoginService.getInfo(token);
+    @GetMapping("/info")
+    @ApiOperation(value = "获取用户信息",notes = "info")
+    public ServiceResponse<UserRespDto> getInfo(HttpServletRequest request, HttpServletResponse response){
+        String authorization = request.getHeader("Authorization");
+        if (StringUtils.isEmpty(authorization)){
+            response.setStatus(HttpStatus.UNAUTHORIZED.value(),HttpStatus.UNAUTHORIZED.name());
+            return ServiceResponse.createByErrorCodeMessage(HttpStatus.UNAUTHORIZED.value(),HttpStatus.UNAUTHORIZED.name());
+        }
+        return userLoginService.getInfo(authorization,response);
     }
 }

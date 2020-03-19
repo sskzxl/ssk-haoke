@@ -9,35 +9,35 @@ import java.io.Serializable;
 //保证序列化Json时,如果是null对象,key也会消失
 @NoArgsConstructor
 public class ServiceResponse<T> implements Serializable{
-    private int status;
-    private String msg;
+    private int resultCode;
+    private String resultMsg;
     private T data;
-    private ServiceResponse(int status){
-        this.status = status;
+    private ServiceResponse(int resultCode){
+        this.resultCode = resultCode;
     }
-    private ServiceResponse(int status, String msg){
-        this.status = status;
-        this.msg = msg;
+    private ServiceResponse(int resultCode, String resultMsg){
+        this.resultCode = resultCode;
+        this.resultMsg = resultMsg;
     }
-    private ServiceResponse(int status, String msg, T data){
-        this.status = status;
-        this.msg = msg;
+    private ServiceResponse(int resultCode, String resultMsg, T data){
+        this.resultCode = resultCode;
+        this.resultMsg = resultMsg;
         this.data = data;
     }
-    private ServiceResponse(int status,T data){
+    private ServiceResponse(int resultCode,T data){
         this.data = data;
-        this.status = status;
+        this.resultCode = resultCode;
     }
     @JsonIgnore
     //使之不在Json序列化结果当中
     public boolean isSuccess(){
-        return this.status == ResponseCode.SUCCESS.getCode();
+        return this.resultCode == ResponseCode.SUCCESS.getCode();
     }
-    public int getStatus(){
-        return status;
+    public int getResultCode(){
+        return resultCode;
     }
-    public String getMsg(){
-        return msg;
+    public String getResultMsg(){
+        return resultMsg;
     }
     public T getData(){
         return data;
@@ -46,11 +46,11 @@ public class ServiceResponse<T> implements Serializable{
         return new ServiceResponse<T>(ResponseCode.SUCCESS.getCode());
 
     }
-    public static <T> ServiceResponse<T> createBySuccessMsg(String msg){
-        return new ServiceResponse<T>(ResponseCode.SUCCESS.getCode(),msg);
+    public static <T> ServiceResponse<T> createBySuccessResultMsg(String resultMsg){
+        return new ServiceResponse<T>(ResponseCode.SUCCESS.getCode(),resultMsg);
     }
-    //当data数据是String类型时，因为参数是T类型所以会调用private ServiceResponse(int status,T data)方法，
-    //而不会调用private ServiceResponse(int status, String msg)
+    //当data数据是String类型时，因为参数是T类型所以会调用private ServiceResponse(int resultCode,T data)方法，
+    //而不会调用private ServiceResponse(int resultCode, String resultMsg)
     public static <T> ServiceResponse<T> createBySuccess(T data){
         return new ServiceResponse<T>(ResponseCode.SUCCESS.getCode(),data);
     }

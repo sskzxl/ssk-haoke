@@ -2,9 +2,10 @@ package com.ssk.haoke.cloud.server.house.api.dto.response;
 
 import com.ssk.haoke.cloud.server.house.api.dto.response.base.HouseResourcesBaseRespDto;
 import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
 import java.util.Date;
-
+@Data
 public class HouseInspectionRespDto extends HouseResourcesBaseRespDto {
     /**
      *  主键

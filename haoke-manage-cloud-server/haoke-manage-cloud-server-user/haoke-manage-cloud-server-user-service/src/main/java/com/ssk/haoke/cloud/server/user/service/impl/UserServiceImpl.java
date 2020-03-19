@@ -107,6 +107,7 @@ public class UserServiceImpl extends BaseServiceImpl<UserEo> implements IUserSer
         }
         UserRespDto userRespDto = new UserRespDto();
         BeanUtils.copyProperties(selectOne1,userRespDto);
+        userRespDto.setPassword(StringUtils.EMPTY);
         return ServiceResponse.createBySuccess("登陆成功",userRespDto);
     }
 

@@ -1,8 +1,12 @@
 package com.ssk.haoke.cloud.server.house.service;
 
+import com.ssk.haoke.cloud.server.house.api.dto.request.HouseBookingReqDto;
 import com.ssk.haoke.cloud.server.house.api.dto.request.HouseInspectionReqReqDto;
+import com.ssk.haoke.cloud.server.house.api.dto.response.HouseBookingRespDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.HouseInspectionRespDto;
 import com.ssk.haoke.cloud.server.house.eo.PageInfo;
+
+import java.util.List;
 
 /**
 * 看房请求表服务接口
@@ -52,5 +56,9 @@ public interface IHouseInspectionReqService {
     PageInfo<HouseInspectionRespDto> queryByPage(String filter,
                                                  Integer pageNum,
                                                  Integer pageSize);
+    HouseBookingRespDto getHouseBooking(Long id);
 
+    Boolean commitBooking(HouseBookingReqDto houseBookingReqDto);
+
+    List<String> getHostNote(Long id);
 }

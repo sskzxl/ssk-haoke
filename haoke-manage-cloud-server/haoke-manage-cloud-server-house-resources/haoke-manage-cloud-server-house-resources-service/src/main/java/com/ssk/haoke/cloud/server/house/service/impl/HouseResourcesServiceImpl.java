@@ -3,12 +3,14 @@ package com.ssk.haoke.cloud.server.house.service.impl;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Lists;
-import com.ssk.haoke.cloud.server.house.service.BaseServiceImpl;
-import com.ssk.haoke.cloud.server.house.service.HouseResourcesService;
 import com.ssk.haoke.cloud.server.house.api.dto.request.HouseResourcesReqDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.HouseResourcesRespDto;
+import com.ssk.haoke.cloud.server.house.eo.EstateEo;
 import com.ssk.haoke.cloud.server.house.eo.HouseResourcesEo;
 import com.ssk.haoke.cloud.server.house.eo.PageInfo;
+import com.ssk.haoke.cloud.server.house.mapper.HouseEstateMapper;
+import com.ssk.haoke.cloud.server.house.service.BaseServiceImpl;
+import com.ssk.haoke.cloud.server.house.service.HouseResourcesService;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +18,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
+import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.List;
 
@@ -24,7 +27,8 @@ public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo>
 
     public static final Logger logger = LoggerFactory.getLogger(HouseResourcesServiceImpl.class);
     public static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
-
+    @Resource
+    private HouseEstateMapper houseEstateMapper;
     /**
      * @param id
      * @return
@@ -81,7 +85,14 @@ public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo>
             return null;
         } else {
             HouseResourcesRespDto houseResourcesRespDto = new HouseResourcesRespDto();
-            BeanUtils.copyProperties(houseResourcesEo, houseResourcesRespDto, HouseResourcesRespDto.class);
+            BeanUtils.copyProperties(houseResourcesEo, houseResourcesRespDto,"facilities");
+            String facilities = houseResourcesEo.getFacilities();
+            if (StringUtils.isNotEmpty(facilities)){
+                String[] split = facilities.split(",");
+                houseResourcesRespDto.setFacilities(split);
+            }
+            EstateEo estateEo = houseEstateMapper.selectById(houseResourcesEo.getEstateId());
+            houseResourcesRespDto.setAddress(estateEo.getAddress());
             return houseResourcesRespDto;
         }
     }
@@ -111,6 +122,13 @@ public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo>
         for (HouseResourcesEo eo : eos) {
             HouseResourcesRespDto respDto = new HouseResourcesRespDto();
             BeanUtils.copyProperties(eo, respDto);
+            String facilities = eo.getFacilities();
+            if (StringUtils.isNotEmpty(facilities)){
+                String[] split = facilities.split(",");
+                respDto.setFacilities(split);
+            }
+            EstateEo estateEo = houseEstateMapper.selectById(eo.getEstateId());
+            respDto.setAddress(estateEo.getAddress());
             respDtos.add(respDto);
         }
         PageInfo<HouseResourcesRespDto> respDtoPage = new PageInfo<>();

@@ -1,8 +1,9 @@
 package com.ssk.haoke.cloud.server.house.api.query;
 
+import com.ssk.haoke.cloud.server.house.api.dto.response.HouseBookingRespDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.HouseInspectionRespDto;
-import com.ssk.haoke.cloud.server.house.rest.RestResponse;
 import com.ssk.haoke.cloud.server.house.eo.PageInfo;
+import com.ssk.haoke.cloud.server.house.rest.RestResponse;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -45,5 +46,25 @@ public interface IHouseInspectionReqQueryApi {
                                                    @RequestParam(name = "pageNum", required = false, defaultValue = "1") Integer pageNum,
                                                    @RequestParam(name = "pageSize", required = false, defaultValue = "10") Integer pageSize);
 
+
+    /**
+     * 根据房源id查询房源信息和地址（租客提交看房请求预览页面）
+     */
+    @GetMapping("/book")
+    @ApiOperation(value = "根据房源id查询房源信息和地址",notes = "租客提交看房请求预览页面")
+    RestResponse<HouseBookingRespDto>getHouseBooking(@RequestParam("id") Long id);
+
+    /***
+     * 根据房东id查询看房请求通知
+     */
+    @GetMapping("host/note")
+    @ApiOperation(value = "根据房东id查询看房请求通知",notes = "根据房东id查询看房请求通知")
+    RestResponse<String> getHostNote(Long id);
+    /***
+     * 根据租客id查询看房请求通知
+     */
+    @GetMapping("tenant/note")
+    @ApiOperation(value = "根据租客id查询看房请求通知",notes = "根据租客id查询看房请求通知")
+    RestResponse<String> getTenantNote(Long id);
 
 }

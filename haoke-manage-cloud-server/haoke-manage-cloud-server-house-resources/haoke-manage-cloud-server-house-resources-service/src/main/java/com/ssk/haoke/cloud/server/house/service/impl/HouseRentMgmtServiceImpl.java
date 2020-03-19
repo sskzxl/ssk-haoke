@@ -85,7 +85,7 @@ public class HouseRentMgmtServiceImpl extends BaseServiceImpl<HouseRentMgmtEo> i
         Long landlordId = rentMgmtEo.getLandlordId();
         Long tenantId = rentMgmtEo.getTenantId();
         Long houseResourcesId = rentMgmtEo.getHouseResourcesId();
-        Long contractId = rentMgmtEo.getContractId();
+//        Long contractId = rentMgmtEo.getContractId();
         if (null != landlordId){
             RestResponse<UserRespDto> landlordRespDto = userQueryApi.queryById(landlordId);
             detailRespDto.setLandLord(landlordRespDto.getData());
@@ -98,10 +98,10 @@ public class HouseRentMgmtServiceImpl extends BaseServiceImpl<HouseRentMgmtEo> i
             HouseResourcesRespDto houseResourcesRespDto = houseResourcesService.queryHouseResourcesById(houseResourcesId);
             detailRespDto.setHouseResources(houseResourcesRespDto);
         }
-        if (null != contractId){
-            RestResponse<ContractRespDto> contractRespDtoRestResponse = contractQueryApi.queryById(contractId);
-            detailRespDto.setContract(contractRespDtoRestResponse.getData());
-        }
+//        if (null != contractId){
+//            RestResponse<ContractRespDto> contractRespDtoRestResponse = contractQueryApi.queryById(contractId);
+//            detailRespDto.setContract(contractRespDtoRestResponse.getData());
+//        }
         return detailRespDto;
     }
 

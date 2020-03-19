@@ -1,6 +1,7 @@
 package com.ssk.haoke.cloud.server.house.apiimpl;
 
 import com.ssk.haoke.cloud.server.house.api.IHouseInspectionReqApi;
+import com.ssk.haoke.cloud.server.house.api.dto.request.HouseBookingReqDto;
 import com.ssk.haoke.cloud.server.house.api.dto.request.HouseInspectionReqReqDto;
 import com.ssk.haoke.cloud.server.house.rest.RestResponse;
 import com.ssk.haoke.cloud.server.house.service.IHouseInspectionReqService;
@@ -34,5 +35,10 @@ public class HouseInspectionReqApiImpl implements IHouseInspectionReqApi {
     public RestResponse<Void> removeHouseInspectionReq(String ids) {
         houseInspectionReqService.removeHouseInspectionReq(ids);
         return RestResponse.VOID;
+    }
+
+    @Override
+    public RestResponse<Boolean> commitBooking(HouseBookingReqDto houseBookingReqDto) {
+        return new RestResponse<>(houseInspectionReqService.commitBooking(houseBookingReqDto));
     }
 }

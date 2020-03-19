@@ -9,9 +9,11 @@ import com.ssk.haoke.cloud.server.user.api.dto.request.UserReqDto;
 import com.ssk.haoke.cloud.server.user.api.dto.response.UserRespDto;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @Service("userLoginService")
@@ -49,7 +51,7 @@ public class UserLoginService {
         ServiceResponse<UserRespDto> login = userApi.login(username, password);
         if (login.isSuccess()){
             String token = tokenManager.getToken(login.getData());
-            return ServiceResponse.createBySuccess(login.getMsg(),token);
+            return ServiceResponse.createBySuccess(login.getResultMsg(),token);
         }
         return login;
     }
@@ -57,15 +59,16 @@ public class UserLoginService {
         return userApi.register(userReqDto);
     }
 
-    public ServiceResponse logout(String token){
+    public ServiceResponse logout(String token,HttpServletResponse response){
         if (tokenManager.loginOff(token)){
-            return ServiceResponse.createBySuccessMsg("退出登陆成功");
+            return ServiceResponse.createBySuccessResultMsg("退出登陆成功");
         }else {
-            return ServiceResponse.createByErrorMessage("退出登陆失败");
+            response.setStatus(HttpStatus.FORBIDDEN.value(),HttpStatus.FORBIDDEN.name());
+            return ServiceResponse.createByErrorCodeMessage(HttpStatus.FORBIDDEN.value(),HttpStatus.FORBIDDEN.name());
         }
     }
 
-    public ServiceResponse getInfo(String token){
+    public ServiceResponse getInfo(String token , HttpServletResponse response){
         String infoByToken = tokenManager.getUserInfoByToken(token);
         if (StringUtils.isNotEmpty(infoByToken)){
             try {
@@ -73,10 +76,11 @@ public class UserLoginService {
                 return ServiceResponse.createBySuccess("获取当前登陆用户成功",userRespDto);
             } catch (IOException e) {
                 e.printStackTrace();
+                return ServiceResponse.createByError();
             }
-            return ServiceResponse.createByErrorMessage("获取异常");
         }else {
-            return ServiceResponse.createByErrorMessage("该用户当前不在登陆状态");
+            response.setStatus(HttpStatus.FORBIDDEN.value(),HttpStatus.FORBIDDEN.name());
+            return ServiceResponse.createByErrorCodeMessage(HttpStatus.FORBIDDEN.value(),HttpStatus.FORBIDDEN.name());
         }
     }
 

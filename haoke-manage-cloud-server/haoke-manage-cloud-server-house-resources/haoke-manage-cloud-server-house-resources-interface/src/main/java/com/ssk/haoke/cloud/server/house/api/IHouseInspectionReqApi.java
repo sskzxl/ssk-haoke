@@ -1,5 +1,6 @@
 package com.ssk.haoke.cloud.server.house.api;
 
+import com.ssk.haoke.cloud.server.house.api.dto.request.HouseBookingReqDto;
 import com.ssk.haoke.cloud.server.house.api.dto.request.HouseInspectionReqReqDto;
 import com.ssk.haoke.cloud.server.house.rest.RestResponse;
 import io.swagger.annotations.Api;
@@ -47,4 +48,8 @@ public interface IHouseInspectionReqApi {
     @DeleteMapping("/{ids}")
     @ApiOperation(value = "删除看房请求表", notes = "删除看房请求表")
     RestResponse<Void> removeHouseInspectionReq(@PathVariable("ids") String ids);
+
+    @PostMapping("/commit")
+    @ApiOperation(value = "提交租客提交看房预约",notes = "提交租客提交看房预约")
+    RestResponse<Boolean>commitBooking(@RequestBody HouseBookingReqDto houseBookingReqDto);
 }

@@ -12,7 +12,7 @@ import java.util.Date;
 * @author 代码生成器
 */
 @Data
-@ApiModel(value = "HouseInspectionReqReqDto", description = "看房请求表Eo对象")
+@ApiModel(value = "HouseInspectionReqReqDto", description = "看房请求表dto对象")
 public class HouseInspectionReqReqDto{
 
     /**

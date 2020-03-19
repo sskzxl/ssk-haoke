@@ -111,8 +111,8 @@ public class HouseResourcesRespDto extends BasePojo {
     /**
      * 配套设施， 如：1洗衣机,2冰箱,3空调,4阳台,5卫生间,6电视,7热水器,8宽带,9沙发,10,衣柜
      */
-    @ApiModelProperty(name = "facilities" , value = "配套设施")
-    private Integer facilities;
+    @ApiModelProperty(name = "facilities" , value = "配套设施如：1洗衣机,2冰箱,3空调,4阳台,5卫生间,6电视,7热水器,8宽带,9沙发,10,衣柜")
+    private String[] facilities;
 
     /**
      * 图片，最多5张
@@ -131,7 +131,11 @@ public class HouseResourcesRespDto extends BasePojo {
      */
     @ApiModelProperty(name = "contact" , value = "联系人")
     private String contact;
-
+    /**
+     * 联系人
+     */
+    @ApiModelProperty(name = "contactId" , value = "联系人")
+    private Long contactId;
     /**
      * 手机号
      */
@@ -150,6 +154,10 @@ public class HouseResourcesRespDto extends BasePojo {
      */
     @ApiModelProperty(name = "propertyCost" , value = "物业费")
     private String propertyCost;
-
+    /**
+     * 地址
+     */
+    @ApiModelProperty(name = "address" , value = "地址")
+    private String address;
 
 }
