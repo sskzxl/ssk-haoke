@@ -79,4 +79,9 @@ public class HouseResourcesRest implements IHouseResourcesApi,IHouseResourcesQue
             LOGGER.info("存入数据库成功");
         }
     }
+
+    @Override
+    public RestResponse<PageInfo<HouseResourcesRespDto>> getPageByCity(String cityName, Integer pageNum, Integer pageSize) {
+        return houseResourcesQueryApi.getPageByCity(cityName, pageNum, pageSize);
+    }
 }

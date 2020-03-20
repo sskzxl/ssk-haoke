@@ -1,8 +1,8 @@
 package com.ssk.haoke.cloud.server.house.api.query;
 
 import com.ssk.haoke.cloud.server.house.api.dto.response.HouseResourcesRespDto;
-import com.ssk.haoke.cloud.server.house.rest.RestResponse;
 import com.ssk.haoke.cloud.server.house.eo.PageInfo;
+import com.ssk.haoke.cloud.server.house.rest.RestResponse;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -38,4 +38,11 @@ public interface IHouseResourcesQueryApi {
     @ResponseBody
     @ApiOperation(value = "根据id查询房源",notes = "根据id查询房源")
     RestResponse<HouseResourcesRespDto> queryHouseResourcesById(@PathVariable("id") Long id);
+
+    @GetMapping("cityName/{cityName}")
+    @ResponseBody
+    @ApiOperation(value = "根据城市查询房源",notes = "根据城市查询房源")
+    RestResponse<PageInfo<HouseResourcesRespDto>> getPageByCity(@PathVariable("cityName")String cityName,
+                                                                @RequestParam(value = "pageNum",defaultValue = "1") Integer pageNum,
+                                                                @RequestParam(value = "pageSize",defaultValue = "10") Integer pageSize);
 }

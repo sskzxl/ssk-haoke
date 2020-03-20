@@ -83,6 +83,7 @@ public class UserReqDto{
     */
     @ApiModelProperty(name = "updated", value = "更新时间")
     private Date updated;
-
+    @ApiModelProperty(name = "headUrl", value = "头像")
+    private String headUrl;
 
 }

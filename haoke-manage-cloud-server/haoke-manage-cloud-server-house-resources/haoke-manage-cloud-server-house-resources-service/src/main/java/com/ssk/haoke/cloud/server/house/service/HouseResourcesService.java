@@ -37,4 +37,6 @@ public interface HouseResourcesService {
     更新房源
      */
     boolean updateHouseResources(HouseResourcesReqDto houseResourcesReqDto);
+
+    PageInfo<HouseResourcesRespDto> getPageByCity(String cityName,Integer pageNum,Integer pageSize);
 }

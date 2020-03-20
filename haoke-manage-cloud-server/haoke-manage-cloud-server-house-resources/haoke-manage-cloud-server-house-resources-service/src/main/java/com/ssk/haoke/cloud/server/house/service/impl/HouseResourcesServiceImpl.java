@@ -1,5 +1,6 @@
 package com.ssk.haoke.cloud.server.house.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Lists;
@@ -21,6 +22,7 @@ import org.springframework.util.CollectionUtils;
 import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo> implements HouseResourcesService {
@@ -94,6 +96,26 @@ public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo>
             EstateEo estateEo = houseEstateMapper.selectById(houseResourcesEo.getEstateId());
             houseResourcesRespDto.setAddress(estateEo.getAddress());
             return houseResourcesRespDto;
+        }
+    }
+
+    @Override
+    public PageInfo<HouseResourcesRespDto> getPageByCity(String cityName,Integer pageNum,Integer pageSize) {
+        EstateEo estateEo = new EstateEo();
+        estateEo.setCity(cityName);
+        //查出所有该城市的楼盘
+        List<EstateEo> estateEos = houseEstateMapper.selectList(new QueryWrapper<>(estateEo));
+        //筛选所有楼盘id
+        List<Long> estateIds = estateEos.stream().map(e -> e.getId()).collect(Collectors.toList());
+        if (!CollectionUtils.isEmpty(estateEos)){
+            HouseResourcesEo houseResourcesEo = new HouseResourcesEo();
+            QueryWrapper<HouseResourcesEo> queryWrapper = new QueryWrapper<>(houseResourcesEo);
+            queryWrapper.in("estate_id",estateIds);
+            IPage<HouseResourcesEo> houseResourcesEoIPage = this.queryPageList(queryWrapper, pageNum, pageSize);
+            PageInfo<HouseResourcesRespDto> dtoPageInfo = IPage2PageInfo(houseResourcesEoIPage);
+            return dtoPageInfo;
+        }else {
+            return null;
         }
     }
 

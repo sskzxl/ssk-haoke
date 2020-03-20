@@ -10,6 +10,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.server.ServerHttpRequest;
 import org.springframework.http.server.ServerHttpResponse;
 import org.springframework.http.server.ServletServerHttpRequest;
+import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
@@ -18,7 +19,7 @@ import java.time.Duration;
 /*
     在controller执行完返回responseBody之前执行
  */
-//@ControllerAdvice
+@ControllerAdvice
 public class MyResponseBodyAdvice implements ResponseBodyAdvice {
     @Autowired
     private RedisTemplate<String, String> redisTemplate;

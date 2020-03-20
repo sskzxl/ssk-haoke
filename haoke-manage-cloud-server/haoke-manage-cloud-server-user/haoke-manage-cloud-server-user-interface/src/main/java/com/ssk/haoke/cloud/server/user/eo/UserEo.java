@@ -62,5 +62,8 @@ public class UserEo extends BasePojo{
     /**
      *  
      */
-
+    /**
+     *头像
+     */
+    private String headUrl;
 }

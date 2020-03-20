@@ -80,5 +80,11 @@ public class HouseResourcesController {
     public RestResponse<HouseResourcesRespDto> get(@PathVariable("id") Long id) {
         return houseResourcesService.queryById(id);
     }
-
+    @GetMapping("/cityName/{cityName}")
+    @ApiOperation(value = "根据地区查询房源")
+    public RestResponse<PageInfo<HouseResourcesRespDto>> getPageByCity(@PathVariable("cityName")String cityName,
+                                                                       @RequestParam(value = "pageNum",defaultValue = "1") Integer pageNum,
+                                                                       @RequestParam(value = "pageSize",defaultValue = "10")Integer pageSize) {
+        return houseResourcesService.getPageByCity(cityName, pageNum, pageSize);
+    }
 }

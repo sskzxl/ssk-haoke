@@ -19,6 +19,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
@@ -36,6 +37,8 @@ public class UserServiceImpl extends BaseServiceImpl<UserEo> implements IUserSer
     public static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
     @Autowired(required = false)
     private UserMapper userMapper;
+    @Value("${user.default.head}")
+    private String DEFAULT_HEAD;
     @Override
     public Long addUser(UserReqDto addReqDto) {
         UserEo userEo = new UserEo();
@@ -122,6 +125,9 @@ public class UserServiceImpl extends BaseServiceImpl<UserEo> implements IUserSer
         userReqDto.setPassword(MD5Util.MD5EncodeUtf8(userReqDto.getPassword()));
         UserEo userEo = new UserEo();
         BeanUtils.copyProperties(userReqDto,userEo);
+        if (StringUtils.isEmpty(userEo.getHeadUrl())){//用户不传图片时使用默认的
+            userEo.setHeadUrl(DEFAULT_HEAD);
+        }
         int insert = userMapper.insert(userEo);
         if(insert == 0){
             return ServiceResponse.createByErrorMessage("注册失败");
@@ -142,7 +148,7 @@ public class UserServiceImpl extends BaseServiceImpl<UserEo> implements IUserSer
         }else {
             return ServiceResponse.createByErrorMessage("参数错误");
         }
-        return ServiceResponse.createBySuccessMsg("校验成功");
+        return ServiceResponse.createBySuccessResultMsg("校验成功");
     }
 
     @Override

@@ -72,7 +72,8 @@ public class UserRespDto extends BasePojo{
     private Integer isHost;
 
     /**
-     *token
+     *头像
      */
-
+    @ApiModelProperty(name = "headUrl", value = "头像")
+    private String headUrl;
 }

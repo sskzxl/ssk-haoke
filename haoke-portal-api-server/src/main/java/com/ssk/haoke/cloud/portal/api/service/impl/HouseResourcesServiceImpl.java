@@ -53,6 +53,11 @@ public class HouseResourcesServiceImpl {
         return this.houseResourcesApi.updateHouseResources(houseResourcesReqDto);
     }
 
-
+    /**
+     * 根据楼盘城市查询房源
+     */
+    public RestResponse<PageInfo<HouseResourcesRespDto>> getPageByCity(String cityName,Integer pageNum,Integer pageSize) {
+        return this.houseResourcesQueryApi.getPageByCity(cityName, pageNum, pageSize);
+    }
 
 }
