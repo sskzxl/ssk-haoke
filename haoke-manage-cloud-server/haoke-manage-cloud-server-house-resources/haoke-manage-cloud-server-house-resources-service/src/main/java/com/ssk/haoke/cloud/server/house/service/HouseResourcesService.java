@@ -1,8 +1,11 @@
 package com.ssk.haoke.cloud.server.house.service;
 
 import com.ssk.haoke.cloud.server.house.api.dto.request.HouseResourcesReqDto;
+import com.ssk.haoke.cloud.server.house.api.dto.response.DropDownRespDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.HouseResourcesRespDto;
 import com.ssk.haoke.cloud.server.house.eo.PageInfo;
+
+import java.util.List;
 
 
 public interface HouseResourcesService {
@@ -39,4 +42,6 @@ public interface HouseResourcesService {
     boolean updateHouseResources(HouseResourcesReqDto houseResourcesReqDto);
 
     PageInfo<HouseResourcesRespDto> getPageByCity(String cityName,Integer pageNum,Integer pageSize);
+
+    List<DropDownRespDto> getAllCity();
 }

@@ -152,6 +152,20 @@ public class HouseResourcesReqDto extends BasePojo {
      */
     @ApiModelProperty(name = "propertyCost" , value = "物业费")
     private String propertyCost;
+    /**
+     * 价格范围
+     */
+    @ApiModelProperty(name = "lowPrice" , value = "价格范围")
+    private String lowPrice;
 
+    /**
+     * 价格范围
+     */
+    @ApiModelProperty(name = "upPrice" , value = "价格范围")
+    private String upPrice;
+    /**
+     * 地区
+     */
+    private String address;
 
 }

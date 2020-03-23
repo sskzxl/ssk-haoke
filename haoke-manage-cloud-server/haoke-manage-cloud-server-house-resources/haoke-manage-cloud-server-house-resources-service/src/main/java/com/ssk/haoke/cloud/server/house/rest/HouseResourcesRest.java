@@ -4,6 +4,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ssk.haoke.cloud.server.house.api.IHouseResourcesApi;
 import com.ssk.haoke.cloud.server.house.api.dto.request.HouseResourcesReqDto;
+import com.ssk.haoke.cloud.server.house.api.dto.response.DropDownRespDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.HouseResourcesRespDto;
 import com.ssk.haoke.cloud.server.house.api.query.IHouseResourcesQueryApi;
 import com.ssk.haoke.cloud.server.house.eo.PageInfo;
@@ -83,5 +84,10 @@ public class HouseResourcesRest implements IHouseResourcesApi,IHouseResourcesQue
     @Override
     public RestResponse<PageInfo<HouseResourcesRespDto>> getPageByCity(String cityName, Integer pageNum, Integer pageSize) {
         return houseResourcesQueryApi.getPageByCity(cityName, pageNum, pageSize);
+    }
+
+    @Override
+    public RestResponse<List<DropDownRespDto>> getAllCity() {
+        return houseResourcesQueryApi.getAllCity();
     }
 }

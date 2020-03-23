@@ -3,15 +3,20 @@ package com.ssk.haoke.cloud.portal.api.service.impl;
 import com.ssk.haoke.cloud.server.house.api.IHouseRentMgmtApi;
 import com.ssk.haoke.cloud.server.house.api.IHouseResourcesApi;
 import com.ssk.haoke.cloud.server.house.api.dto.request.HouseResourcesReqDto;
+import com.ssk.haoke.cloud.server.house.api.dto.response.DropDownRespDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.HouseResourcesRespDto;
 import com.ssk.haoke.cloud.server.house.api.query.IHouseRentMgmtQueryApi;
 import com.ssk.haoke.cloud.server.house.api.query.IHouseResourcesQueryApi;
 import com.ssk.haoke.cloud.server.house.eo.PageInfo;
 import com.ssk.haoke.cloud.server.house.rest.RestResponse;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service("houseResourcesService")
 public class HouseResourcesServiceImpl {
@@ -59,5 +64,7 @@ public class HouseResourcesServiceImpl {
     public RestResponse<PageInfo<HouseResourcesRespDto>> getPageByCity(String cityName,Integer pageNum,Integer pageSize) {
         return this.houseResourcesQueryApi.getPageByCity(cityName, pageNum, pageSize);
     }
-
+    public RestResponse<List<DropDownRespDto>> getAllCity(){
+        return this.houseResourcesQueryApi.getAllCity();
+    }
 }

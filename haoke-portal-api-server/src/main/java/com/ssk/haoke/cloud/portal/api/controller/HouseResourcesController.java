@@ -2,6 +2,7 @@ package com.ssk.haoke.cloud.portal.api.controller;
 
 import com.ssk.haoke.cloud.portal.api.service.impl.HouseResourcesServiceImpl;
 import com.ssk.haoke.cloud.server.house.api.dto.request.HouseResourcesReqDto;
+import com.ssk.haoke.cloud.server.house.api.dto.response.DropDownRespDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.HouseResourcesRespDto;
 import com.ssk.haoke.cloud.server.house.eo.PageInfo;
 import com.ssk.haoke.cloud.server.house.rest.RestResponse;
@@ -11,6 +12,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("house/resources")
@@ -86,5 +89,11 @@ public class HouseResourcesController {
                                                                        @RequestParam(value = "pageNum",defaultValue = "1") Integer pageNum,
                                                                        @RequestParam(value = "pageSize",defaultValue = "10")Integer pageSize) {
         return houseResourcesService.getPageByCity(cityName, pageNum, pageSize);
+    }
+    @GetMapping("/allCity")
+    @ResponseBody
+    @ApiOperation(value = "查询城市下拉列表",notes = "查询城市下拉列表")
+    RestResponse<List<DropDownRespDto>> getAllCity(){
+        return houseResourcesService.getAllCity();
     }
 }

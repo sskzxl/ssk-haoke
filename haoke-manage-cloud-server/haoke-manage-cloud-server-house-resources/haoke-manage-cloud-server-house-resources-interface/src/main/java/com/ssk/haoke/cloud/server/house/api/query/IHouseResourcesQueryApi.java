@@ -1,5 +1,6 @@
 package com.ssk.haoke.cloud.server.house.api.query;
 
+import com.ssk.haoke.cloud.server.house.api.dto.response.DropDownRespDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.HouseResourcesRespDto;
 import com.ssk.haoke.cloud.server.house.eo.PageInfo;
 import com.ssk.haoke.cloud.server.house.rest.RestResponse;
@@ -10,6 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 @FeignClient(name = "${haoke.manage.center.resources.api.name:haoke-manage-center-resources}",
         path = "/v1/house/resources",
@@ -45,4 +48,10 @@ public interface IHouseResourcesQueryApi {
     RestResponse<PageInfo<HouseResourcesRespDto>> getPageByCity(@PathVariable("cityName")String cityName,
                                                                 @RequestParam(value = "pageNum",defaultValue = "1") Integer pageNum,
                                                                 @RequestParam(value = "pageSize",defaultValue = "10") Integer pageSize);
+
+    @GetMapping("allCity")
+    @ResponseBody
+    @ApiOperation(value = "查询城市下拉列表",notes = "查询城市下拉列表")
+    RestResponse<List<DropDownRespDto>> getAllCity();
+
 }

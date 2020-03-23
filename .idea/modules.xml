@@ -17,6 +17,7 @@
       <module fileurl="file://$PROJECT_DIR$/haoke-portal-cloud-server/haoke-portal-cloud-server-ad/haoke-portal-cloud-server-ad-interface/haoke-portal-cloud-server-ad-interface.iml" filepath="$PROJECT_DIR$/haoke-portal-cloud-server/haoke-portal-cloud-server-ad/haoke-portal-cloud-server-ad-interface/haoke-portal-cloud-server-ad-interface.iml" />
       <module fileurl="file://$PROJECT_DIR$/haoke-portal-cloud-server/haoke-portal-cloud-server-ad/haoke-portal-cloud-server-ad-service/haoke-portal-cloud-server-ad-service.iml" filepath="$PROJECT_DIR$/haoke-portal-cloud-server/haoke-portal-cloud-server-ad/haoke-portal-cloud-server-ad-service/haoke-portal-cloud-server-ad-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/haoke-portal-cloud-server/haoke-portal-cloud-server-common/haoke-portal-cloud-server-common.iml" filepath="$PROJECT_DIR$/haoke-portal-cloud-server/haoke-portal-cloud-server-common/haoke-portal-cloud-server-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/haoke-portal-cloud-server/haoke-portal-cloud-server-im/haoke-portal-cloud-server-im.iml" filepath="$PROJECT_DIR$/haoke-portal-cloud-server/haoke-portal-cloud-server-im/haoke-portal-cloud-server-im.iml" />
       <module fileurl="file://$PROJECT_DIR$/ssk-haoke-manage.iml" filepath="$PROJECT_DIR$/ssk-haoke-manage.iml" />
     </modules>
   </component>

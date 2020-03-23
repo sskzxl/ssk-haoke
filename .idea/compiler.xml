@@ -24,6 +24,8 @@
         <module name="haoke-portal-cloud-server-ad-interface" />
         <module name="haoke-portal-cloud-server-ad-service" />
         <module name="haoke-portal-cloud-server-common" />
+        <module name="haoke-portal-cloud-server-im" />
+        <module name="ssk-haoke-im" />
         <module name="ssk-haoke-manage-api-server" />
       </profile>
       <profile name="Annotation profile for ssk-haoke-manage" enabled="true">
@@ -68,6 +70,11 @@
       <module name="haoke-portal-cloud-server-ad-interface" target="1.8" />
       <module name="haoke-portal-cloud-server-ad-service" target="1.8" />
       <module name="haoke-portal-cloud-server-common" target="1.8" />
+      <module name="haoke-portal-cloud-server-house-resources" target="1.8" />
+      <module name="haoke-portal-cloud-server-house-resources-interface" target="1.8" />
+      <module name="haoke-portal-cloud-server-house-resources-service" target="1.8" />
+      <module name="haoke-portal-cloud-server-im" target="1.8" />
+      <module name="ssk-haoke-im" target="1.8" />
       <module name="ssk-haoke-manage" target="1.8" />
     </bytecodeTargetLevel>
   </component>

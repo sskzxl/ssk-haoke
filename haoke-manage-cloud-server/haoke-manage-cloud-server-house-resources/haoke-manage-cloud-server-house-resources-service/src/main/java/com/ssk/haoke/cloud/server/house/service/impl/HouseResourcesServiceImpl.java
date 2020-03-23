@@ -5,6 +5,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Lists;
 import com.ssk.haoke.cloud.server.house.api.dto.request.HouseResourcesReqDto;
+import com.ssk.haoke.cloud.server.house.api.dto.response.DropDownRespDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.HouseResourcesRespDto;
 import com.ssk.haoke.cloud.server.house.eo.EstateEo;
 import com.ssk.haoke.cloud.server.house.eo.HouseResourcesEo;
@@ -22,6 +23,7 @@ import org.springframework.util.CollectionUtils;
 import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
@@ -63,16 +65,69 @@ public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo>
      * @return
      */
     public PageInfo<HouseResourcesRespDto> queryHouseResourcesList(String filter, Integer pageNum, Integer pageSize) {
-        HouseResourcesEo houseResourcesEo = new HouseResourcesEo();
+        HouseResourcesReqDto houseResourcesReqDto = new HouseResourcesReqDto();
         try {
-            houseResourcesEo = OBJECT_MAPPER.readValue(filter, HouseResourcesEo.class);
+            houseResourcesReqDto = OBJECT_MAPPER.readValue(filter, HouseResourcesReqDto.class);
         } catch (IOException e) {
             logger.error("string转对象异常：{}",e);
         }
+        String upPrice = houseResourcesReqDto.getUpPrice();
+        String lowPrice = houseResourcesReqDto.getLowPrice();
+        HouseResourcesEo houseResourcesEo = new HouseResourcesEo();
+        BeanUtils.copyProperties(houseResourcesReqDto,houseResourcesEo);
+        QueryWrapper<HouseResourcesEo> queryWrapper = new QueryWrapper<>();
+        if (StringUtils.isNotEmpty(lowPrice)){
+            queryWrapper.ge("rent",lowPrice);
+        }
+        if (StringUtils.isNotEmpty(upPrice)){
+            queryWrapper.le("rent",upPrice);
+        }
+        if (null != houseResourcesReqDto){
+            String address = houseResourcesReqDto.getAddress();
+            if (StringUtils.isNotEmpty(address)){
+                QueryWrapper<EstateEo> EstateWrapper = new QueryWrapper<>();
+                if (address.endsWith("区")){
+                    EstateWrapper.eq("area",address);
+                }else if (address.endsWith("市")){
+                    EstateWrapper.eq("city",address);
+                }
+                List<EstateEo> estateEos = houseEstateMapper.selectList(EstateWrapper);
+                List<Long> estateIds = estateEos.stream().map(e -> e.getId()).collect(Collectors.toList());
+                queryWrapper.in("estate_id",estateIds);
+            }
+        }
+        IPage<HouseResourcesEo> eoIPage = super.queryPageList(queryWrapper, pageNum, pageSize);
 
-        IPage<HouseResourcesEo> eoIPage = queryPageListByWhere(houseResourcesEo, pageNum, pageSize);
         PageInfo pageInfo = IPage2PageInfo(eoIPage);
         return pageInfo;
+    }
+
+    @Override
+    public List<DropDownRespDto> getAllCity() {
+        List<EstateEo> estateEos = houseEstateMapper.selectList(new QueryWrapper<>());
+        List<DropDownRespDto> results = Lists.newArrayList();
+        List<String> citys = Lists.newArrayList();
+        Map<String, List<EstateEo>> collect = estateEos.stream().collect(Collectors.groupingBy(e -> e.getCity()));
+        for (List<EstateEo> eos : collect.values()) {
+            //城市
+            DropDownRespDto dropDownRespDto = new DropDownRespDto();
+            List<Long> ids = eos.stream().map(estateEo -> estateEo.getId()).collect(Collectors.toList());
+            dropDownRespDto.setValue(ids);
+            dropDownRespDto.setLabel(eos.get(0).getCity());
+            //地区
+            Map<String, List<EstateEo>> area = eos.stream().collect(Collectors.groupingBy(e -> e.getArea()));
+            List<DropDownRespDto> areaResult = Lists.newArrayList();
+            for (List<EstateEo> areaList : area.values()) {
+                DropDownRespDto childRespDto = new DropDownRespDto();
+                childRespDto.setLabel(areaList.get(0).getArea());
+                List<Long> areaIds = areaList.stream().map(estateEo -> estateEo.getId()).collect(Collectors.toList());
+                childRespDto.setValue(areaIds);
+                areaResult.add(childRespDto);
+            }
+            dropDownRespDto.setChild(areaResult);
+            results.add(dropDownRespDto);
+        }
+        return results;
     }
 
     /**
@@ -138,7 +193,7 @@ public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo>
     private PageInfo<HouseResourcesRespDto> IPage2PageInfo(IPage eoIPage) {
         List<HouseResourcesEo> eos = eoIPage.getRecords();
         if (CollectionUtils.isEmpty(eos)){
-            return null;
+            return new PageInfo<>();
         }
         List<HouseResourcesRespDto> respDtos = Lists.newArrayList();
         for (HouseResourcesEo eo : eos) {

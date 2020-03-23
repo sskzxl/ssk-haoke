@@ -10,6 +10,10 @@
         <option value="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-user/pom.xml" />
         <option value="$PROJECT_DIR$/haoke-portal-cloud-server/pom.xml" />
         <option value="$PROJECT_DIR$/haoke-portal-api-server/pom.xml" />
+        <option value="$PROJECT_DIR$/haoke-portal-cloud-server/haoke-portal-cloud-server-house-resources/haoke-portal-cloud-server-house-resources-interface/pom.xml" />
+        <option value="$PROJECT_DIR$/haoke-portal-cloud-server/haoke-portal-cloud-server-house-resources/haoke-portal-cloud-server-house-resources-service/pom.xml" />
+        <option value="$PROJECT_DIR$/haoke-portal-cloud-server/haoke-portal-cloud-server-house-resources/pom.xml" />
+        <option value="$PROJECT_DIR$/haoke-portal-cloud-server/haoke-portal-cloud-server-im/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
@@ -21,6 +25,7 @@
         <option value="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/haoke-manage-dubbo-server-house-resources-dubbo-service/pom.xml" />
         <option value="$PROJECT_DIR$/haoke-manage-cloud-server/haoke-manage-cloud-server-house-resources/pom.xml" />
         <option value="$PROJECT_DIR$/haoke-manage-dubbo-server/haoke-manage-dubbo-server-house-resources/pom.xml" />
+        <option value="$PROJECT_DIR$/haoke-portal-cloud-server/haoke-portal-cloud-server-house-resources/pom.xml" />
       </set>
     </option>
   </component>

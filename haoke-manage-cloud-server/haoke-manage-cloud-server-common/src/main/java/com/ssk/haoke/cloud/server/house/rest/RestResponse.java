@@ -15,13 +15,13 @@ public class RestResponse<T> extends BaseVo{
     private String exceptCauseIp;
     private String exceptCauseApp;
     private String exceptClass;
-    private String resultCode;
+    private Integer resultCode;
     private String resultMsg;
     private T data;
     public static final RestResponse SUCCESS = new RestResponse();
-    public static final RestResponse<String> SUCCEED = new RestResponse("0", "success");
-    public static final RestResponse FAIL = new RestResponse("100000", "fail");
-    public static final RestResponse<String> FAILED = new RestResponse("100000", "fail");
+    public static final RestResponse<String> SUCCEED = new RestResponse(0, "success");
+    public static final RestResponse FAIL = new RestResponse(100000, "fail");
+    public static final RestResponse<String> FAILED = new RestResponse(100000, "fail");
     public static final RestResponse<Void> VOID = new RestResponse((Object)null);
     public static final RestResponse<Boolean> TRUE;
     public static final RestResponse<Boolean> FALSE;
@@ -31,17 +31,17 @@ public class RestResponse<T> extends BaseVo{
     }
 
     public RestResponse(T data) {
-        this.resultCode = "0";
+        this.resultCode = 0;
         this.resultMsg = "success";
         this.data = data;
     }
 
-    public RestResponse(String resultCode, String resutMessage) {
+    public RestResponse(Integer resultCode, String resutMessage) {
         this.resultCode = resultCode;
         this.resultMsg = resutMessage;
     }
 
-    public RestResponse(String resultCode, String resutMsg, T data) {
+    public RestResponse(Integer resultCode, String resutMsg, T data) {
         this.resultCode = resultCode;
         this.resultMsg = resutMsg;
         this.data = data;
@@ -107,11 +107,11 @@ public class RestResponse<T> extends BaseVo{
         this.data = data;
     }
 
-    public String getResultCode() {
+    public Integer getResultCode() {
         return this.resultCode;
     }
 
-    public void setResultCode(String resultCode) {
+    public void setResultCode(Integer resultCode) {
         this.resultCode = resultCode;
     }
 
@@ -136,7 +136,7 @@ public class RestResponse<T> extends BaseVo{
     }
 
     static {
-        TRUE = new RestResponse("0", "success", Boolean.TRUE);
-        FALSE = new RestResponse("0", "success", Boolean.FALSE);
+        TRUE = new RestResponse(0, "success", Boolean.TRUE);
+        FALSE = new RestResponse(0, "success", Boolean.FALSE);
     }
 }
