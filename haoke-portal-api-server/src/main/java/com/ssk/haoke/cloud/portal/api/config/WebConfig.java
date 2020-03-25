@@ -19,7 +19,7 @@ public class WebConfig implements WebMvcConfigurer {
     private UserInterceptor userInterceptor;
 
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(this.redisCacheInterceptor).addPathPatterns("/**");
+//        registry.addInterceptor(this.redisCacheInterceptor).addPathPatterns("/**");
 //        registry.addInterceptor(this.userInterceptor).addPathPatterns("/api/**");
     }
 

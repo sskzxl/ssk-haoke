@@ -133,6 +133,10 @@ public class HouseResourcesEo extends BasePojo {
      * 物业费
      */
     private String propertyCost;
+    /**
+     * 地区
+     */
+    private String address;
 
 
 }

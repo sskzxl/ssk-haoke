@@ -1,9 +1,9 @@
 package com.ssk.haoke.cloud.portal.api.controller;
 
 import com.ssk.haoke.cloud.portal.api.service.IAdService;
-import com.ssk.haoke.cloud.portal.api.vo.WebResult;
 import com.ssk.haoke.cloud.server.ad.pojo.Ad;
 import com.ssk.haoke.cloud.server.house.eo.PageInfo;
+import com.ssk.haoke.cloud.server.house.rest.RestResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,7 +27,7 @@ public class AdController {
      * @return
      */
     @GetMapping
-    public com.ssk.haoke.cloud.portal.api.vo.WebResult queryIndexAd(){
+    public RestResponse queryIndexAd(){
         PageInfo<Ad> pageInfo = this.IAdService.queryAdList(1,1,4);
         //所有广告对象
         List<Ad> records = pageInfo.getRecords();
@@ -39,6 +39,6 @@ public class AdController {
             map.put("original",ad.getUrl());
             result.add(map);
         }
-        return WebResult.ok(result);
+        return new RestResponse(result);
     }
 }

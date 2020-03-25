@@ -1,7 +1,7 @@
 package com.ssk.haoke.cloud.portal.api.service.impl;
 
 import com.ssk.haoke.cloud.portal.api.vo.HouseData;
-import com.ssk.haoke.cloud.portal.api.vo.SearchResult;
+import com.ssk.haoke.cloud.portal.api.vo.SearchRespDto;
 import org.apache.commons.lang3.reflect.FieldUtils;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.common.text.Text;
@@ -36,7 +36,7 @@ public class SearchService {
 
     public static final Integer ROWS = 10;
 
-    public SearchResult search(String keyWord, Integer page) {
+    public SearchRespDto search(String keyWord, Integer page) {
         PageRequest pageRequest = PageRequest.of(page - 1, ROWS); //设置分页参数
 
         SearchQuery searchQuery = new NativeSearchQueryBuilder()
@@ -103,7 +103,7 @@ public class SearchService {
                             }
                         });
 
-        return new SearchResult(housePage.getTotalPages(), housePage.getContent(), null);
+        return new SearchRespDto(housePage.getTotalPages(), housePage.getContent(), null,null);
 
     }
 

@@ -1,5 +1,6 @@
 package com.ssk.haoke.cloud.server.house.service.impl;
 
+import com.alibaba.nacos.client.utils.JSONUtils;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -67,7 +68,8 @@ public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo>
     public PageInfo<HouseResourcesRespDto> queryHouseResourcesList(String filter, Integer pageNum, Integer pageSize) {
         HouseResourcesReqDto houseResourcesReqDto = new HouseResourcesReqDto();
         try {
-            houseResourcesReqDto = OBJECT_MAPPER.readValue(filter, HouseResourcesReqDto.class);
+            houseResourcesReqDto = (HouseResourcesReqDto)JSONUtils.deserializeObject(filter, HouseResourcesReqDto.class);
+//            houseResourcesReqDto = OBJECT_MAPPER.readValue(filter, HouseResourcesReqDto.class);
         } catch (IOException e) {
             logger.error("string转对象异常：{}",e);
         }
@@ -86,14 +88,7 @@ public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo>
             String address = houseResourcesReqDto.getAddress();
             if (StringUtils.isNotEmpty(address)){
                 QueryWrapper<EstateEo> EstateWrapper = new QueryWrapper<>();
-                if (address.endsWith("区")){
-                    EstateWrapper.eq("area",address);
-                }else if (address.endsWith("市")){
-                    EstateWrapper.eq("city",address);
-                }
-                List<EstateEo> estateEos = houseEstateMapper.selectList(EstateWrapper);
-                List<Long> estateIds = estateEos.stream().map(e -> e.getId()).collect(Collectors.toList());
-                queryWrapper.in("estate_id",estateIds);
+               EstateWrapper.like("address",address);
             }
         }
         IPage<HouseResourcesEo> eoIPage = super.queryPageList(queryWrapper, pageNum, pageSize);
