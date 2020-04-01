@@ -6,6 +6,8 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
+import java.util.List;
+
 /**
  * <p>
  * 房源表
@@ -120,6 +122,8 @@ public class HouseResourcesRespDto extends BasePojo {
     @ApiModelProperty(name = "pic" , value = "图片")
     private String pic;
 
+    @ApiModelProperty(name = "picList" , value = "图片集合")
+    private List picList;
     /**
      * 描述
      */
@@ -147,7 +151,7 @@ public class HouseResourcesRespDto extends BasePojo {
 天
      */
     @ApiModelProperty(name = "time" , value = "看房时间")
-    private Integer time;
+    private String time;
 
     /**
      * 物业费

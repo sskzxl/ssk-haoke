@@ -44,6 +44,7 @@ public class HouseResourcesEo extends BasePojo {
      */
     private String buildingUnit;
 
+
     /**
      * 门牌号
      */
@@ -127,7 +128,7 @@ public class HouseResourcesEo extends BasePojo {
      * 看房时间，1-上午，2-中午，3-下午，4-晚上，5-全
 天
      */
-    private Integer time;
+    private String time;
 
     /**
      * 物业费
@@ -138,5 +139,13 @@ public class HouseResourcesEo extends BasePojo {
      */
     private String address;
 
+    /**
+     * 经度
+     */
+    private String lng;
 
+    /**
+     * 维度
+     */
+    private String lat;
 }

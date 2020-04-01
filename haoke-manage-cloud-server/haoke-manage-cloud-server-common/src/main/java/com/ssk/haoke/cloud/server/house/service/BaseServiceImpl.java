@@ -7,7 +7,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.ssk.haoke.cloud.server.pojo.BasePojo;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 public abstract class BaseServiceImpl<T extends BasePojo>{
@@ -68,7 +68,7 @@ public abstract class BaseServiceImpl<T extends BasePojo>{
      * @return
      */
     public Integer save(T record) {
-        record.setCreated(new Date());
+        record.setCreated(LocalDateTime.now());
         record.setUpdated(record.getCreated());
         return this.mapper.insert(record);
     }
@@ -79,7 +79,7 @@ public abstract class BaseServiceImpl<T extends BasePojo>{
      * @return
      */
     public Integer update(T record) {
-        record.setUpdated(new Date());
+        record.setUpdated(LocalDateTime.now());
         return this.mapper.updateById(record);
     }
     /**

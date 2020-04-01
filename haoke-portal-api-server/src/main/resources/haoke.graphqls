@@ -5,6 +5,7 @@ type HaokeQuery {
     HouseResources(id:Long):HouseResourcesRespDto
     HouseResourcesList(pageNum:Int, pageSize:Int):PageInfo
     IndexAdList:IndexAdResult
+    MapHouseData(lng:Float,lat:Float,zoom:Int):MapHouseDataResult
 }
 type HouseResourcesRespDto{
     id:Long!
@@ -40,6 +41,13 @@ type PageInfo{
 type IndexAdResult{
     list:[IndexAdResultData]
  }
+type MapHouseDataResult{
+    list:[MapHouseXY]
+}
+type MapHouseXY{
+    x:Float
+    y:Float
+}
  type IndexAdResultData{
     original:String
  }

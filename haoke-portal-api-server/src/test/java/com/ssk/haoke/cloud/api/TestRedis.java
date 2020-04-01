@@ -1,25 +1,32 @@
 package com.ssk.haoke.cloud.api;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.ssk.haoke.cloud.portal.api.service.impl.HouseResourcesServiceImpl;
 import com.ssk.haoke.cloud.portal.api.service.impl.UserLoginService;
-import org.apache.commons.io.FileUtils;
+import org.apache.http.HttpEntity;
+import org.apache.http.ParseException;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.util.EntityUtils;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.test.context.junit4.SpringRunner;
 
-import java.io.File;
 import java.io.IOException;
-import java.util.List;
 import java.util.Set;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest
+//@RunWith(SpringRunner.class)
+//@SpringBootTest
 public class TestRedis {
     @Autowired
     private RedisTemplate<String, String> redisTemplate;
-
+//    @Autowired
+//    private HttpClient httpClient;
+    @Autowired
+    private HouseResourcesServiceImpl houseResourcesService;
     @Test
     public void testSave() {
 
@@ -43,12 +50,47 @@ public class TestRedis {
     }
     @Test
     public void insertData() throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        CloseableHttpClient httpClient =  HttpClientBuilder.create().build();
+        String address = "广州";
+        HttpGet httpGet = new HttpGet("http://api.map.baidu.com/geocoder/v2/?address=" + address + "&ak=jpfEH2etB2gutGyHpxVdWy8ZrTxbu0qj&output=json");
+        // 响应模型
+        CloseableHttpResponse response = null;
+        try {
+            // 由客户端执行(发送)Get请求
+            response = httpClient.execute(httpGet);
+            // 从响应模型中获取响应实体
+            HttpEntity responseEntity = response.getEntity();
+            System.out.println("响应状态为:" + response.getStatusLine());
+            if (responseEntity != null) {
+                System.out.println("响应内容长度为:" + responseEntity.getContentLength());
+                String string = EntityUtils.toString(responseEntity);
 
-        List<String> lines = FileUtils.readLines(new File("E:\\JavaWebLearning\\HaoKe\\data.json"), "UTF-8");
-        for (String line : lines) {
-            System.out.println(line);
-            break;
+            }
+        } catch (ClientProtocolException e) {
+            e.printStackTrace();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                // 释放资源
+                if (httpClient != null) {
+                    httpClient.close();
+                }
+                if (response != null) {
+                    response.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+
+    }
+
+    public static void main(String[] args) {
+
 
     }
 }

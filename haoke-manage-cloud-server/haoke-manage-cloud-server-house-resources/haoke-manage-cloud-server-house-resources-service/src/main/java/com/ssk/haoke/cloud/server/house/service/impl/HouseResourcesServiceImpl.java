@@ -1,6 +1,7 @@
 package com.ssk.haoke.cloud.server.house.service.impl;
 
 import com.alibaba.nacos.client.utils.JSONUtils;
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -34,6 +35,7 @@ public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo>
     public static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
     @Resource
     private HouseEstateMapper houseEstateMapper;
+
     /**
      * @param id
      * @return
@@ -48,15 +50,14 @@ public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo>
      * @return -1:输入的参数不符合要求，0：数据插入数据库失败，1：成功
      */
     public int saveHouseResources(HouseResourcesReqDto houseResourcesReqDto) {
-        // 编写校验逻辑，如果教研不通过，返回-1
         if (StringUtils.isBlank(houseResourcesReqDto.getTitle())) {
             return -1;
         }
-        // 其他校验以及逻辑省略 ……
         HouseResourcesEo houseResourcesEo = new HouseResourcesEo();
         BeanUtils.copyProperties(houseResourcesReqDto, houseResourcesEo, HouseResourcesEo.class);
         return super.save(houseResourcesEo);
     }
+
 
     /**
      * 查询房源列表
@@ -68,33 +69,40 @@ public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo>
     public PageInfo<HouseResourcesRespDto> queryHouseResourcesList(String filter, Integer pageNum, Integer pageSize) {
         HouseResourcesReqDto houseResourcesReqDto = new HouseResourcesReqDto();
         try {
-            houseResourcesReqDto = (HouseResourcesReqDto)JSONUtils.deserializeObject(filter, HouseResourcesReqDto.class);
+            houseResourcesReqDto = (HouseResourcesReqDto) JSONUtils.deserializeObject(filter, HouseResourcesReqDto.class);
 //            houseResourcesReqDto = OBJECT_MAPPER.readValue(filter, HouseResourcesReqDto.class);
         } catch (IOException e) {
-            logger.error("string转对象异常：{}",e);
+            logger.error("string转对象异常：{}", e);
         }
-        String upPrice = houseResourcesReqDto.getUpPrice();
-        String lowPrice = houseResourcesReqDto.getLowPrice();
-        HouseResourcesEo houseResourcesEo = new HouseResourcesEo();
-        BeanUtils.copyProperties(houseResourcesReqDto,houseResourcesEo);
-        QueryWrapper<HouseResourcesEo> queryWrapper = new QueryWrapper<>();
-        if (StringUtils.isNotEmpty(lowPrice)){
-            queryWrapper.ge("rent",lowPrice);
-        }
-        if (StringUtils.isNotEmpty(upPrice)){
-            queryWrapper.le("rent",upPrice);
-        }
-        if (null != houseResourcesReqDto){
-            String address = houseResourcesReqDto.getAddress();
-            if (StringUtils.isNotEmpty(address)){
-                QueryWrapper<EstateEo> EstateWrapper = new QueryWrapper<>();
-               EstateWrapper.like("address",address);
-            }
-        }
+
+        QueryWrapper<HouseResourcesEo> queryWrapper = getHouseResourcesWrapper(houseResourcesReqDto);
+
         IPage<HouseResourcesEo> eoIPage = super.queryPageList(queryWrapper, pageNum, pageSize);
 
         PageInfo pageInfo = IPage2PageInfo(eoIPage);
         return pageInfo;
+    }
+
+    private QueryWrapper<HouseResourcesEo> getHouseResourcesWrapper(HouseResourcesReqDto houseResourcesReqDto) {
+        if (null == houseResourcesReqDto )return new QueryWrapper<>();
+        HouseResourcesEo houseResourcesEo = new HouseResourcesEo();
+        if (null != houseResourcesReqDto.getRentMethod() && 0 == houseResourcesReqDto.getRentMethod()) {
+            houseResourcesEo.setRentMethod(null);
+        }else {
+            houseResourcesEo.setRentMethod(houseResourcesReqDto.getRentMethod());
+        }
+        QueryWrapper<HouseResourcesEo> queryWrapper = new QueryWrapper<>(houseResourcesEo);
+        if (StringUtils.isNotEmpty(houseResourcesReqDto.getLowPrice())) {
+            queryWrapper.ge("rent", houseResourcesReqDto.getLowPrice());
+        }
+        if (StringUtils.isNotEmpty(houseResourcesReqDto.getUpPrice())) {
+            queryWrapper.le("rent", houseResourcesReqDto.getUpPrice());
+        }
+        String address = houseResourcesReqDto.getAddress();
+        if (StringUtils.isNotEmpty(address)) {
+            queryWrapper.like("address", address);
+        }
+        return queryWrapper;
     }
 
     @Override
@@ -137,34 +145,38 @@ public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo>
             return null;
         } else {
             HouseResourcesRespDto houseResourcesRespDto = new HouseResourcesRespDto();
-            BeanUtils.copyProperties(houseResourcesEo, houseResourcesRespDto,"facilities");
+            BeanUtils.copyProperties(houseResourcesEo, houseResourcesRespDto, "facilities", "pic");
             String facilities = houseResourcesEo.getFacilities();
-            if (StringUtils.isNotEmpty(facilities)){
-                String[] split = facilities.split(",");
-                houseResourcesRespDto.setFacilities(split);
+            //设备
+            if (StringUtils.isNotBlank(facilities)) {
+                String[] facilitiesArr = facilities.split(",");
+                houseResourcesRespDto.setFacilities(facilitiesArr);
             }
-            EstateEo estateEo = houseEstateMapper.selectById(houseResourcesEo.getEstateId());
-            houseResourcesRespDto.setAddress(estateEo.getAddress());
+            //图片
+            String pic = houseResourcesEo.getPic();
+            if (StringUtils.isNotBlank(pic)) {
+                houseResourcesRespDto.setPic(pic);
+            }
             return houseResourcesRespDto;
         }
     }
 
     @Override
-    public PageInfo<HouseResourcesRespDto> getPageByCity(String cityName,Integer pageNum,Integer pageSize) {
+    public PageInfo<HouseResourcesRespDto> getPageByCity(String cityName, Integer pageNum, Integer pageSize) {
         EstateEo estateEo = new EstateEo();
         estateEo.setCity(cityName);
         //查出所有该城市的楼盘
         List<EstateEo> estateEos = houseEstateMapper.selectList(new QueryWrapper<>(estateEo));
         //筛选所有楼盘id
         List<Long> estateIds = estateEos.stream().map(e -> e.getId()).collect(Collectors.toList());
-        if (!CollectionUtils.isEmpty(estateEos)){
+        if (!CollectionUtils.isEmpty(estateEos)) {
             HouseResourcesEo houseResourcesEo = new HouseResourcesEo();
             QueryWrapper<HouseResourcesEo> queryWrapper = new QueryWrapper<>(houseResourcesEo);
-            queryWrapper.in("estate_id",estateIds);
+            queryWrapper.in("estate_id", estateIds);
             IPage<HouseResourcesEo> houseResourcesEoIPage = this.queryPageList(queryWrapper, pageNum, pageSize);
             PageInfo<HouseResourcesRespDto> dtoPageInfo = IPage2PageInfo(houseResourcesEoIPage);
             return dtoPageInfo;
-        }else {
+        } else {
             return null;
         }
     }
@@ -187,20 +199,27 @@ public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo>
 
     private PageInfo<HouseResourcesRespDto> IPage2PageInfo(IPage eoIPage) {
         List<HouseResourcesEo> eos = eoIPage.getRecords();
-        if (CollectionUtils.isEmpty(eos)){
+        if (CollectionUtils.isEmpty(eos)) {
             return new PageInfo<>();
         }
         List<HouseResourcesRespDto> respDtos = Lists.newArrayList();
         for (HouseResourcesEo eo : eos) {
             HouseResourcesRespDto respDto = new HouseResourcesRespDto();
+            String pic = eo.getPic();
+            if (StringUtils.isNotBlank(pic)) {
+                //房源列表只显示第一张图片
+                respDto.setPic(pic);
+            }
             BeanUtils.copyProperties(eo, respDto);
             String facilities = eo.getFacilities();
-            if (StringUtils.isNotEmpty(facilities)){
+            if (StringUtils.isNotEmpty(facilities)) {
                 String[] split = facilities.split(",");
                 respDto.setFacilities(split);
             }
-            EstateEo estateEo = houseEstateMapper.selectById(eo.getEstateId());
-            respDto.setAddress(estateEo.getAddress());
+//            EstateEo estateEo = houseEstateMapper.selectById(eo.getEstateId());
+//            if (null != estateEo){
+//                respDto.setAddress(estateEo.getAddress());
+//            }
             respDtos.add(respDto);
         }
         PageInfo<HouseResourcesRespDto> respDtoPage = new PageInfo<>();

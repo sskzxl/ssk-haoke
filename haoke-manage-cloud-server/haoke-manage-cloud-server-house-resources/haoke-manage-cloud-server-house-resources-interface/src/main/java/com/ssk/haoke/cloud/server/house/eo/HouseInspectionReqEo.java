@@ -35,10 +35,6 @@ public class HouseInspectionReqEo extends BasePojo{
     private String address;
     @TableField("req_time")
     private Date reqTime;
-    @TableField("created")
-    private Date created;
-    @TableField("updated")
-    private Date updated;
 
 
 }

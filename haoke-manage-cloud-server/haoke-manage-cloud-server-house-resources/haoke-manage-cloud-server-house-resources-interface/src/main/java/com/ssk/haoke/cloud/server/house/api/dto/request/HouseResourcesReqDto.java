@@ -145,7 +145,7 @@ public class HouseResourcesReqDto extends BasePojo {
 天
      */
     @ApiModelProperty(name = "time" , value = "看房时间")
-    private Integer time;
+    private String time;
 
     /**
      * 物业费

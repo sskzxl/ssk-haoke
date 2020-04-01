@@ -8,9 +8,11 @@ import com.ssk.haoke.cloud.server.house.eo.PageInfo;
 import com.ssk.haoke.cloud.server.house.rest.RestResponse;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,6 +26,7 @@ public class HouseResourcesController {
     public static final Logger LOGGER = LoggerFactory.getLogger(HouseResourcesController.class);
     @Autowired
     private HouseResourcesServiceImpl houseResourcesService;
+
 
     /**
      * 新增房源
@@ -81,7 +84,16 @@ public class HouseResourcesController {
     @GetMapping("{id}")
     @ApiOperation(value = "根据id获取房源")
     public RestResponse<HouseResourcesRespDto> get(@PathVariable("id") Long id) {
-        return houseResourcesService.queryById(id);
+        RestResponse<HouseResourcesRespDto> response = houseResourcesService.queryById(id);
+        HouseResourcesRespDto data = response.getData();
+        String pic = data.getPic();
+        if (StringUtils.isNotBlank(pic)){
+            String[] picArr = pic.split(";");
+            List list = CollectionUtils.arrayToList(picArr);
+            data.setPicList(list);
+            response.setData(data);
+        }
+        return response;
     }
     @GetMapping("/cityName/{cityName}")
     @ApiOperation(value = "根据地区查询房源")
@@ -96,4 +108,9 @@ public class HouseResourcesController {
     RestResponse<List<DropDownRespDto>> getAllCity(){
         return houseResourcesService.getAllCity();
     }
+
+    /**
+     * 根据地址查询经纬度
+     * todo
+     */
 }

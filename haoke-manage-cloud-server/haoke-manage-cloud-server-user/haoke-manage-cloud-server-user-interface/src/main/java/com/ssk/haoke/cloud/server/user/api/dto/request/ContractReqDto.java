@@ -73,14 +73,7 @@ public class ContractReqDto extends BasePojo {
     /**
     *  
     */
-    @ApiModelProperty(name = "created", value = "")
-    private Date created;
 
-    /**
-    *  
-    */
-    @ApiModelProperty(name = "updated", value = "")
-    private Date updated;
 
 
 }
