@@ -6,7 +6,6 @@ import com.ssk.haoke.cloud.portal.api.vo.SearchRespDto;
 import com.ssk.haoke.cloud.server.house.rest.RestResponse;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,18 +35,19 @@ public class SearchController {
         SearchRespDto search = this.searchService.search(keyword, page);
 
         Set<String> hotWordSet = getHodWord(keyword,search);
-        Set<String> recommendWordSet = getRecommendWord(keyword);
+        Set<String> recommendWordSet = getRecommendWord(keyword,search);
         search.setHotWord(hotWordSet);
         search.setRecommendWord(recommendWordSet);
         return new RestResponse<>(search);
 
     }
 
-    private Set<String> getRecommendWord(String keyword) {
+    private Set<String> getRecommendWord(String keyword,SearchRespDto search) {
         String recommendRedisKey = "KEY_RECOMMEND_WORD";
-        if (StringUtils.isNotBlank(keyword)){
+        if (search.getTotalPage()>0){//统计 搜索结果大于0的关键词 的次数
             redisTemplate.opsForZSet().incrementScore(recommendRedisKey,keyword,1);
         }
+        //根据次数排行前五返回
         Set set = redisTemplate.opsForZSet().reverseRange(recommendRedisKey, 0, 4);
         return set;
     }
@@ -72,4 +72,8 @@ public class SearchController {
         return set;
     }
 
+    @GetMapping("insert")
+    public void insertDate(){
+        searchService.insertData();
+    }
 }

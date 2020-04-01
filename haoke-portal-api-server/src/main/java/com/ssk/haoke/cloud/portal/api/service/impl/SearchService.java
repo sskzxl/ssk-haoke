@@ -2,7 +2,9 @@ package com.ssk.haoke.cloud.portal.api.service.impl;
 
 import com.ssk.haoke.cloud.portal.api.vo.HouseData;
 import com.ssk.haoke.cloud.portal.api.vo.SearchRespDto;
+import com.ssk.haoke.cloud.server.house.api.query.IHouseResourcesQueryApi;
 import org.apache.commons.lang3.reflect.FieldUtils;
+import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.common.text.Text;
 import org.elasticsearch.index.query.Operator;
@@ -20,6 +22,8 @@ import org.springframework.data.elasticsearch.core.aggregation.AggregatedPage;
 import org.springframework.data.elasticsearch.core.aggregation.impl.AggregatedPageImpl;
 import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
 import org.springframework.data.elasticsearch.core.query.SearchQuery;
+import org.springframework.data.elasticsearch.core.query.UpdateQuery;
+import org.springframework.data.elasticsearch.core.query.UpdateQueryBuilder;
 import org.springframework.stereotype.Service;
 
 import java.lang.reflect.Field;
@@ -33,6 +37,8 @@ public class SearchService {
 
     @Autowired
     private ElasticsearchTemplate elasticsearchTemplate;
+    @Autowired
+    private IHouseResourcesQueryApi houseResourcesQueryApi;
 
     public static final Integer ROWS = 10;
 
@@ -107,5 +113,22 @@ public class SearchService {
 
     }
 
+    public void insertData(){
 
+//        List<HouseResourcesRespDto> records = houseResourcesQueryApi.queryHouseResourcesList(null, 1, 200).getData().getRecords();
+//        for (HouseResourcesRespDto record : records) {
+//            HouseData houseData = new HouseData();
+//            houseData.setId(String.valueOf(record.getId()));
+//            houseData.setAddress(record.getAddress());
+
+            IndexRequest indexRequest = new IndexRequest();
+            indexRequest.source("address","地址");
+            UpdateQuery updateQuery = new UpdateQueryBuilder()
+                .withId("0pwEuXABuZe7lB10LVSB")
+                .withClass(HouseData.class)
+                .withIndexRequest(indexRequest).build();
+        this.elasticsearchTemplate.update(updateQuery);
+//        }
+
+    }
 }

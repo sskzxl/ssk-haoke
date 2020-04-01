@@ -1,6 +1,8 @@
 package com.ssk.haoke.cloud.portal.api.vo;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.Document;
 
@@ -19,4 +21,5 @@ public class HouseData {
     private String houseType;
     private String rentMethod;
     private String time;
+    private String address;
 }
