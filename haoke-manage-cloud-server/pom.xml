@@ -13,7 +13,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>haoke-manage-cloud-server-house-resources</module>
-        <module>haoke-manage-cloud-server-generator</module>
         <module>haoke-manage-cloud-server-common</module>
     </modules>
     <dependencies>

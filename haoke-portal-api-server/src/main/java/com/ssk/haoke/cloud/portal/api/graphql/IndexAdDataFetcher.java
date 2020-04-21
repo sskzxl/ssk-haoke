@@ -14,7 +14,7 @@ import java.util.List;
 @Component
 public class IndexAdDataFetcher implements MyDataFetcher {
     @Autowired
-    private IAdService IAdService;
+    private IAdService adService;
     @Override
     public String fieldName() {
         return "IndexAdList";
@@ -22,7 +22,7 @@ public class IndexAdDataFetcher implements MyDataFetcher {
 
     @Override
     public Object dataFetcher(DataFetchingEnvironment environment) {
-        PageInfo<Ad> pageInfo = this.IAdService.queryAdList(1, 1, 3);
+        PageInfo<Ad> pageInfo = this.adService.queryAdList(1, 1, 3);
         List<Ad> ads = pageInfo.getRecords();
         List<IndexAdResultData> list = new ArrayList<>();
 

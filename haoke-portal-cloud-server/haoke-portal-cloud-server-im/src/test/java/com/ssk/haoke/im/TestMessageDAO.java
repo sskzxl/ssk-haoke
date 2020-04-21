@@ -1,8 +1,8 @@
 package com.ssk.haoke.im;
 
-import com.ssk.haoke.im.dao.MessageDAO;
-import com.ssk.haoke.im.pojo.Message;
-import com.ssk.haoke.im.pojo.User;
+import com.ssk.haoke.cloud.server.im.dao.MessageDAO;
+import com.ssk.haoke.cloud.server.im.pojo.Message;
+import com.ssk.haoke.cloud.server.im.pojo.User;
 import org.bson.types.ObjectId;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -16,6 +16,7 @@ public class UserRespDto extends BasePojo{
     /**
     *  主键
     */
+
     @ApiModelProperty(name = "id", value = "主键")
     private Long id;
 

@@ -43,30 +43,34 @@ public class SearchService {
     public static final Integer ROWS = 10;
 
     public SearchRespDto search(String keyWord, Integer page) {
-        PageRequest pageRequest = PageRequest.of(page - 1, ROWS); //设置分页参数
-
+        //设置分页参数
+        PageRequest pageRequest = PageRequest.of(page - 1, ROWS);
+        //构造查询条件
         SearchQuery searchQuery = new NativeSearchQueryBuilder()
                 .withQuery(QueryBuilders.multiMatchQuery(keyWord, "title", "title.pinyin"
                 ).operator(Operator.AND)) // match查询
                 .withPageable(pageRequest)
                 .withHighlightFields(new HighlightBuilder.Field("title")) // 设置高亮
                 .build();
-
+        //使用Spring集成的ElasticsearchTemplate
         AggregatedPage<HouseData> housePage =
                 this.elasticsearchTemplate.queryForPage(searchQuery,
-                        HouseData.class, new SearchResultMapper() {
-                            @Override
+                        HouseData.class,
+                        //匿名内部类
+                        new SearchResultMapper() {
+                            @Override//映射搜索结果到自定义的HouseData搜索结果对象
                             public <T> AggregatedPage<T> mapResults(SearchResponse response, Class<T> clazz, Pageable pageable) {
-
+                                //搜索命令为0，直接返回空集合
                                 if (response.getHits().totalHits == 0) {
                                     return new AggregatedPageImpl<>(Collections.emptyList(), pageable, 0L);
                                 }
-
                                 List<T> list = new ArrayList<>();
+                                //泛型 T 指房源结果类 HouseData.class
                                 for (SearchHit searchHit : response.getHits().getHits()) {
                                     T obj = (T) ReflectUtils.newInstance(clazz);
 
                                     try {
+                                        //写入id
                                         FieldUtils.writeField(obj, "id", searchHit.getId(), true);
                                     } catch (IllegalAccessException e) {
                                         e.printStackTrace();
@@ -74,26 +78,27 @@ public class SearchService {
 
                                     // 非高亮字段的数据写入
                                     for (Map.Entry<String, Object> entry : searchHit.getSourceAsMap().entrySet()) {
-
+                                        //获取对应字段
                                         Field field = FieldUtils.getField(clazz, entry.getKey(), true);
                                         if (null == field) {
                                             continue;
                                         }
 
                                         try {
+                                            //字段写入值
                                             FieldUtils.writeField(obj, entry.getKey(), entry.getValue(), true);
                                         } catch (IllegalAccessException e) {
                                             e.printStackTrace();
                                         }
                                     }
-
+                                    //高亮字段写入
                                     for (Map.Entry<String, HighlightField> entry : searchHit.getHighlightFields().entrySet()) {
+                                        //title字段，为text类型
                                         StringBuilder sb = new StringBuilder();
                                         Text[] fragments = entry.getValue().getFragments();
                                         for (Text fragment : fragments) {
                                             sb.append(fragment.toString());
                                         }
-
                                         // 写入高亮的内容
                                         try {
                                             FieldUtils.writeField(obj, entry.getKey(), sb.toString(), true);
@@ -104,7 +109,6 @@ public class SearchService {
 
                                     list.add(obj);
                                 }
-
                                 return new AggregatedPageImpl<>(list, pageable, response.getHits().totalHits);
                             }
                         });

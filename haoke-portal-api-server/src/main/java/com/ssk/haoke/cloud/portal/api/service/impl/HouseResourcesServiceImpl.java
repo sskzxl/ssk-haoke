@@ -41,7 +41,6 @@ public class HouseResourcesServiceImpl {
     //查询房源列表
     public RestResponse<PageInfo<HouseResourcesRespDto>> queryList(Integer pageNum, Integer pageSize, String filter) {
         RestResponse<PageInfo<HouseResourcesRespDto>> response = this.houseResourcesQueryApi.queryHouseResourcesList(filter, pageNum, pageSize);
-
         return response;
     }
     /**

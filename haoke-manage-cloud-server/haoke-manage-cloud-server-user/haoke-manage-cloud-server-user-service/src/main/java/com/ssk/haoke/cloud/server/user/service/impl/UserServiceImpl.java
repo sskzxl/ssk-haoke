@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Lists;
+import com.ssk.haoke.cloud.server.common.CommonConstant;
 import com.ssk.haoke.cloud.server.common.ServiceResponse;
 import com.ssk.haoke.cloud.server.common.UserConst;
 import com.ssk.haoke.cloud.server.house.eo.PageInfo;
@@ -97,21 +98,25 @@ public class UserServiceImpl extends BaseServiceImpl<UserEo> implements IUserSer
     public ServiceResponse<UserRespDto> login(String username, String password) {
         UserEo userEo = new UserEo();
         userEo.setUsername(username);
-        UserEo selectOne = userMapper.selectOne(new QueryWrapper<>(userEo));
-        if (null == selectOne){
-            return ServiceResponse.createByErrorMessage("用户不存在");
+        //查询数据库
+        UserEo result = userMapper.selectOne(new QueryWrapper<>(userEo));
+        if (null == result){
+            //用户不存在
+            return ServiceResponse.createByErrorMessage(CommonConstant.INVALID_USER);
         }
-        //用户名不存在的话上一个方法已经返回，所以user为空时，用户名是存在的。就是是密码错误
+        //密码md5算法加密
         String MD5Password = MD5Util.MD5EncodeUtf8(password);
         userEo.setPassword(MD5Password);
-        UserEo selectOne1 = userMapper.selectOne(new QueryWrapper<>(userEo));
-        if (null == selectOne1 ){
-            return ServiceResponse.createByErrorMessage("密码错误");
+        UserEo selectOne = userMapper.selectOne(new QueryWrapper<>(userEo));
+        if (null == selectOne ){
+            //密码错误
+            return ServiceResponse.createByErrorMessage(CommonConstant.PASSWORD_ERROR);
         }
         UserRespDto userRespDto = new UserRespDto();
-        BeanUtils.copyProperties(selectOne1,userRespDto);
+        BeanUtils.copyProperties(selectOne,userRespDto);
         userRespDto.setPassword(StringUtils.EMPTY);
-        return ServiceResponse.createBySuccess("登陆成功",userRespDto);
+        //返回用户信息和登陆状态
+        return ServiceResponse.createBySuccess(CommonConstant.LOGIN_SUCCESS,userRespDto);
     }
 
     @Override
@@ -132,7 +137,7 @@ public class UserServiceImpl extends BaseServiceImpl<UserEo> implements IUserSer
         if(insert == 0){
             return ServiceResponse.createByErrorMessage("注册失败");
         }
-        return ServiceResponse.createBySuccess("注册成功");
+        return ServiceResponse.createBySuccessResultMsg("注册成功");
     }
 
     @Override

@@ -50,7 +50,7 @@ public class MD5Util {
     }
 
     public static void main(String[] args) {
-        MD5Encode("ssk",null);
+        MD5Encode("1123866518",null);
     }
 
 

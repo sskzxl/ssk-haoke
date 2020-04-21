@@ -2,12 +2,14 @@ package com.ssk.haoke.cloud.portal.api.graphql;
 
 import graphql.schema.DataFetchingEnvironment;
 
-public interface MyDataFetcher{/**
- * 查询名称
- *
- * @return
- */
-String fieldName();
+public interface MyDataFetcher {
+    /**
+     * 查询名称
+     *
+     * @return
+     */
+    String fieldName();
+
     /**
      * 具体实现数据查询的逻辑
      *

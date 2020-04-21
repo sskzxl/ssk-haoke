@@ -1,5 +1,6 @@
 package com.ssk.haoke.cloud.portal.api.service.impl;
 
+import com.alibaba.fastjson.JSONObject;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ssk.haoke.cloud.portal.api.mapper.UserMapper;
 import com.ssk.haoke.cloud.portal.api.util.impl.RedisTokenManager;
@@ -14,7 +15,6 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 @Service("userLoginService")
 public class UserLoginService {
@@ -48,8 +48,10 @@ public class UserLoginService {
 //    }
 
     public ServiceResponse login(String username, String password){
+        //调用用户微服务判断登陆状态
         ServiceResponse<UserRespDto> login = userApi.login(username, password);
         if (login.isSuccess()){
+            //登陆成功，生产token返回给前端
             String token = tokenManager.getToken(login.getData());
             return ServiceResponse.createBySuccess(login.getResultMsg(),token);
         }
@@ -72,9 +74,13 @@ public class UserLoginService {
         String infoByToken = tokenManager.getUserInfoByToken(token);
         if (StringUtils.isNotEmpty(infoByToken)){
             try {
-                UserRespDto userRespDto = objectMapper.readValue(infoByToken, UserRespDto.class);
+//                ParserConfig parserConfig = new ParserConfig();
+//                parserConfig.addDeny("created");
+
+                UserRespDto userRespDto = JSONObject.parseObject(infoByToken, UserRespDto.class);
+//                UserRespDto userRespDto = objectMapper.readValue(infoByToken, UserRespDto.class);
                 return ServiceResponse.createBySuccess("获取当前登陆用户成功",userRespDto);
-            } catch (IOException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
                 return ServiceResponse.createByError();
             }

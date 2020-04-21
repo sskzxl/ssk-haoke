@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import graphql.ExecutionInput;
 import graphql.GraphQL;
 import io.swagger.annotations.Api;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,7 +17,7 @@ import java.util.Map;
 @Api
 public class GraphQLController {
 
-    @Autowired
+//    @Autowired
     private GraphQL graphQL;
 
     private static final ObjectMapper MAPPER = new ObjectMapper();

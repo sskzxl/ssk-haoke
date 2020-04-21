@@ -19,7 +19,7 @@ import java.util.List;
 @Data
 @Accessors(chain = true)
 @ApiModel(value = "HouseResourcesRespDto", description = "房源请求响应dto对象")
-public class HouseResourcesRespDto extends BasePojo {
+public class  HouseResourcesRespDto extends BasePojo {
 
 
     private static final long serialVersionUID = 8129783375107293156L;

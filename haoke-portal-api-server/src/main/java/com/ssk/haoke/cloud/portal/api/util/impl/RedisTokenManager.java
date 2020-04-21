@@ -1,6 +1,6 @@
 package com.ssk.haoke.cloud.portal.api.util.impl;
 
-import com.alibaba.nacos.client.utils.JSONUtils;
+import com.alibaba.fastjson.JSON;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ssk.haoke.cloud.portal.api.config.LoginRedisConfig;
 import com.ssk.haoke.cloud.portal.api.util.TokenManager;
@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
 
-import java.io.IOException;
 import java.io.Serializable;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
@@ -27,12 +26,8 @@ public class RedisTokenManager implements TokenManager ,Serializable {
     public String getToken(UserRespDto userRespDto) {
         //使用uuid作为源token
         String token = UUID.randomUUID().toString().replace("-", "");
-        String user = null;
-        try {
-            user = JSONUtils.serializeObject(userRespDto);
-        } catch (IOException e) {
-            logger.error("用户对象转换String失败:{}",e);
-        }
+        String user = JSON.toJSONString(userRespDto);
+
         this.redisTemplate.opsForValue().set(token,user,config.getExpires(),TimeUnit.SECONDS);
         return token;
     }

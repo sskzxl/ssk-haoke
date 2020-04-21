@@ -10,9 +10,13 @@ import com.ssk.haoke.cloud.server.house.api.dto.request.HouseResourcesReqDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.DropDownRespDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.HouseResourcesRespDto;
 import com.ssk.haoke.cloud.server.house.eo.EstateEo;
+import com.ssk.haoke.cloud.server.house.eo.HousePicEo;
 import com.ssk.haoke.cloud.server.house.eo.HouseResourcesEo;
 import com.ssk.haoke.cloud.server.house.eo.PageInfo;
+import com.ssk.haoke.cloud.server.house.mapper.AttachmentsMapper;
 import com.ssk.haoke.cloud.server.house.mapper.HouseEstateMapper;
+import com.ssk.haoke.cloud.server.house.mapper.HousePicMapper;
+import com.ssk.haoke.cloud.server.house.mapper.RHouseAttachmentsMapper;
 import com.ssk.haoke.cloud.server.house.service.BaseServiceImpl;
 import com.ssk.haoke.cloud.server.house.service.HouseResourcesService;
 import org.apache.commons.lang3.StringUtils;
@@ -26,6 +30,8 @@ import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 import java.util.stream.Collectors;
 
 @Service
@@ -35,7 +41,12 @@ public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo>
     public static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
     @Resource
     private HouseEstateMapper houseEstateMapper;
-
+    @Resource
+    private RHouseAttachmentsMapper houseAttachmentsMapper;
+    @Resource
+    private HousePicMapper housePicMapper;
+    @Resource
+    private AttachmentsMapper attachmentsMapper;
     /**
      * @param id
      * @return
@@ -69,17 +80,30 @@ public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo>
     public PageInfo<HouseResourcesRespDto> queryHouseResourcesList(String filter, Integer pageNum, Integer pageSize) {
         HouseResourcesReqDto houseResourcesReqDto = new HouseResourcesReqDto();
         try {
+            //根据filter条件的json字符串转换为请求dto对象
             houseResourcesReqDto = (HouseResourcesReqDto) JSONUtils.deserializeObject(filter, HouseResourcesReqDto.class);
-//            houseResourcesReqDto = OBJECT_MAPPER.readValue(filter, HouseResourcesReqDto.class);
         } catch (IOException e) {
             logger.error("string转对象异常：{}", e);
         }
-
+        //提取查询条件，转换为wrapper
         QueryWrapper<HouseResourcesEo> queryWrapper = getHouseResourcesWrapper(houseResourcesReqDto);
-
+        //查询结果
         IPage<HouseResourcesEo> eoIPage = super.queryPageList(queryWrapper, pageNum, pageSize);
-
-        PageInfo pageInfo = IPage2PageInfo(eoIPage);
+        //转换为结果对象
+        PageInfo<HouseResourcesRespDto> pageInfo = IPage2PageInfo(eoIPage);
+        //图片处理
+        List<HouseResourcesRespDto> records = pageInfo.getRecords();
+        if (!CollectionUtils.isEmpty(records)){
+            for (HouseResourcesRespDto record : records) {
+                QueryWrapper<HousePicEo> picQueryWrapper = new QueryWrapper<>();
+                picQueryWrapper.eq("house_resources_id",record.getId());
+                List<HousePicEo> housePicEos = housePicMapper.selectList(picQueryWrapper);
+                //列表显示第一张
+                if (!CollectionUtils.isEmpty(housePicEos)){
+                    record.setPic(housePicEos.get(0).getPath());
+                }
+            }
+        }
         return pageInfo;
     }
 
@@ -100,7 +124,10 @@ public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo>
         }
         String address = houseResourcesReqDto.getAddress();
         if (StringUtils.isNotEmpty(address)) {
-            queryWrapper.like("address", address);
+            if (address.endsWith("区")){
+                address = address.substring(0,address.length()-1);
+                queryWrapper.like("address", address);
+            }
         }
         return queryWrapper;
     }
@@ -153,10 +180,11 @@ public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo>
                 houseResourcesRespDto.setFacilities(facilitiesArr);
             }
             //图片
-            String pic = houseResourcesEo.getPic();
-            if (StringUtils.isNotBlank(pic)) {
-                houseResourcesRespDto.setPic(pic);
-            }
+            QueryWrapper<HousePicEo> queryWrapper = new QueryWrapper<>();
+            queryWrapper.eq("house_resources_id",id);
+            List<HousePicEo> housePicEos = housePicMapper.selectList(queryWrapper);
+            List<String> pics = housePicEos.stream().map(e -> e.getPath()).collect(Collectors.toList());
+            houseResourcesRespDto.setPicList(pics);
             return houseResourcesRespDto;
         }
     }
@@ -205,11 +233,6 @@ public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo>
         List<HouseResourcesRespDto> respDtos = Lists.newArrayList();
         for (HouseResourcesEo eo : eos) {
             HouseResourcesRespDto respDto = new HouseResourcesRespDto();
-            String pic = eo.getPic();
-            if (StringUtils.isNotBlank(pic)) {
-                //房源列表只显示第一张图片
-                respDto.setPic(pic);
-            }
             BeanUtils.copyProperties(eo, respDto);
             String facilities = eo.getFacilities();
             if (StringUtils.isNotEmpty(facilities)) {
@@ -222,7 +245,7 @@ public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo>
 //            }
             respDtos.add(respDto);
         }
-        PageInfo<HouseResourcesRespDto> respDtoPage = new PageInfo<>();
+        PageInfo<HouseResourcesRespDto> respDtoPage = new PageInfo<HouseResourcesRespDto>();
         respDtoPage.setRecords(respDtos);
         respDtoPage.setPageNum(Integer.parseInt(String.valueOf(eoIPage.getCurrent())));
         respDtoPage.setPageSize(Integer.parseInt(String.valueOf(eoIPage.getSize())));

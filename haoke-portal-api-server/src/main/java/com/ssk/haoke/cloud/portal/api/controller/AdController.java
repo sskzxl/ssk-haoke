@@ -20,7 +20,7 @@ import java.util.Map;
 @CrossOrigin
 public class AdController {
     @Autowired
-    private IAdService IAdService;
+    private IAdService adService;
 
     /**
      * 首页广告位
@@ -28,7 +28,7 @@ public class AdController {
      */
     @GetMapping
     public RestResponse queryIndexAd(){
-        PageInfo<Ad> pageInfo = this.IAdService.queryAdList(1,1,4);
+        PageInfo<Ad> pageInfo = this.adService.queryAdList(1,1,4);
         //所有广告对象
         List<Ad> records = pageInfo.getRecords();
         //根据前端要求的数据封装数据

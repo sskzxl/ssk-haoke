@@ -11,7 +11,6 @@
     <modules>
         <module>haoke-manage-api-server</module>
         <module>haoke-manage-cloud-server</module>
-        <module>haoke-eureka-center</module>
         <module>haoke-portal-cloud-server</module>
     </modules>
     <!--spring boot的支持-->

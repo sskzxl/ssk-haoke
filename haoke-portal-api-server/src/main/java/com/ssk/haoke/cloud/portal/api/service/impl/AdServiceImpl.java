@@ -7,7 +7,7 @@ import com.ssk.haoke.cloud.server.house.eo.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service("IAdService")
+@Service("adService")
 public class AdServiceImpl implements IAdService {
     @Autowired
     private IAdApi adApi;
