@@ -4,6 +4,7 @@ import com.ssk.haoke.cloud.server.house.api.IHouseRentMgmtApi;
 import com.ssk.haoke.cloud.server.house.api.IHouseResourcesApi;
 import com.ssk.haoke.cloud.server.house.api.dto.request.HouseResourcesReqDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.DropDownRespDto;
+import com.ssk.haoke.cloud.server.house.api.dto.response.HouseResourcesListRespDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.HouseResourcesRespDto;
 import com.ssk.haoke.cloud.server.house.api.query.IHouseRentMgmtQueryApi;
 import com.ssk.haoke.cloud.server.house.api.query.IHouseResourcesQueryApi;
@@ -39,8 +40,8 @@ public class HouseResourcesServiceImpl {
         return new RestResponse<>(result.getData() == 1);
     }
     //查询房源列表
-    public RestResponse<PageInfo<HouseResourcesRespDto>> queryList(Integer pageNum, Integer pageSize, String filter) {
-        RestResponse<PageInfo<HouseResourcesRespDto>> response = this.houseResourcesQueryApi.queryHouseResourcesList(filter, pageNum, pageSize);
+    public RestResponse<PageInfo<HouseResourcesListRespDto>> queryList(Integer pageNum, Integer pageSize, String filter) {
+        RestResponse<PageInfo<HouseResourcesListRespDto>> response = this.houseResourcesQueryApi.queryHouseResourcesList(filter, pageNum, pageSize);
         return response;
     }
     /**

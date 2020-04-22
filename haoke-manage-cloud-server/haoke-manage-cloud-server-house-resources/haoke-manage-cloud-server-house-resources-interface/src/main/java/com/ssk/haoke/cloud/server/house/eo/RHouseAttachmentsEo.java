@@ -20,7 +20,7 @@ public class RHouseAttachmentsEo extends BasePojo{
     /**
      *  房源id
      */
-    @TableField("house__resources_id")
+    @TableField("house_resources_id")
     private Long houseResourcesId;
 
     /**

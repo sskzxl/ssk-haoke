@@ -1,6 +1,7 @@
 package com.ssk.haoke.cloud.server.house.api.query;
 
 import com.ssk.haoke.cloud.server.house.api.dto.response.DropDownRespDto;
+import com.ssk.haoke.cloud.server.house.api.dto.response.HouseResourcesListRespDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.HouseResourcesRespDto;
 import com.ssk.haoke.cloud.server.house.eo.PageInfo;
 import com.ssk.haoke.cloud.server.house.rest.RestResponse;
@@ -28,9 +29,9 @@ public interface IHouseResourcesQueryApi {
      */
     @GetMapping(produces = {"application/json"})
     @ApiOperation(value = "分页查询房源",notes = "分页查询房源")
-    RestResponse<PageInfo<HouseResourcesRespDto>> queryHouseResourcesList(@RequestParam("filter") String filter,
-                                                                          @RequestParam(value = "pageNum",defaultValue = "1") Integer pageNum,
-                                                                          @RequestParam(value = "pageSize",defaultValue = "10") Integer pageSize);
+    RestResponse<PageInfo<HouseResourcesListRespDto>> queryHouseResourcesList(@RequestParam("filter") String filter,
+                                                                              @RequestParam(value = "pageNum",defaultValue = "1") Integer pageNum,
+                                                                              @RequestParam(value = "pageSize",defaultValue = "10") Integer pageSize);
 
     /**
      * 根据id删除房源

@@ -2,6 +2,7 @@ package com.ssk.haoke.cloud.server.house.service;
 
 import com.ssk.haoke.cloud.server.house.api.dto.request.HouseResourcesReqDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.DropDownRespDto;
+import com.ssk.haoke.cloud.server.house.api.dto.response.HouseResourcesListRespDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.HouseResourcesRespDto;
 import com.ssk.haoke.cloud.server.house.eo.PageInfo;
 
@@ -27,7 +28,7 @@ public interface HouseResourcesService {
      * @param pageSize
      * @return
      */
-    PageInfo<HouseResourcesRespDto> queryHouseResourcesList(String filter,Integer pageNum, Integer pageSize);
+    PageInfo<HouseResourcesListRespDto> queryHouseResourcesList(String filter, Integer pageNum, Integer pageSize);
 
     /**
      * 根据id查询房源

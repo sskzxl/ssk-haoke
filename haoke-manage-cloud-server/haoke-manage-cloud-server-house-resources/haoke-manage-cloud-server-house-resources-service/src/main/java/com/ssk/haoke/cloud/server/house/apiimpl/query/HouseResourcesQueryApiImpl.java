@@ -1,6 +1,7 @@
 package com.ssk.haoke.cloud.server.house.apiimpl.query;
 
 import com.ssk.haoke.cloud.server.house.api.dto.response.DropDownRespDto;
+import com.ssk.haoke.cloud.server.house.api.dto.response.HouseResourcesListRespDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.HouseResourcesRespDto;
 import com.ssk.haoke.cloud.server.house.api.query.IHouseResourcesQueryApi;
 import com.ssk.haoke.cloud.server.house.eo.PageInfo;
@@ -16,7 +17,7 @@ public class HouseResourcesQueryApiImpl implements IHouseResourcesQueryApi {
     @Resource
     private HouseResourcesService houseResourcesService;
     @Override
-    public RestResponse<PageInfo<HouseResourcesRespDto>> queryHouseResourcesList(String filter,Integer pageNum, Integer pageSize) {
+    public RestResponse<PageInfo<HouseResourcesListRespDto>> queryHouseResourcesList(String filter, Integer pageNum, Integer pageSize) {
         return new RestResponse<>(this.houseResourcesService.queryHouseResourcesList(filter,pageNum,pageSize));
     }
 

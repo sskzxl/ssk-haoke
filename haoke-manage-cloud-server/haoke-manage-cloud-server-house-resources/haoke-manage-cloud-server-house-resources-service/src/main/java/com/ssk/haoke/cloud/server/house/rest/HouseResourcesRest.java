@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ssk.haoke.cloud.server.house.api.IHouseResourcesApi;
 import com.ssk.haoke.cloud.server.house.api.dto.request.HouseResourcesReqDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.DropDownRespDto;
+import com.ssk.haoke.cloud.server.house.api.dto.response.HouseResourcesListRespDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.HouseResourcesRespDto;
 import com.ssk.haoke.cloud.server.house.api.query.IHouseResourcesQueryApi;
 import com.ssk.haoke.cloud.server.house.eo.PageInfo;
@@ -39,9 +40,9 @@ public class HouseResourcesRest implements IHouseResourcesApi,IHouseResourcesQue
     }
 
     @Override
-    public RestResponse<PageInfo<HouseResourcesRespDto>> queryHouseResourcesList(String filter,Integer pageNum, Integer pageSize) {
+    public RestResponse<PageInfo<HouseResourcesListRespDto>> queryHouseResourcesList(String filter, Integer pageNum, Integer pageSize) {
 
-        RestResponse<PageInfo<HouseResourcesRespDto>> response = houseResourcesQueryApi.queryHouseResourcesList(filter, pageNum, pageSize);
+        RestResponse<PageInfo<HouseResourcesListRespDto>> response = houseResourcesQueryApi.queryHouseResourcesList(filter, pageNum, pageSize);
         if (null == response.getData()){
             return RestResponse.FAIL;
         }else {

@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.experimental.Accessors;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -114,7 +115,7 @@ public class  HouseResourcesRespDto extends BasePojo {
      * 配套设施， 如：1洗衣机,2冰箱,3空调,4阳台,5卫生间,6电视,7热水器,8宽带,9沙发,10,衣柜
      */
     @ApiModelProperty(name = "facilities" , value = "配套设施如：1洗衣机,2冰箱,3空调,4阳台,5卫生间,6电视,7热水器,8宽带,9沙发,10,衣柜")
-    private String[] facilities;
+    private Map<Long, String> facilities;
 
     /**
      * 图片，最多5张
