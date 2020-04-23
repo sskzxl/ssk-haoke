@@ -3,6 +3,7 @@ package com.ssk.haoke.cloud.server.house.service.impl;
 import com.alibaba.nacos.client.utils.JSONUtils;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Lists;
 import com.ssk.haoke.cloud.server.common.AttachMap;
@@ -10,17 +11,19 @@ import com.ssk.haoke.cloud.server.house.api.dto.request.HouseResourcesReqDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.DropDownRespDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.HouseResourcesListRespDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.HouseResourcesRespDto;
+import com.ssk.haoke.cloud.server.house.api.vo.search.HouseDataVo;
 import com.ssk.haoke.cloud.server.house.eo.*;
-import com.ssk.haoke.cloud.server.house.mapper.AttachmentsMapper;
-import com.ssk.haoke.cloud.server.house.mapper.HouseEstateMapper;
-import com.ssk.haoke.cloud.server.house.mapper.HousePicMapper;
-import com.ssk.haoke.cloud.server.house.mapper.RHouseAttachmentsMapper;
+import com.ssk.haoke.cloud.server.house.mapper.*;
 import com.ssk.haoke.cloud.server.house.service.BaseServiceImpl;
 import com.ssk.haoke.cloud.server.house.service.HouseResourcesService;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.rocketmq.spring.core.RocketMQTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.Message;
+import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
@@ -43,6 +46,13 @@ public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo>
     private HousePicMapper housePicMapper;
     @Resource
     private AttachmentsMapper attachmentsMapper;
+//    @Autowired
+//    private RocketMQTemplate rocketMQTemplate;
+    @Resource
+    private HouseMapService houseMapService;
+    @Resource
+    private HouseResourcesMapper houseResourcesMapper;
+
     /**
      * @param id
      * @return
@@ -56,15 +66,68 @@ public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo>
      * @param houseResourcesReqDto
      * @return -1:输入的参数不符合要求，0：数据插入数据库失败，1：成功
      */
-    public int saveHouseResources(HouseResourcesReqDto houseResourcesReqDto) {
-        if (StringUtils.isBlank(houseResourcesReqDto.getTitle())) {
-            return -1;
-        }
+    public Long saveHouseResources( HouseResourcesReqDto houseResourcesReqDto) {
         HouseResourcesEo houseResourcesEo = new HouseResourcesEo();
-        BeanUtils.copyProperties(houseResourcesReqDto, houseResourcesEo, HouseResourcesEo.class);
-        return super.save(houseResourcesEo);
+        BeanUtils.copyProperties(houseResourcesReqDto, houseResourcesEo, "facilities","pic");
+        //添加时还没有通过审核
+        houseResourcesEo.setByReview(0);
+        Integer save = super.save(houseResourcesEo);
+        if (save == 1){
+            //图片新增
+            List<String> pics = houseResourcesReqDto.getPic();
+            addPics(pics,houseResourcesEo.getId());
+            //配套设施新增
+            Integer[] facilities = houseResourcesReqDto.getFacilities();
+            addFacilities(facilities,houseResourcesEo.getId());
+        }
+        return houseResourcesEo.getId();
+    }
+    public void synsHouseData(List<Long> ids){
+        QueryWrapper<HouseResourcesEo> queryWrapper = new QueryWrapper<>();
+        queryWrapper.in("id",ids);
+        queryWrapper.eq("by_review",0);//未通过审核的
+        List<HouseResourcesEo> houseResourcesEos = houseResourcesMapper.selectList(queryWrapper);
+        for (HouseResourcesEo houseResourcesEo : houseResourcesEos) {
+            //发送MQ消息给es和mongodb同步数据
+            HouseDataVo houseDataVo = new HouseDataVo();
+            BeanUtils.copyProperties(houseResourcesEo, houseDataVo);
+            String houseData = null;
+            if (null != houseDataVo){
+                try {
+                    houseData = OBJECT_MAPPER.writeValueAsString(houseDataVo);
+                } catch (JsonProcessingException e) {
+                    logger.error("houseDataVo转换String异常");
+                    e.printStackTrace();
+                }
+                Message message = MessageBuilder.withPayload(houseData).build();
+//                rocketMQTemplate.send("haoke-resources-syns-topic:DATA_SYNS",message);
+                houseMapService.addHouseData(houseResourcesEo.getAddress(),houseResourcesEo.getId(),houseResourcesEo.getTitle());
+            }
+            houseResourcesEo.setByReview(1);
+            houseResourcesMapper.updateById(houseResourcesEo);
+        }
+
     }
 
+    private void addPics(List<String> pics , Long id){
+        if (!CollectionUtils.isEmpty(pics)){
+            for (String pic : pics) {
+                HousePicEo housePicEo = new HousePicEo();
+                housePicEo.setPath(pic);
+                housePicEo.setHouseResourcesId(id);
+                housePicMapper.insert(housePicEo);
+            }
+        }
+    }
+    private void addFacilities(Integer[] facilities,Long id){
+        if (null != facilities && facilities.length > 0)
+            for (Integer facility : facilities) {
+                RHouseAttachmentsEo rHouseAttachmentsEo = new RHouseAttachmentsEo();
+                rHouseAttachmentsEo.setHouseResourcesId(id);
+                rHouseAttachmentsEo.setAttachmentsId(facility.longValue());
+                houseAttachmentsMapper.insert(rHouseAttachmentsEo);
+            }
+    }
 
     /**
      * 查询房源列表
@@ -125,6 +188,8 @@ public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo>
                 queryWrapper.like("address", address);
             }
         }
+        //通过审核的
+        queryWrapper.eq("by_review",1);
         return queryWrapper;
     }
 

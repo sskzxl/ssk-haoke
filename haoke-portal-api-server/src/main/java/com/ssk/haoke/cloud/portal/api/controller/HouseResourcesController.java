@@ -36,10 +36,8 @@ public class HouseResourcesController {
      */
     @PostMapping
     @ApiOperation(value = "新增房源")
-    public RestResponse<Boolean> save(@RequestBody HouseResourcesReqDto houseResourcesReqDto) {
-        System.out.println(houseResourcesReqDto);
-        RestResponse<Boolean> save = this.houseResourcesService.save(houseResourcesReqDto);
-        return save;
+    public RestResponse<Long> save(@RequestBody HouseResourcesReqDto houseResourcesReqDto) {
+        return this.houseResourcesService.save(houseResourcesReqDto);
     }
 
     /**
@@ -110,8 +108,9 @@ public class HouseResourcesController {
         return houseResourcesService.getAllCity();
     }
 
-    /**
-     * 根据地址查询经纬度
-     * todo
-     */
+    @PutMapping("review")
+    @ApiOperation(value = "审核房源,后端同步数据到es和mongo",notes = "审核房源")
+    public RestResponse sysnHouseData(List<Long> ids){
+        return this.houseResourcesService.sysnHouseData(ids);
+    }
 }

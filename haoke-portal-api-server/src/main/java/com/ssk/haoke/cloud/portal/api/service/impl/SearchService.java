@@ -1,9 +1,16 @@
 package com.ssk.haoke.cloud.portal.api.service.impl;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ssk.haoke.cloud.portal.api.vo.HouseData;
 import com.ssk.haoke.cloud.portal.api.vo.SearchRespDto;
 import com.ssk.haoke.cloud.server.house.api.query.IHouseResourcesQueryApi;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.reflect.FieldUtils;
+import org.apache.rocketmq.client.exception.MQClientException;
+import org.apache.rocketmq.client.producer.DefaultMQProducer;
+import org.apache.rocketmq.spring.annotation.MessageModel;
+import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;
+import org.apache.rocketmq.spring.core.RocketMQListener;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.common.text.Text;
@@ -12,6 +19,8 @@ import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.fetch.subphase.highlight.HighlightBuilder;
 import org.elasticsearch.search.fetch.subphase.highlight.HighlightField;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cglib.core.ReflectUtils;
 import org.springframework.data.domain.PageRequest;
@@ -20,12 +29,10 @@ import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.data.elasticsearch.core.SearchResultMapper;
 import org.springframework.data.elasticsearch.core.aggregation.AggregatedPage;
 import org.springframework.data.elasticsearch.core.aggregation.impl.AggregatedPageImpl;
-import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
-import org.springframework.data.elasticsearch.core.query.SearchQuery;
-import org.springframework.data.elasticsearch.core.query.UpdateQuery;
-import org.springframework.data.elasticsearch.core.query.UpdateQueryBuilder;
+import org.springframework.data.elasticsearch.core.query.*;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -33,7 +40,13 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class SearchService {
+@RocketMQMessageListener(
+        topic = "haoke-resources-syns-topic",
+        consumerGroup = "haoke-resources-consumer",
+        messageModel = MessageModel.BROADCASTING,
+        selectorExpression = "DATA_SYNS"
+)
+public class SearchService implements RocketMQListener<String>{
 
     @Autowired
     private ElasticsearchTemplate elasticsearchTemplate;
@@ -41,7 +54,8 @@ public class SearchService {
     private IHouseResourcesQueryApi houseResourcesQueryApi;
 
     public static final Integer ROWS = 10;
-
+    public static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
+    public static final Logger logger = LoggerFactory.getLogger(SearchService.class);
     public SearchRespDto search(String keyWord, Integer page) {
         //设置分页参数
         PageRequest pageRequest = PageRequest.of(page - 1, ROWS);
@@ -135,4 +149,33 @@ public class SearchService {
 //        }
 
     }
+
+    @Override
+    public void onMessage(String msg) {
+        System.out.println("接收到的同步房源消息->"+msg);
+        HouseData houseData = null;
+        try {
+            if (StringUtils.isNotBlank(msg)){
+                houseData = OBJECT_MAPPER.readValue(msg, HouseData.class);
+            }
+        } catch (IOException e) {
+            logger.error("String转换houseDataVo异常");
+            e.printStackTrace();
+        }
+        IndexQuery add = new IndexQueryBuilder().withObject(houseData).build();
+        String index = this.elasticsearchTemplate.index(add);
+        System.out.println(index);
+    }
+
+
+        public static void main(String[] args) throws MQClientException {
+            DefaultMQProducer producer = new DefaultMQProducer("haoke-resources-producer");
+            producer.setNamesrvAddr("192.168.19.131:9876");
+            producer.start();
+
+            producer.createTopic("broker_haoke", "haoke-resources-syns-topic", 8);
+            System.out.println("创建topic成功");
+            producer.shutdown();
+        }
+
 }

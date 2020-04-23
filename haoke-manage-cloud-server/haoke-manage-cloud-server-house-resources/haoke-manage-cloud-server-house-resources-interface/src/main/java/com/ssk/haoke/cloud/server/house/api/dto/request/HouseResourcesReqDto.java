@@ -6,6 +6,8 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
+import javax.validation.constraints.NotNull;
+import java.util.List;
 
 
 /**
@@ -29,6 +31,7 @@ public class HouseResourcesReqDto extends BasePojo {
      * 房源标题
      */
     @ApiModelProperty(name = "title" , value = "标题")
+    @NotNull
     private String title;
 
     /**
@@ -114,20 +117,24 @@ public class HouseResourcesReqDto extends BasePojo {
      * 配套设施， 如：1,2,3
      */
     @ApiModelProperty(name = "facilities" , value = "配套设施")
-    private Integer facilities;
+    private Integer[] facilities;
 
     /**
      * 图片，最多5张
      */
     @ApiModelProperty(name = "pic" , value = "图片")
-    private String pic;
+    private List<String> pic;
 
     /**
      * 描述
      */
     @ApiModelProperty(name = "houseDesc" , value = "描述")
     private String houseDesc;
-
+    /**
+     * 联系人
+     */
+    @ApiModelProperty(name = "contactId" , value = "联系人id")
+    private Long contactId;
     /**
      * 联系人
      */
@@ -164,8 +171,10 @@ public class HouseResourcesReqDto extends BasePojo {
     @ApiModelProperty(name = "upPrice" , value = "价格范围")
     private String upPrice;
     /**
-     * 地区
+     * 地址
      */
+    @ApiModelProperty(name = "address" , value = "地址")
+    @NotNull
     private String address;
 
 }

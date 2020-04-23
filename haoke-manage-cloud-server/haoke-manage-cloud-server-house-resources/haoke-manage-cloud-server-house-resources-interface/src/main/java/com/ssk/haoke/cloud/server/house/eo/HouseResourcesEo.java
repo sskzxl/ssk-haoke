@@ -99,7 +99,7 @@ public class HouseResourcesEo extends BasePojo {
     /**
      * 配套设施， 如：1,2,3
      */
-    private String facilities;
+    private Integer[] facilities;
 
 
     /**
@@ -144,4 +144,9 @@ public class HouseResourcesEo extends BasePojo {
      * 维度
      */
     private String lat;
+
+    /**
+     *  是否通过审核
+     */
+    private Integer byReview;
 }

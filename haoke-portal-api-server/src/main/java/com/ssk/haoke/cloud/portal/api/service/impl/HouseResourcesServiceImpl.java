@@ -10,11 +10,8 @@ import com.ssk.haoke.cloud.server.house.api.query.IHouseRentMgmtQueryApi;
 import com.ssk.haoke.cloud.server.house.api.query.IHouseResourcesQueryApi;
 import com.ssk.haoke.cloud.server.house.eo.PageInfo;
 import com.ssk.haoke.cloud.server.house.rest.RestResponse;
-import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -35,9 +32,8 @@ public class HouseResourcesServiceImpl {
         return this.houseResourcesApi.deleteHouseResource(id);
     }
     //增加房源
-    public RestResponse<Boolean> save(HouseResourcesReqDto houseResourcesReqDto) {
-        RestResponse<Integer> result = this.houseResourcesApi.saveHouseResources(houseResourcesReqDto);
-        return new RestResponse<>(result.getData() == 1);
+    public RestResponse<Long> save(HouseResourcesReqDto houseResourcesReqDto) {
+        return  this.houseResourcesApi.saveHouseResources(houseResourcesReqDto);
     }
     //查询房源列表
     public RestResponse<PageInfo<HouseResourcesListRespDto>> queryList(Integer pageNum, Integer pageSize, String filter) {
@@ -66,5 +62,8 @@ public class HouseResourcesServiceImpl {
     }
     public RestResponse<List<DropDownRespDto>> getAllCity(){
         return this.houseResourcesQueryApi.getAllCity();
+    }
+    public RestResponse sysnHouseData(List<Long> ids){
+        return this.houseResourcesApi.sysnHouseData(ids);
     }
 }

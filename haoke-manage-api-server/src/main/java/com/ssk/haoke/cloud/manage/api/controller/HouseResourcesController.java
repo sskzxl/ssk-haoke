@@ -2,6 +2,7 @@ package com.ssk.haoke.cloud.manage.api.controller;
 
 import com.ssk.haoke.cloud.manage.api.service.impl.HouseResourcesServiceImpl;
 import com.ssk.haoke.cloud.server.house.api.dto.request.HouseResourcesReqDto;
+import com.ssk.haoke.cloud.server.house.api.dto.response.HouseResourcesListRespDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.HouseResourcesRespDto;
 import com.ssk.haoke.cloud.server.house.eo.PageInfo;
 import com.ssk.haoke.cloud.server.house.rest.RestResponse;
@@ -29,10 +30,9 @@ public class HouseResourcesController {
      */
     @PostMapping
     @ApiOperation(value = "新增房源")
-    public RestResponse<Boolean> save(@RequestBody HouseResourcesReqDto houseResourcesReqDto) {
+    public RestResponse<Long> save(@RequestBody HouseResourcesReqDto houseResourcesReqDto) {
         System.out.println(houseResourcesReqDto);
-        RestResponse<Boolean> save = this.houseResourcesService.save(houseResourcesReqDto);
-        return save;
+        return this.houseResourcesService.save(houseResourcesReqDto);
     }
 
     /**
@@ -44,10 +44,10 @@ public class HouseResourcesController {
      */
     @GetMapping
     @ApiOperation(value = "查询房源列表")
-    public RestResponse<PageInfo<HouseResourcesRespDto>> list(@RequestParam(name = "filter")String filter,
-                                                              @RequestParam(name = "pageNum",
+    public RestResponse<PageInfo<HouseResourcesListRespDto>> list(@RequestParam(name = "filter")String filter,
+                                                                  @RequestParam(name = "pageNum",
                                                                       defaultValue = "1") Integer pageNum,
-                                                              @RequestParam(name = "pageSize",
+                                                                  @RequestParam(name = "pageSize",
                                                                       defaultValue = "10") Integer pageSize) {
         return this.houseResourcesService.queryList(pageNum, pageSize, filter);
     }

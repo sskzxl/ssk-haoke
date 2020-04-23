@@ -1,10 +1,13 @@
 package com.ssk.haoke.cloud.server.house.api;
+
 import com.ssk.haoke.cloud.server.house.api.dto.request.HouseResourcesReqDto;
 import com.ssk.haoke.cloud.server.house.rest.RestResponse;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @FeignClient(name = "${haoke.manage.center.resources.api.name:haoke-manage-center-resources}",
         path = "/v1/house/resources", url = "${haoke.manage.center.resources.api:}")
@@ -21,7 +24,7 @@ public interface IHouseResourcesApi {
     @PostMapping
     @ResponseBody
     @ApiOperation(value = "新增房源",notes = "新增房源")
-    RestResponse<Integer>saveHouseResources(@RequestBody HouseResourcesReqDto houseResourcesReqDto);
+    RestResponse<Long>saveHouseResources(@RequestBody HouseResourcesReqDto houseResourcesReqDto);
 
     //更新房源
     @PutMapping(produces = "application/json")
@@ -29,6 +32,9 @@ public interface IHouseResourcesApi {
     @ApiOperation(value = "更新房源",notes = "更新房源")
     RestResponse<Boolean> updateHouseResources(@RequestBody HouseResourcesReqDto houseResources);
 
+    @PutMapping("review")
+    @ApiOperation(value = "审核房源,后端同步数据到es和mongo",notes = "审核房源")
+    public RestResponse sysnHouseData(@RequestBody List<Long> ids);
 
 }
 

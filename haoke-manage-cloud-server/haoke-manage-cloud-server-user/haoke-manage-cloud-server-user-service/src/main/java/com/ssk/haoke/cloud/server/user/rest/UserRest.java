@@ -10,6 +10,7 @@ import com.ssk.haoke.cloud.server.user.api.query.IUserQueryApi;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping("/v1/user")
@@ -47,7 +48,11 @@ public class UserRest implements IUserApi,IUserQueryApi {
 
     @Override
     public RestResponse<UserRespDto> queryById(@PathVariable("id") Long id) {
-        return userQueryApi.queryById(id);
+
+        RestResponse<UserRespDto> response = userQueryApi.queryById(id);
+        LocalDateTime created = response.getData().getCreated();
+        System.out.println(created);
+        return response;
     }
 
     @Override

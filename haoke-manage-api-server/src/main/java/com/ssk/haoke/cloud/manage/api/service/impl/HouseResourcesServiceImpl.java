@@ -3,6 +3,7 @@ package com.ssk.haoke.cloud.manage.api.service.impl;
 import com.ssk.haoke.cloud.server.house.api.IHouseRentMgmtApi;
 import com.ssk.haoke.cloud.server.house.api.IHouseResourcesApi;
 import com.ssk.haoke.cloud.server.house.api.dto.request.HouseResourcesReqDto;
+import com.ssk.haoke.cloud.server.house.api.dto.response.HouseResourcesListRespDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.HouseResourcesRespDto;
 import com.ssk.haoke.cloud.server.house.api.query.IHouseRentMgmtQueryApi;
 import com.ssk.haoke.cloud.server.house.api.query.IHouseResourcesQueryApi;
@@ -29,13 +30,12 @@ public class HouseResourcesServiceImpl {
         return this.houseResourcesApi.deleteHouseResource(id);
     }
     //增加房源
-    public RestResponse<Boolean> save(HouseResourcesReqDto houseResourcesReqDto) {
-        RestResponse<Integer> result = this.houseResourcesApi.saveHouseResources(houseResourcesReqDto);
-        return new RestResponse<>(result.getData() == 1);
+    public RestResponse<Long> save(HouseResourcesReqDto houseResourcesReqDto) {
+        return this.houseResourcesApi.saveHouseResources(houseResourcesReqDto);
     }
     //查询房源列表
-    public RestResponse<PageInfo<HouseResourcesRespDto>> queryList(Integer pageNum, Integer pageSize, String filter) {
-        RestResponse<PageInfo<HouseResourcesRespDto>> response = this.houseResourcesQueryApi.queryHouseResourcesList(filter, pageNum, pageSize);
+    public RestResponse<PageInfo<HouseResourcesListRespDto>> queryList(Integer pageNum, Integer pageSize, String filter) {
+        RestResponse<PageInfo<HouseResourcesListRespDto>> response = this.houseResourcesQueryApi.queryHouseResourcesList(filter, pageNum, pageSize);
 
         return response;
     }

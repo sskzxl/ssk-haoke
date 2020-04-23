@@ -20,7 +20,7 @@ public interface HouseResourcesService {
      * @param houseResourcesReqDto
      * @return -1:输入的参数不符合要求，0：数据插入数据库失败，1：成功
      */
-    int saveHouseResources(HouseResourcesReqDto houseResourcesReqDto);
+    Long saveHouseResources(HouseResourcesReqDto houseResourcesReqDto);
 
     /**
      * 查询房源列表
@@ -45,4 +45,6 @@ public interface HouseResourcesService {
     PageInfo<HouseResourcesRespDto> getPageByCity(String cityName,Integer pageNum,Integer pageSize);
 
     List<DropDownRespDto> getAllCity();
+
+    public void synsHouseData(List<Long> ids);
 }

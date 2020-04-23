@@ -12,6 +12,7 @@ import com.ssk.haoke.cloud.server.house.eo.PageInfo;
 import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -35,27 +36,18 @@ public class HouseResourcesRest implements IHouseResourcesApi,IHouseResourcesQue
     }
 
     @Override
-    public RestResponse<Integer> saveHouseResources(HouseResourcesReqDto houseResourcesReqDto) {
+    public RestResponse<Long> saveHouseResources(@Validated HouseResourcesReqDto houseResourcesReqDto) {
         return houseResourcesApi.saveHouseResources(houseResourcesReqDto);
     }
 
     @Override
     public RestResponse<PageInfo<HouseResourcesListRespDto>> queryHouseResourcesList(String filter, Integer pageNum, Integer pageSize) {
-
-        RestResponse<PageInfo<HouseResourcesListRespDto>> response = houseResourcesQueryApi.queryHouseResourcesList(filter, pageNum, pageSize);
-        if (null == response.getData()){
-            return RestResponse.FAIL;
-        }else {
-            return response;
-        }
+        return houseResourcesQueryApi.queryHouseResourcesList(filter, pageNum, pageSize);
     }
 
     @Override
     public RestResponse<HouseResourcesRespDto> queryHouseResourcesById(Long id) {
         RestResponse<HouseResourcesRespDto> response = houseResourcesQueryApi.queryHouseResourcesById(id);
-        if (null == response.getData()){
-            return RestResponse.FAIL;
-        }
         return response;
     }
 
@@ -90,5 +82,9 @@ public class HouseResourcesRest implements IHouseResourcesApi,IHouseResourcesQue
     @Override
     public RestResponse<List<DropDownRespDto>> getAllCity() {
         return houseResourcesQueryApi.getAllCity();
+    }
+    @Override
+    public RestResponse sysnHouseData(List<Long> ids){
+        return houseResourcesApi.sysnHouseData(ids);
     }
 }
