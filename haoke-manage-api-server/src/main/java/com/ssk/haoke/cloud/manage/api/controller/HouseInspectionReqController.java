@@ -3,13 +3,14 @@ package com.ssk.haoke.cloud.manage.api.controller;
 import com.ssk.haoke.cloud.manage.api.service.impl.HouseInspectionReqServiceImpl;
 import com.ssk.haoke.cloud.server.house.api.dto.request.HouseInspectionReqReqDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.HouseInspectionRespDto;
-import com.ssk.haoke.cloud.server.house.eo.PageInfo;
 import com.ssk.haoke.cloud.server.house.rest.RestResponse;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("house/inspection")
@@ -41,10 +42,10 @@ public class HouseInspectionReqController {
      */
     @GetMapping
     @ApiOperation(value = "查询房源列表")
-    public RestResponse<PageInfo<HouseInspectionRespDto>> list(@RequestParam(name = "filter")String filter,
-                                                               @RequestParam(name = "pageNum",
+    public RestResponse<List<Map<String,String>>> list(@RequestParam(name = "filter")String filter,
+                                                       @RequestParam(name = "pageNum",
                                                                      defaultValue = "1") Integer pageNum,
-                                                               @RequestParam(name = "pageSize",
+                                                       @RequestParam(name = "pageSize",
                                                                      defaultValue = "10") Integer pageSize) {
         return this.inspectionReqService.queryList(pageNum, pageSize, filter);
     }

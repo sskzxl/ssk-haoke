@@ -30,5 +30,10 @@ public class HouseInspectionRespDto extends HouseResourcesBaseRespDto {
      */
     @ApiModelProperty(name = "reqStatus", value = "请求状态（0、待确认 1、待看房 2、已确认 3、已取消）")
     private String reqStatus;
+    /**
+     *  地址
+     */
+    @ApiModelProperty(name = "address", value = "地址")
+    private String address;
 
 }

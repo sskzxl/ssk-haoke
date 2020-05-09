@@ -14,6 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.CollectionUtils;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -36,7 +37,8 @@ public class HouseResourcesController {
      */
     @PostMapping
     @ApiOperation(value = "新增房源")
-    public RestResponse<Long> save(@RequestBody HouseResourcesReqDto houseResourcesReqDto) {
+    public RestResponse<Long> save(@RequestBody @Validated HouseResourcesReqDto houseResourcesReqDto) {
+        System.out.println(houseResourcesReqDto);
         return this.houseResourcesService.save(houseResourcesReqDto);
     }
 
@@ -85,14 +87,17 @@ public class HouseResourcesController {
     public RestResponse<HouseResourcesRespDto> get(@PathVariable("id") Long id) {
         RestResponse<HouseResourcesRespDto> response = houseResourcesService.queryById(id);
         HouseResourcesRespDto data = response.getData();
-        String pic = data.getPic();
-        if (StringUtils.isNotBlank(pic)){
-            String[] picArr = pic.split(";");
-            List list = CollectionUtils.arrayToList(picArr);
-            data.setPicList(list);
-            response.setData(data);
+        if (null != data){
+            String pic = data.getPic();
+            if (StringUtils.isNotBlank(pic)){
+                String[] picArr = pic.split(";");
+                List list = CollectionUtils.arrayToList(picArr);
+                data.setPicList(list);
+                response.setData(data);
+            }
+            return response;
         }
-        return response;
+        return RestResponse.FAIL;
     }
     @GetMapping("/cityName/{cityName}")
     @ApiOperation(value = "根据地区查询房源")

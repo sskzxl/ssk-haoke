@@ -5,12 +5,15 @@ import com.ssk.haoke.cloud.server.house.api.dto.request.HouseBookingReqDto;
 import com.ssk.haoke.cloud.server.house.api.dto.request.HouseInspectionReqReqDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.HouseBookingRespDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.HouseInspectionRespDto;
+import com.ssk.haoke.cloud.server.house.api.dto.response.HouseResourcesRespDto;
 import com.ssk.haoke.cloud.server.house.api.query.IHouseInspectionReqQueryApi;
-import com.ssk.haoke.cloud.server.house.eo.PageInfo;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.List;
+import java.util.Map;
+
 @RestController
 @RequestMapping("/v1/houseinspectionreq")
 public class HouseInspectionReqRest implements IHouseInspectionReqApi,IHouseInspectionReqQueryApi {
@@ -39,12 +42,12 @@ public class HouseInspectionReqRest implements IHouseInspectionReqApi,IHouseInsp
     }
 
     @Override
-    public RestResponse<PageInfo<HouseInspectionRespDto>> queryByPage(String filter, Integer pageNum, Integer pageSize) {
+    public RestResponse<List<Map<String,String>>> queryByPage(String filter, Integer pageNum, Integer pageSize) {
         return houseInspectionReqQueryApi.queryByPage(filter, pageNum, pageSize);
     }
 
     @Override
-    public RestResponse<HouseBookingRespDto> getHouseBooking(Long id) {
+    public RestResponse<HouseResourcesRespDto> getHouseBooking(Long id) {
         return houseInspectionReqQueryApi.getHouseBooking(id);
     }
 
@@ -59,8 +62,20 @@ public class HouseInspectionReqRest implements IHouseInspectionReqApi,IHouseInsp
     }
 
 
+
+
     @Override
     public RestResponse<Boolean> commitBooking(HouseBookingReqDto houseBookingReqDto) {
         return houseInspectionReqApi.commitBooking(houseBookingReqDto);
+    }
+
+    @Override
+    public RestResponse updateStatus(Integer bookingStatus) {
+        return null;
+    }
+
+    @Override
+    public RestResponse<HouseBookingRespDto> getHouseBookingByReqId(Long id) {
+        return houseInspectionReqQueryApi.getHouseBookingByReqId(id);
     }
 }

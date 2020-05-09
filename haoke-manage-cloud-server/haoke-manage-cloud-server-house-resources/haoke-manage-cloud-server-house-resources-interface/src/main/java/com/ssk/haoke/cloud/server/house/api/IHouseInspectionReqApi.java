@@ -51,5 +51,9 @@ public interface IHouseInspectionReqApi {
 
     @PostMapping("/commit")
     @ApiOperation(value = "提交租客提交看房预约",notes = "提交租客提交看房预约")
-    RestResponse<Boolean>commitBooking(@RequestBody HouseBookingReqDto houseBookingReqDto);
+    RestResponse commitBooking(@RequestBody HouseBookingReqDto houseBookingReqDto);
+
+    @PutMapping("/updateStatus")
+    @ApiOperation(value = "提交租客提交看房预约",notes = "提交租客提交看房预约")
+    RestResponse updateStatus(@RequestParam("bookingStatus") Integer bookingStatus);
 }

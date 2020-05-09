@@ -28,7 +28,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
 import javax.annotation.Resource;
+import javax.validation.constraints.NotNull;
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -68,7 +70,7 @@ public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo>
      */
     public Long saveHouseResources( HouseResourcesReqDto houseResourcesReqDto) {
         HouseResourcesEo houseResourcesEo = new HouseResourcesEo();
-        BeanUtils.copyProperties(houseResourcesReqDto, houseResourcesEo, "facilities","pic");
+        BeanUtils.copyProperties(houseResourcesReqDto, houseResourcesEo, "attachments","pic");
         //添加时还没有通过审核
         houseResourcesEo.setByReview(0);
         Integer save = super.save(houseResourcesEo);
@@ -77,7 +79,7 @@ public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo>
             List<String> pics = houseResourcesReqDto.getPic();
             addPics(pics,houseResourcesEo.getId());
             //配套设施新增
-            Integer[] facilities = houseResourcesReqDto.getFacilities();
+            Integer[] facilities = houseResourcesReqDto.getAttachments();
             addFacilities(facilities,houseResourcesEo.getId());
         }
         return houseResourcesEo.getId();
@@ -115,6 +117,8 @@ public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo>
                 HousePicEo housePicEo = new HousePicEo();
                 housePicEo.setPath(pic);
                 housePicEo.setHouseResourcesId(id);
+                housePicEo.setUpdated(LocalDateTime.now());
+                housePicEo.setCreated(LocalDateTime.now());
                 housePicMapper.insert(housePicEo);
             }
         }
@@ -169,6 +173,7 @@ public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo>
     private QueryWrapper<HouseResourcesEo> getHouseResourcesWrapper(HouseResourcesReqDto houseResourcesReqDto) {
         if (null == houseResourcesReqDto )return new QueryWrapper<>();
         HouseResourcesEo houseResourcesEo = new HouseResourcesEo();
+        BeanUtils.copyProperties(houseResourcesReqDto,houseResourcesEo,"rentMethod","rent","address","title");
         if (null != houseResourcesReqDto.getRentMethod() && 0 == houseResourcesReqDto.getRentMethod()) {
             houseResourcesEo.setRentMethod(null);
         }else {
@@ -188,8 +193,12 @@ public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo>
                 queryWrapper.like("address", address);
             }
         }
-        //通过审核的
-        queryWrapper.eq("by_review",1);
+        @NotNull String title = houseResourcesReqDto.getTitle();
+        if (StringUtils.isNotEmpty(title)) {
+            queryWrapper.like("title", title);
+
+        }
+
         return queryWrapper;
     }
 
@@ -298,6 +307,7 @@ public class HouseResourcesServiceImpl extends BaseServiceImpl<HouseResourcesEo>
         }
         HouseResourcesEo houseResourcesEo = new HouseResourcesEo();
         BeanUtils.copyProperties(houseResourcesReqDto, houseResourcesEo, HouseResourcesEo.class);
+        houseResourcesEo.setByReview(0);//修改完需要重新审核
         Integer update = super.update(houseResourcesEo);
         return update == 1;
     }

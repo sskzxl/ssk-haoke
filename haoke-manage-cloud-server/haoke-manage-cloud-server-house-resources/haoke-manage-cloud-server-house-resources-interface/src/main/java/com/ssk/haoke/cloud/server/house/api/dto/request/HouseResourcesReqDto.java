@@ -93,7 +93,7 @@ public class HouseResourcesReqDto extends BasePojo {
      * 使用面积
      */
     @ApiModelProperty(name = "useArea" , value = "使用面积")
-    private String useArea;
+    private Integer useArea;
 
     /**
      * 楼层，如：8/26
@@ -116,8 +116,8 @@ public class HouseResourcesReqDto extends BasePojo {
     /**
      * 配套设施， 如：1,2,3
      */
-    @ApiModelProperty(name = "facilities" , value = "配套设施")
-    private Integer[] facilities;
+    @ApiModelProperty(name = "attachments" , value = "配套设施")
+    private Integer[] attachments;
 
     /**
      * 图片，最多5张
@@ -176,5 +176,9 @@ public class HouseResourcesReqDto extends BasePojo {
     @ApiModelProperty(name = "address" , value = "地址")
     @NotNull
     private String address;
-
+    /**
+     *  是否通过审核
+     */
+    @ApiModelProperty(name = "byReview" , value = "是否通过审核")
+    private Integer byReview;
 }

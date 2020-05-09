@@ -4,9 +4,11 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.ssk.haoke.cloud.server.pojo.BasePojo;
 import lombok.Data;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -26,13 +28,15 @@ public class HouseInspectionReqEo extends BasePojo{
     @TableField("house_resources_id")
     private Long houseResourcesId;
     @TableField("start_time")
-    private Date startTime;
+    @JsonFormat(pattern = "yyyy-MM-dd hh:MM:ss")
+    private LocalDateTime startTime;
+    @JsonFormat(pattern = "yyyy-MM-dd hh:MM:ss")
     @TableField("end_time")
-    private Date endTime;
+    private LocalDateTime endTime;
     @TableField("req_status")
     private Integer reqStatus;
-    @TableField("address")
-    private String address;
+    @TableField("req_msg")
+    private String reqMsg;
     @TableField("req_time")
     private Date reqTime;
 

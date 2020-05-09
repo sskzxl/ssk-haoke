@@ -58,7 +58,7 @@ public class PicUploadFileSystemService{// 允许上传的格式
         }
 
         private String getFilePath(String sourceFileName) {
-            String baseFolder = "E:\\JavaWebLearning\\taotao\\picture\\uploadPic" + File.separator
+            String baseFolder = "E:\\JavaWebLearning\\haoke" + File.separator
                     + "images";
             Date nowDate = new Date();
 // yyyy/MM/dd

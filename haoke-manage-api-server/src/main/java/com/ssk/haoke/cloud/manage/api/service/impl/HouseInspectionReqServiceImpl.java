@@ -9,6 +9,8 @@ import com.ssk.haoke.cloud.server.house.rest.RestResponse;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
+import java.util.Map;
 
 @Service("houseInspectionReqService")
 public class HouseInspectionReqServiceImpl {
@@ -27,8 +29,8 @@ public class HouseInspectionReqServiceImpl {
         return result;
     }
     //查询看房请求列表
-    public RestResponse<PageInfo<HouseInspectionRespDto>> queryList(Integer pageNum, Integer pageSize, String filter) {
-        RestResponse<PageInfo<HouseInspectionRespDto>> response = this.houseInspectionReqQueryApi.queryByPage(filter, pageNum, pageSize);
+    public RestResponse<List<Map<String,String>>> queryList(Integer pageNum, Integer pageSize, String filter) {
+        RestResponse<List<Map<String,String>>> response = this.houseInspectionReqQueryApi.queryByPage(filter, pageNum, pageSize);
 
         return response;
     }

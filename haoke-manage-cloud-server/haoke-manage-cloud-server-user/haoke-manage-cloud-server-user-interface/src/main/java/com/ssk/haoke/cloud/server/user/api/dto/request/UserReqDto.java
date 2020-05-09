@@ -1,10 +1,9 @@
 package com.ssk.haoke.cloud.server.user.api.dto.request;
 
+import com.ssk.haoke.cloud.server.pojo.BasePojo;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
-
-import java.util.Date;
 
 /**
 *
@@ -12,7 +11,7 @@ import java.util.Date;
 */
 @Data
 @ApiModel(value = "UserReqDto", description = "用户请求对象")
-public class UserReqDto{
+public class UserReqDto extends BasePojo{
 
     /**
     *  主键
@@ -75,14 +74,14 @@ public class UserReqDto{
     /**
     *  
     */
-    @ApiModelProperty(name = "created", value = "创建时间")
-    private Date created;
-
-    /**
-    *  
-    */
-    @ApiModelProperty(name = "updated", value = "更新时间")
-    private Date updated;
+//    @ApiModelProperty(name = "created", value = "创建时间")
+//    private Date created;
+//
+//    /**
+//    *
+//    */
+//    @ApiModelProperty(name = "updated", value = "更新时间")
+//    private Date updated;
     @ApiModelProperty(name = "headUrl", value = "头像")
     private String headUrl;
 

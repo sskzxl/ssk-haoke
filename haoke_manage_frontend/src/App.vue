@@ -1,6 +1,7 @@
 <template>
   <a-locale-provider :locale="zh_CN">
     <div id="app">
+      <!--路由占位符-->
       <router-view></router-view>
     </div>
   </a-locale-provider>
@@ -10,7 +11,7 @@
 import zh_CN from "ant-design-vue/lib/locale-provider/zh_CN";
 
 export default {
-  name: "app",
+  name: 'app',
   data() {
     return {
       zh_CN

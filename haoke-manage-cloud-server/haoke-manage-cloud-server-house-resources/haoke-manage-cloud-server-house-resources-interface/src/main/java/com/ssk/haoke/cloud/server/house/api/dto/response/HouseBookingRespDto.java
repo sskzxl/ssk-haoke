@@ -7,10 +7,14 @@ public class HouseBookingRespDto {
     /**
      * 房源信息
      */
-    private HouseResourcesRespDto houseResourcesRespDto;
+    private HouseResourcesRespDto houseData;
 
     /**
      * 地址
      */
-    private String address;
+    private Integer reqStatus;
+    /**
+     * 电话
+     */
+    private String phone;
 }

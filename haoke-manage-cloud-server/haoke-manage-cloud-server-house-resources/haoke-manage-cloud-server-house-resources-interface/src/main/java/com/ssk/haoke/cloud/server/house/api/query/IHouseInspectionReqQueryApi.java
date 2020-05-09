@@ -2,7 +2,7 @@ package com.ssk.haoke.cloud.server.house.api.query;
 
 import com.ssk.haoke.cloud.server.house.api.dto.response.HouseBookingRespDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.HouseInspectionRespDto;
-import com.ssk.haoke.cloud.server.house.eo.PageInfo;
+import com.ssk.haoke.cloud.server.house.api.dto.response.HouseResourcesRespDto;
 import com.ssk.haoke.cloud.server.house.rest.RestResponse;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -10,6 +10,9 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
+import java.util.Map;
 
 /**
 * 看房请求表服务接口
@@ -42,9 +45,9 @@ public interface IHouseInspectionReqQueryApi {
     */
     @GetMapping("/page")
     @ApiOperation(value = "看房请求表分页数据", notes = "根据filter查询条件查询看房请求表数据，filter=HouseInspectionReqReqDto")
-    RestResponse<PageInfo<HouseInspectionRespDto>> queryByPage(@RequestParam("filter") String filter,
-                                                   @RequestParam(name = "pageNum", required = false, defaultValue = "1") Integer pageNum,
-                                                   @RequestParam(name = "pageSize", required = false, defaultValue = "10") Integer pageSize);
+    RestResponse<List<Map<String,String>>> queryByPage(@RequestParam("filter") String filter,
+                                                       @RequestParam(name = "pageNum", required = false, defaultValue = "1") Integer pageNum,
+                                                       @RequestParam(name = "pageSize", required = false, defaultValue = "10") Integer pageSize);
 
 
     /**
@@ -52,7 +55,7 @@ public interface IHouseInspectionReqQueryApi {
      */
     @GetMapping("/book")
     @ApiOperation(value = "根据房源id查询房源信息和地址",notes = "租客提交看房请求预览页面")
-    RestResponse<HouseBookingRespDto>getHouseBooking(@RequestParam("id") Long id);
+    RestResponse<HouseResourcesRespDto>getHouseBooking(@RequestParam("id") Long id);
 
     /***
      * 根据房东id查询看房请求通知
@@ -67,4 +70,7 @@ public interface IHouseInspectionReqQueryApi {
     @ApiOperation(value = "根据租客id查询看房请求通知",notes = "根据租客id查询看房请求通知")
     RestResponse<String> getTenantNote(Long id);
 
+    @GetMapping("book/req")
+    @ApiOperation(value = "根据看房请求表id查询看房请求通知",notes = "根据看房请求表id查询看房请求通知")
+    public RestResponse<HouseBookingRespDto> getHouseBookingByReqId(@RequestParam("id")Long id);
 }

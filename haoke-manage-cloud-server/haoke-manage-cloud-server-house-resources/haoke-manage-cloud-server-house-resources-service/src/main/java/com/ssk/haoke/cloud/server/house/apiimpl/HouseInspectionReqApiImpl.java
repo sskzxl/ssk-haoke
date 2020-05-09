@@ -38,7 +38,14 @@ public class HouseInspectionReqApiImpl implements IHouseInspectionReqApi {
     }
 
     @Override
-    public RestResponse<Boolean> commitBooking(HouseBookingReqDto houseBookingReqDto) {
-        return new RestResponse<>(houseInspectionReqService.commitBooking(houseBookingReqDto));
+    public RestResponse commitBooking(HouseBookingReqDto houseBookingReqDto) {
+        return houseInspectionReqService.commitBooking(houseBookingReqDto);
     }
+    //没用
+    @Override
+    public RestResponse updateStatus(Integer bookingStatus) {
+        return new RestResponse(houseInspectionReqService.updateStatus(bookingStatus));
+    }
+
+
 }

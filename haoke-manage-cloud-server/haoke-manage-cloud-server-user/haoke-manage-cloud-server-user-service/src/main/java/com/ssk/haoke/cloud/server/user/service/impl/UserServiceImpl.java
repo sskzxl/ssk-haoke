@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Lists;
+import com.google.common.collect.Maps;
 import com.ssk.haoke.cloud.server.common.CommonConstant;
 import com.ssk.haoke.cloud.server.common.ServiceResponse;
 import com.ssk.haoke.cloud.server.common.UserConst;
@@ -26,6 +27,7 @@ import org.springframework.util.CollectionUtils;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 /**
 * 服务实现类
@@ -48,8 +50,10 @@ public class UserServiceImpl extends BaseServiceImpl<UserEo> implements IUserSer
             throw new RuntimeException("用户新增参数不得为空");
         }
         BeanUtils.copyProperties(addReqDto,userEo,UserEo.class);
-        Integer save = super.save(userEo);
-        return save.longValue();
+        String MD5Password = MD5Util.MD5EncodeUtf8(userEo.getPassword());
+        userEo.setPassword(MD5Password);
+        super.save(userEo);
+        return userEo.getId();
     }
 
     @Override
@@ -84,12 +88,20 @@ public class UserServiceImpl extends BaseServiceImpl<UserEo> implements IUserSer
     @Override
     public PageInfo<UserRespDto> queryByPage(String filter, Integer pageNum, Integer pageSize) {
         UserEo userEo = new UserEo();
+        Map map = Maps.newHashMap();
         try {
-            userEo = OBJECT_MAPPER.readValue(filter, UserEo.class);
+            map = OBJECT_MAPPER.readValue(filter, Map.class);
         } catch (IOException e) {
-            logger.error("string转对象异常");
+            e.printStackTrace();
         }
-        IPage<UserEo> eoIPage = queryPageListByWhere(userEo, pageNum, pageSize);
+        QueryWrapper<UserEo> queryWrapper = new QueryWrapper<>(userEo);
+        Object usernameObj = map.get("username");
+        if (null != usernameObj){
+            queryWrapper.like("username",usernameObj.toString());
+        }
+
+        queryWrapper.orderByDesc("updated");
+        IPage<UserEo> eoIPage = queryPageList(queryWrapper, pageNum, pageSize);
         PageInfo respDtoPage = IPage2PageInfo(eoIPage);
         return respDtoPage;
     }

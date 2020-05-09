@@ -34,6 +34,7 @@ public class UserController {
         System.out.println(userReqDto);
         return new RestResponse<>(userService.addUser(userReqDto));
     }
+
     /**
      * 查询房源列表
      *
@@ -41,7 +42,7 @@ public class UserController {
      * @param pageSize
      * @return
      */
-    @GetMapping
+    @GetMapping("/page")
     @ApiOperation(value = "查询用户列表")
     public RestResponse<PageInfo<UserRespDto>> list(@RequestParam(name = "filter")String filter,
                                                     @RequestParam(name = "pageNum",

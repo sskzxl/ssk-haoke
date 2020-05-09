@@ -99,7 +99,7 @@ public class HouseResourcesEo extends BasePojo {
     /**
      * 配套设施， 如：1,2,3
      */
-    private Integer[] facilities;
+    private String attachments;
 
 
     /**

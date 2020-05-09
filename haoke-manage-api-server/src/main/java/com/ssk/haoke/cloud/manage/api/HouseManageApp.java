@@ -13,7 +13,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 //})
 @EnableFeignClients(basePackages = {
         "com.ssk.haoke.cloud.manage.api",
-        "com.ssk.haoke.cloud.server.*.api"
+        "com.ssk.haoke.cloud.server.*.api",
 })
 public class HouseManageApp {
     public static void main(String[] args) {

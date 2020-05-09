@@ -4,9 +4,11 @@ import com.ssk.haoke.cloud.server.house.api.dto.request.HouseBookingReqDto;
 import com.ssk.haoke.cloud.server.house.api.dto.request.HouseInspectionReqReqDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.HouseBookingRespDto;
 import com.ssk.haoke.cloud.server.house.api.dto.response.HouseInspectionRespDto;
-import com.ssk.haoke.cloud.server.house.eo.PageInfo;
+import com.ssk.haoke.cloud.server.house.api.dto.response.HouseResourcesRespDto;
+import com.ssk.haoke.cloud.server.house.rest.RestResponse;
 
 import java.util.List;
+import java.util.Map;
 
 /**
 * 看房请求表服务接口
@@ -53,12 +55,14 @@ public interface IHouseInspectionReqService {
     * @param pageSize 页大小
     * @return 看房请求表分页数据
     */
-    PageInfo<HouseInspectionRespDto> queryByPage(String filter,
-                                                 Integer pageNum,
-                                                 Integer pageSize);
-    HouseBookingRespDto getHouseBooking(Long id);
+    List<Map<String,String>> queryByPage(String filter,
+                                         Integer pageNum,
+                                         Integer pageSize);
+    HouseResourcesRespDto getHouseBooking(Long id);
+    HouseBookingRespDto getHouseBookingByReqId(Long id);
+    RestResponse commitBooking(HouseBookingReqDto houseBookingReqDto);
 
-    Boolean commitBooking(HouseBookingReqDto houseBookingReqDto);
-
-    List<String> getHostNote(Long id);
+//    List<String> getHostNote(Long id);
+//    List<String> getTenantNote(Long id);
+    boolean updateStatus(Integer bookingStatus);
 }

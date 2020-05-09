@@ -43,8 +43,9 @@ public class HouseResourcesController {
      * @return
      */
     @GetMapping
-    @ApiOperation(value = "查询房源列表")
-    public RestResponse<PageInfo<HouseResourcesListRespDto>> list(@RequestParam(name = "filter")String filter,
+    @ApiOperation(value = "后台查询房源列表")
+    public RestResponse<PageInfo<HouseResourcesListRespDto>> list(@RequestParam(name = "filter",
+                                                                     defaultValue = "1") String filter,
                                                                   @RequestParam(name = "pageNum",
                                                                       defaultValue = "1") Integer pageNum,
                                                                   @RequestParam(name = "pageSize",

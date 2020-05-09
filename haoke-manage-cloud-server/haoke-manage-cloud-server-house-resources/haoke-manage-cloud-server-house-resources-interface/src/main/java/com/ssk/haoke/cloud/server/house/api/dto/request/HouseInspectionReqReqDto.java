@@ -49,7 +49,9 @@ public class HouseInspectionReqReqDto{
     *  请求状态（0、待确认 1、待看房 2、已确认 3、已取消）
     */
     @ApiModelProperty(name = "reqStatus", value = "请求状态（0、待确认 1、待看房 2、已确认 3、已取消）")
-    private String reqStatus;
+    private Integer reqStatus;
+    @ApiModelProperty(name = "reqStatus", value = "请求状态（0、待确认 1、待看房 2、已确认 3、已取消）")
+    private String reqMsg;
 
     /**
     *  

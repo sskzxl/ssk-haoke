@@ -63,6 +63,12 @@ public class ImUserService extends BaseServiceImpl<ImEo>{
         if (null == from && null == to){
             throw new RuntimeException("数据有误");
         }
+        //记录用户的记录
+        this.add(from,to);
+        this.add(to,from);
+        return RestResponse.VOID;
+    }
+    private void add(UserRespDto from, UserRespDto to){
         ImEo imEo = new ImEo();
         imEo.setFromId(from.getId());
         imEo.setToId(to.getId());
@@ -74,7 +80,6 @@ public class ImUserService extends BaseServiceImpl<ImEo>{
         }else {
             super.update(result);
         }
-        return RestResponse.VOID;
     }
 }
 

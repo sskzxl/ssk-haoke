@@ -14,8 +14,11 @@ import java.io.IOException;
 public class RequestReplaceFilter extends OncePerRequestFilter{
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        if (!(request instanceof MyServletRequestWrapper)) {
-            request = new MyServletRequestWrapper(request);
+        String header = request.getHeader("Content-Type");
+        if (!"multipart/form-data".equals(header)){
+            if (!(request instanceof MyServletRequestWrapper)) {
+                request = new MyServletRequestWrapper(request);
+            }
         }
         filterChain.doFilter(request, response);
     }
